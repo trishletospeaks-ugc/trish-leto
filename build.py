@@ -81,6 +81,15 @@ POSTS_ON_OWN_TIKTOK_CONFIRMED = False
 # review the page copy before it goes live. When True, the page also joins
 # the main nav, the home "From the blog" row and the contact page.
 NIL_CONSULTING_CONFIRMED = False
+# Her origin story (About page) is drawn from her own public Facebook posts and
+# her texts with Eddie: ../STORY-SOURCES-2026-10-01.md. The sobriety paragraph
+# is her public story but health-related, so it shows in the preview for her to
+# review (SHOW_SOBRIETY_STORY) and the audit FAILS any INDEXABLE build until
+# she confirms it (STORY_SOBRIETY_CONFIRMED). If she says no, set
+# SHOW_SOBRIETY_STORY = False. "Helicopter mechanic" comes from her text to
+# Eddie on 2026-10-01: confirm it with her before launch too.
+SHOW_SOBRIETY_STORY = True
+STORY_SOBRIETY_CONFIRMED = False
 # Eddie (2026-10-01): Simply Digital is never mentioned on her site except the
 # "Website built by Simply Digital" credit in the footer (plain text, no link).
 # The ads partner in the packages stays unnamed. The audit enforces this.
@@ -696,7 +705,7 @@ def home(p):
     <div class="hero-copy">
       <p class="kicker">Model &middot; Speaker &middot; Tampa, FL</p>
       <h1>A GenX UGC creator for brands that sell to <span class="hl">real grown-ups</span>.</h1>
-      <p class="lede">I'm Trish Leto. I make short-form videos about products I ACTUALLY use: honest, funny, zero fluff, and built to stop the scroll.</p>
+      <p class="lede">I'm Trish Leto. I make short-form videos about products I ACTUALLY use: honest, funny, no BS, and built to stop the scroll.</p>
     </div>
     <div class="hero-photo">
       <div class="frame">{img(p, "trish-coffee", [400, 640], "Trish Leto smiling over a pink coffee mug in her kitchen", "(min-width: 900px) 420px, min(76vw, 340px)", (640, 800), eager=True)}</div>
@@ -903,6 +912,7 @@ def work_with_me(p):
     </div>
     <ul class="nope">
       <li><strong>Alcohol, tobacco or gambling</strong><span>Not for any budget.</span></li>
+      <li><strong>Lingerie</strong><span>I could. I choose not to.</span></li>
       <li><strong>Managing your brand accounts</strong><span>I don't run or post to your brand accounts, and I don't start new accounts for you (&ldquo;canvas UGC&rdquo;). I make the content. You post it.</span></li>
       <li><strong>Fake reviews</strong><span>I only talk about products I have actually used.</span></li>
       <li><strong>Kids' faces</strong><span>Kids on camera are hands only, never faces.</span></li>
@@ -937,7 +947,7 @@ def wwm_faqs(p):
          f'rights</a> and <a href="{p}blog/tiktok-spark-ads/">how TikTok Spark Ads work</a>. If you want the ads '
          'run for you too, ask about a <a href="#packages">UGC + ads package</a>.'),
         ("Which categories are a fit?", "Supplements, food and drink, pets, cars, kitchen and appliances, plants "
-         "and gardening, makeup, skin care and hair care. Not a fit: alcohol, tobacco and gambling."),
+         "and gardening, makeup, skin care and hair care. Not a fit: alcohol, tobacco, gambling and lingerie."),
         ("How do the videos get to us?", "Through a shared Google Drive folder, batch by batch."),
     ]
 
@@ -1034,9 +1044,13 @@ def portfolio(p):
 
 # DRAFT, Trish to rewrite or approve before launch: her story in her words.
 # Kept to facts from her bios until she does (no invented backstory).
-ABOUT_STORY = """<p>I make short-form videos for brands about products I ACTUALLY use. Supplements, kitchen gadgets, skin care, my morning coffee: if I use it, I can show it on camera exactly the way it fits my life.</p>
-      <p>I'm Gen X, and maybe your customers are too. That's my lane: real talk for real grown-ups.</p>
-      <p>I'm also a proud U.S. Navy veteran.</p>"""
+SOBRIETY_STORY = """<p>Part of my story is sobriety. The hardest part wasn't giving up alcohol. It was learning to forgive myself. Once I did, I stepped back into my purpose and started making content that mattered, sharing my story from my HEART so other people know it's OK to not be OK. Every day I make the choice not to drink, and instead build a business around my story.</p>"""
+
+ABOUT_STORY = f"""<p>I'm a VERY proud U.S. Navy veteran. I was a helicopter mechanic, so trust me, I can follow a process and I show up when it counts.</p>
+      <p>My why? Storytelling. I believe it's the most powerful thing we can do, because it lets us use our trials and tribulations as building blocks for prosperity.</p>
+      {SOBRIETY_STORY if SHOW_SOBRIETY_STORY else ""}
+      <p>Now I make short-form videos for brands about products I ACTUALLY use. Supplements, kitchen gadgets, skin care, my morning coffee: if I use it, I can show it on camera exactly the way it fits my life. I'm GenX, and maybe your customers are too. That's my lane: real talk for real grown-ups.</p>
+      <p>And honestly? I'm addicted to seeing other people be successful. That's why I teach, on stages and in my guides. GenX or Boomer, you CAN do this!</p>"""
 
 
 def stan_card(sp):
@@ -1281,7 +1295,7 @@ def contact(p):
         <li>Your timeline</li>
         <li>Your budget range</li>
       </ul>
-      <p style="margin-top:1.4rem">Not a fit: alcohol, tobacco and gambling. <a href="{p}work-with-me/">See what I make and what I don't.</a></p>
+      <p style="margin-top:1.4rem">Not a fit: alcohol, tobacco, gambling and lingerie. <a href="{p}work-with-me/">See what I make and what I don't.</a></p>
     </div>
     <div>
       <h3>Or copy this template</h3>
@@ -1546,7 +1560,7 @@ def home_blog(p):
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">From the blog</p>
-      <h2 id="blog-h">Free guides, no fluff</h2>
+      <h2 id="blog-h">Free guides, no BS</h2>
       <p class="lede">How brands hire and use UGC, how to become a UGC creator over 40{", and NIL content basics for athletes" if NIL_CONSULTING_CONFIRMED else ", and what creators really earn"}.</p>
     </div>
     <div class="grid grid-3 post-cards">{"".join(post_card(q, p) for q in items)}</div>
@@ -2504,6 +2518,12 @@ def audit():
     if nil_page_exists() and not NIL_CONSULTING_CONFIRMED:
         msg = ("NIL_CONSULTING_CONFIRMED is False: /nil-consulting/ is preview only until Trish confirms "
                "(and a Florida sports or entertainment attorney reviews the copy)")
+        (errors if INDEXABLE else warnings).append(msg + (". Cannot go INDEXABLE." if INDEXABLE else ""))
+
+    # Sobriety paragraph: her public story, but health-related; Trish approves before launch.
+    if SHOW_SOBRIETY_STORY and not STORY_SOBRIETY_CONFIRMED:
+        msg = ("STORY_SOBRIETY_CONFIRMED is False: the About page shows her sobriety story for review only "
+               "until Trish approves it (or set SHOW_SOBRIETY_STORY = False)")
         (errors if INDEXABLE else warnings).append(msg + (". Cannot go INDEXABLE." if INDEXABLE else ""))
 
     posts, bad = load_blog()
