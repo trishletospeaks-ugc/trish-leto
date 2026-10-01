@@ -100,7 +100,6 @@ INSTAGRAM_HANDLE = "@Real_trish_leto"
 INSTAGRAM_URL = "https://www.instagram.com/real_trish_leto/"
 FACEBOOK_URL = "https://www.facebook.com/trish.leto"
 STAN_URL = "https://stan.store/trishleto"
-SD_URL = "https://simplydigitalmarketing.co"
 
 # Read from her TikTok profile on 2026-10-01. Update both lines together.
 STATS_AS_OF = "October 2026"
@@ -325,12 +324,11 @@ def img(p, name, widths, alt, sizes, ratio, eager=False, cls=""):
 
 
 def partner_badge(where=""):
-    label = "Official Simply Digital Partner for UGC and paid ads packages. Opens simplydigitalmarketing.co in a new tab."
-    return (f'<a class="partner" href="{SD_URL}" target="_blank" rel="noopener" aria-label="{esc(label)}">'
+    # Plain text, never a link to Simply Digital (Eddie, 2026-10-01).
+    return (f'<div class="partner">'
             f'<span class="seal">{ICON_CHECK}</span>'
             f'<span><span class="p-top">Official Simply Digital Partner</span>'
-            f'<span class="p-main">UGC + paid ads packages</span></span>'
-            f'<span class="arrow" aria-hidden="true">&rarr;</span></a>')
+            f'<span class="p-main">UGC + paid ads packages</span></span></div>')
 
 
 def tiktok_url(vid):
@@ -683,8 +681,7 @@ def home(p):
         <a class="btn btn-primary" href="{p}work-with-me/">Work with me</a>
         <a class="btn btn-ghost" href="{p}portfolio/">Watch my videos</a>
       </div>
-      <p class="hero-note">PAID collabs ONLY &middot; U.S. Navy veteran &middot; Based in Tampa, FL<br>
-      <a href="{p}work-with-me/#packages">Official Simply Digital Partner for UGC + ads packages</a></p>
+      <p class="hero-note">PAID collabs ONLY &middot; U.S. Navy veteran &middot; Based in Tampa, FL</p>
     </div>
   </div>
 </section>
@@ -864,7 +861,6 @@ def work_with_me(p):
     <div class="grid grid-2">{pk_cards}</div>
     <div class="btn-row">
       <a class="btn btn-sun" href="{esc(mailto('Package inquiry: UGC + ads', PACKAGE_TEMPLATE))}">Ask about a package</a>
-      {ext(SD_URL, 'Visit Simply Digital', 'btn btn-ghost')}
     </div>
   </div>
 </section>

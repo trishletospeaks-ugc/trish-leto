@@ -425,7 +425,6 @@ p:last-child { margin-bottom: 0; }
   text-decoration: none;
   box-shadow: 0 1px 2px rgba(23, 25, 59, 0.06);
 }
-.partner:hover { color: var(--ink); border-color: var(--coral); }
 .partner .seal {
   flex: none;
   width: 46px;
@@ -452,15 +451,12 @@ p:last-child { margin-bottom: 0; }
   font-size: 1.02rem;
   line-height: 1.25;
 }
-.partner .arrow { margin-left: auto; padding-left: 0.4rem; font-weight: 800; color: var(--coral); }
 .hero .partner { margin-top: 1.8rem; }
 
-.band-ink a.partner { background: var(--ink-2); border-color: var(--line-ink); color: var(--paper); }
+.band-ink .partner { background: var(--ink-2); border-color: var(--line-ink); color: var(--paper); }
 .band-ink .partner .seal { background: var(--sun); }
 .band-ink .partner .seal svg { fill: var(--ink); }
 .band-ink .partner .p-top { color: var(--sun); }
-.band-ink a.partner:hover { border-color: var(--sun); color: var(--paper); }
-.band-ink .partner .arrow { color: var(--sun); }
 
 /* ---------- Stats ---------- */
 
@@ -904,7 +900,6 @@ p:last-child { margin-bottom: 0; }
 .site-footer .partner .seal { background: var(--sun); }
 .site-footer .partner .seal svg { fill: var(--ink); }
 .site-footer .partner .p-top { color: var(--sun); }
-.site-footer .partner .arrow { color: var(--sun); }
 .footer-bottom {
   margin-top: 2.8rem;
   padding-top: 1.4rem;
