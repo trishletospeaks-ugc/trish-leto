@@ -979,3 +979,7 @@ p:last-child { margin-bottom: 0; }
 .post-card p { margin: 0; font-size: 0.95rem; }
 .post-card .post-card-tag { font-family: var(--font-display); font-weight: 800; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); }
 .post-card .post-card-meta { margin-top: auto; padding-top: 0.3rem; font-size: 0.85rem; }
+
+/* Four-step process (NIL consulting) */
+@media (min-width: 760px) { .steps-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; } }
+@media (min-width: 1080px) { .steps-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }

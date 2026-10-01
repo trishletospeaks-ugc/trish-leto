@@ -28,8 +28,8 @@ const BLOG = join(DOCS, "blog");
 const POSTS = existsSync(BLOG) ? readdirSync(BLOG, { withFileTypes: true })
   .filter((d) => d.isDirectory() && existsSync(join(BLOG, d.name, "index.html"))).map((d) => `blog/${d.name}/`) : [];
 const PAGES = process.env.PAGES ? process.env.PAGES.split(",")
-  : ["", "work-with-me/", "portfolio/", "about/", "speaking/", "contact/", "blog/", ...POSTS, "404.html"];
-const WIDTHS = [360, 390, 768, 1280];
+  : ["", "work-with-me/", "portfolio/", "about/", "speaking/", "contact/", "nil-consulting/", "blog/", ...POSTS, "404.html"];
+const WIDTHS = process.env.WIDTHS ? process.env.WIDTHS.split(",").map(Number) : [360, 390, 768, 1280];
 const PORT = 9333;
 
 mkdirSync(OUT, { recursive: true });
@@ -40,7 +40,10 @@ const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${PORT}
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Shared page-side check: scrollWidth plus every visible element that pokes
-// past the device width (ignoring clipped and fixed ones). Needs W in scope.
+// past the device width (ignoring clipped and fixed ones, and content inside
+// its own horizontal scroll box, such as a wide blog table in .table-scroll:
+// that box scrolls, the page does not; the box itself is still checked).
+// Needs W in scope.
 const OVERFLOW_JS = `
       const sw = document.documentElement.scrollWidth;
       const over = [];
@@ -48,7 +51,7 @@ const OVERFLOW_JS = `
         const r = el.getBoundingClientRect();
         if (r.width && (r.right > W + 0.5 || r.left < -0.5)) {
           let hidden = false;
-          for (let p = el.parentElement; p; p = p.parentElement) { const s = getComputedStyle(p); if (s.overflowX === "hidden" || s.overflow === "hidden" || s.display === "none") { hidden = true; break; } }
+          for (let p = el.parentElement; p; p = p.parentElement) { const s = getComputedStyle(p); if (["hidden", "auto", "scroll"].includes(s.overflowX) || s.overflow === "hidden" || s.display === "none") { hidden = true; break; } }
           if (!hidden && getComputedStyle(el).position !== "fixed") over.push(el.tagName.toLowerCase() + "." + [...el.classList].join(".") + " [" + Math.round(r.left) + "," + Math.round(r.right) + "]");
         }
       });`;

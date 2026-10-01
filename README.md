@@ -24,6 +24,7 @@ Not indexed yet (`INDEXABLE = False`).
 | `/about/` | Her story, quick facts, packages note, her Stan store guides and a recommended course (affiliate link, disclosed) |
 | `/speaking/` | DOMINATE Summit (Oct 9, 2026), Military Creator Con, talk topics, booking checklist |
 | `/contact/` | Collab email, copy button, three pre-filled mailto paths, inquiry template. No third-party form. |
+| `/nil-consulting/` | NIL content and personal brand coaching for athletes and parents: what she helps with, what she does not do (not an agent or attorney), the rules in 60 seconds (cited), FAQ, mailto "NIL inquiry" template, latest NIL posts. Service, FAQPage and BreadcrumbList JSON-LD. Footer link only until `NIL_CONSULTING_CONFIRMED`. |
 | `/blog/` | Hub: live posts grouped by cluster, pillar first |
 | `/blog/<slug>/` | One post: breadcrumbs, hero photo, body with table, SVG chart, inline photo, optional TikTok cards and FAQ, call to action by audience, references, author box, 3 related posts. BlogPosting, BreadcrumbList and FAQPage JSON-LD. |
 | `/404.html` | Not-found page (always noindex, uses absolute BASE links so it works at any depth) |
@@ -45,7 +46,7 @@ Every post is checked on each build: title 60 characters or fewer, description 1
 
 The header, footer, email, handles, stats, event, video list and Stan products are each defined once near the top of `build.py`.
 
-The audit fails the build on: any em dash or en dash in any text file in the repo, more or fewer than one `<h1>` per page, a robots meta that does not match `INDEXABLE`, a wrong canonical, JSON-LD that does not parse, an `<img>` without alt or size, a broken internal link, an affiliate link without a disclosure next to it, "upcoming" event copy after the event date, or a missing icon or OG image. It warns while `PARTNER_CONFIRMED` is False (and fails if `INDEXABLE` is True).
+The audit fails the build on: any em dash or en dash in any text file in the repo, more or fewer than one `<h1>` per page, a robots meta that does not match `INDEXABLE`, a wrong canonical, JSON-LD that does not parse, an `<img>` without alt or size, a broken internal link, an affiliate link without a disclosure next to it, "upcoming" event copy after the event date, or a missing icon or OG image. It warns while `NIL_CONSULTING_CONFIRMED` is False, and fails an `INDEXABLE` build while the NIL page exists and that switch is still False.
 
 ### The two switches
 
@@ -56,7 +57,7 @@ Crawlers only read `robots.txt` at the root of a host. While the site lives at t
 
 ### Pending lines
 
-The `PENDING` block at the top of `build.py` holds lines that wait on a confirmation (her Facebook link, a third talk topic, posting on her own TikTok). Each renders only when its switch is `True`.
+The `PENDING` block at the top of `build.py` holds lines that wait on a confirmation (her Facebook link, a third talk topic, posting on her own TikTok, NIL consulting). Each renders only when its switch is `True`. The exception is `NIL_CONSULTING_CONFIRMED`: the NIL page, its footer link and the NIL posts render in the noindex preview so Trish can review them, and the switch adds the main nav link, the NIL pillar on the home page, the contact page line and the NIL hub description. If she does not offer NIL consulting, remove the `nil-consulting/` entry from `PAGES` and the NIL posts (their links to the page would fail the build).
 
 ### Events
 
@@ -78,7 +79,7 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory docs   # from this fold
 node tools/check_layout.mjs ../site-screenshots                  # 360, 390, 768, 1280 px
 ```
 
-It covers every page, the blog hub and every built post (found in `docs/blog/`). `PAGES=blog/,contact/ node tools/check_layout.mjs` checks a subset.
+It covers every page, the blog hub and every built post (found in `docs/blog/`). `PAGES=blog/,contact/ node tools/check_layout.mjs` checks a subset, and `WIDTHS=360,390,1280` picks the widths. Content inside its own horizontal scroll box (a wide blog table in `.table-scroll`) does not count as page overflow; the box itself still does.
 
 It uses real mobile emulation over the Chrome DevTools Protocol, compares `scrollWidth` to the device width, counts `<h1>` tags, reports console errors and failed requests, and saves full-page screenshots. Below 900 px it also opens the mobile menu and checks the open panel (no overflow, links inside the side gutter). On pages with a hero photo it prints where the photo starts. Requests to the live `BASE` (the 404 page's assets) are answered from the local server.
 

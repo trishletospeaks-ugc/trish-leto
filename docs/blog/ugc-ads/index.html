@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UGC Ads: Hooks, Scripts and Real Examples | Trish Leto</title>
+<meta name="description" content="UGC ads that stop the scroll: hook ideas, a simple script structure, real examples, and the FTC disclosure and health-claim rules every brand has to follow.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/">
+<meta name="author" content="Trish Leto">
+<meta name="theme-color" content="#17193b">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Trish Leto">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="UGC Ads: Hooks, Scripts and Real Examples | Trish Leto">
+<meta property="og:description" content="UGC ads that stop the scroll: hook ideas, a simple script structure, real examples, and the FTC disclosure and health-claim rules every brand has to follow.">
+<meta property="og:url" content="https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/">
+<meta property="og:image" content="https://ogeddiesmith.github.io/trish-leto/assets/img/blog/ugc-ads-hero-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="A woman at a kitchen table holds up a glass bottle of milk while a camera on a gimbal stand films her, with breakfast food spread out in front of her">
+<meta property="article:published_time" content="2026-10-01">
+<meta property="article:modified_time" content="2026-10-01">
+<meta property="article:author" content="https://ogeddiesmith.github.io/trish-leto/about/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UGC Ads: Hooks, Scripts and Real Examples | Trish Leto">
+<meta name="twitter:description" content="UGC ads that stop the scroll: hook ideas, a simple script structure, real examples, and the FTC disclosure and health-claim rules every brand has to follow.">
+<meta name="twitter:image" content="https://ogeddiesmith.github.io/trish-leto/assets/img/blog/ugc-ads-hero-1200.jpg">
+<meta name="twitter:image:alt" content="A woman at a kitchen table holds up a glass bottle of milk while a camera on a gimbal stand films her, with breakfast food spread out in front of her">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;display=swap">
+<link rel="stylesheet" href="../../assets/css/style.css?v=a0ee8d47">
+<script>document.documentElement.classList.add("js")</script>
+<script src="../../assets/js/site.js?v=5c20e9f1" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://ogeddiesmith.github.io/trish-leto/#website",
+   "url": "https://ogeddiesmith.github.io/trish-leto/",
+   "name": "Trish Leto",
+   "inLanguage": "en-US",
+   "publisher": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/#trish"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://ogeddiesmith.github.io/trish-leto/#trish",
+   "name": "Trish Leto",
+   "jobTitle": "GenX UGC Creator, Model and Public Speaker",
+   "description": "GenX UGC creator and model, U.S. Navy veteran and public speaker. Makes short-form product videos and b-roll for brands.",
+   "url": "https://ogeddiesmith.github.io/trish-leto/",
+   "image": "https://ogeddiesmith.github.io/trish-leto/assets/img/trish-coffee-640.webp",
+   "email": "mailto:trishletospeaks@gmail.com",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tampa",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+   },
+   "knowsAbout": [
+    "User-generated content (UGC)",
+    "Short-form video",
+    "TikTok Shop",
+    "Content strategy",
+    "Hooks and content ideas"
+   ],
+   "sameAs": [
+    "https://www.tiktok.com/@trishizzlefoshizzle",
+    "https://www.instagram.com/real_trish_leto/",
+    "https://stan.store/trishleto"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/#webpage",
+   "url": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/",
+   "name": "UGC Ads: Hooks, Scripts and Real Examples | Trish Leto",
+   "description": "UGC ads that stop the scroll: hook ideas, a simple script structure, real examples, and the FTC disclosure and health-claim rules every brand has to follow.",
+   "isPartOf": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/#website"
+   },
+   "about": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/#trish"
+   },
+   "inLanguage": "en-US",
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://ogeddiesmith.github.io/trish-leto/assets/img/blog/ugc-ads-hero-1200.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/#breadcrumb"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://ogeddiesmith.github.io/trish-leto/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://ogeddiesmith.github.io/trish-leto/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "UGC Ads That Stop the Scroll: Hooks, Scripts and Real Examples",
+     "item": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/"
+    }
+   ]
+  },
+  {
+   "@type": "BlogPosting",
+   "@id": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/#article",
+   "headline": "UGC Ads That Stop the Scroll: Hooks, Scripts and Real Examples",
+   "description": "UGC ads that stop the scroll: hook ideas, a simple script structure, real examples, and the FTC disclosure and health-claim rules every brand has to follow.",
+   "image": [
+    "https://ogeddiesmith.github.io/trish-leto/assets/img/blog/ugc-ads-hero-1200.jpg",
+    "https://ogeddiesmith.github.io/trish-leto/assets/img/blog/ugc-ads-hero-1200.webp"
+   ],
+   "datePublished": "2026-10-01",
+   "dateModified": "2026-10-01",
+   "author": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/#trish"
+   },
+   "publisher": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/#trish"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/#webpage"
+   },
+   "isPartOf": {
+    "@id": "https://ogeddiesmith.github.io/trish-leto/blog/#blog"
+   },
+   "articleSection": "UGC for brands",
+   "keywords": [
+    "ugc ads",
+    "ugc ad examples",
+    "ugc script",
+    "ugc hooks",
+    "ugc ad script"
+   ],
+   "inLanguage": "en-US",
+   "citation": [
+    "https://spiegel.medill.northwestern.edu/wp-content/uploads/sites/2/2021/04/Spiegel_Online-Review_eBook_Jun2017_FINAL.pdf",
+    "https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/",
+    "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+    "https://www.law.cornell.edu/cfr/text/16/255.1",
+    "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.5",
+    "https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials",
+    "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "https://www.law.cornell.edu/cfr/text/21/101.93",
+    "https://ads.tiktok.com/help/article/spark-ads",
+    "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025"
+   ],
+   "wordCount": 1689
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://ogeddiesmith.github.io/trish-leto/blog/ugc-ads/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is a UGC ad?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A UGC ad is a short video made by a creator in the casual style of a regular social post, which a brand then runs as a paid ad. On TikTok it can run as a Spark Ad, and on Facebook and Instagram as a Partnership Ad."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can a UGC ad make health claims about a supplement?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not disease claims. A supplement cannot claim to diagnose, treat, cure or prevent any disease, and the FTC says a testimonial cannot carry a claim the brand could not prove if it said it directly. This is general information, not legal advice, so have your own counsel review supplement scripts."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do UGC ads need #ad in the video?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If the creator has a connection to the brand, including free product, the FTC says to disclose it clearly. In a video, the disclosure belongs in the video itself, not only in the description. Plain words like ad, advertisement or sponsored work. A hashtag is fine but not required."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What makes a good UGC hook?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A good hook names something the viewer already thinks or feels, right away and in plain words. Questions, POV setups, a little humor, an extreme close-up or a reply to a comment all work. Write several hooks for the same product and test them."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="../../">
+      <span class="brand-name">Trish Leto<span class="dot">.</span></span>
+      <span class="brand-tag">Gen<span class="x">X</span> UGC Creator</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span>Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul><li><a href="../../work-with-me/">Work with me</a></li><li><a href="../../portfolio/">Portfolio</a></li><li><a href="../../about/">About</a></li><li><a href="../../speaking/">Speaking</a></li><li><a href="../../blog/">Blog</a></li><li class="nav-cta"><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<article class="post">
+<header class="page-hero post-head">
+  <div class="wrap measure">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../blog/">Blog</a></li><li><span aria-current="page">UGC Ads That Stop the Scroll: Hooks, Scripts and Real Examples</span></li></ol></nav>
+    <p class="kicker">UGC for brands</p>
+    <h1>UGC Ads That Stop the Scroll: Hooks, Scripts and Real Examples</h1>
+    <p class="post-meta">By <a href="../../about/">Trish Leto</a> <span aria-hidden="true">&middot;</span> <time datetime="2026-10-01">October 1, 2026</time> <span aria-hidden="true">&middot;</span> 8 min read</p>
+  </div>
+</header>
+<div class="wrap measure post-wrap">
+  <figure class="post-hero"><img src="../../assets/img/blog/ugc-ads-hero-1200.webp" srcset="../../assets/img/blog/ugc-ads-hero-720.webp 720w, ../../assets/img/blog/ugc-ads-hero-1200.webp 1200w" sizes="(min-width: 800px) 720px, calc(100vw - 32px)" width="1200" height="675" alt="A woman at a kitchen table holds up a glass bottle of milk while a camera on a gimbal stand films her, with breakfast food spread out in front of her" fetchpriority="high" decoding="async"><figcaption>Photo: <a href="https://www.pexels.com/@mikael-blomkvist" target="_blank" rel="noopener">Mikael Blomkvist<span class="sr-only"> (opens in a new tab)</span></a> on <a href="https://www.pexels.com/photo/brunette-woman-holding-a-glass-bottle-with-white-liquid-4152780/" target="_blank" rel="noopener">Pexels<span class="sr-only"> (opens in a new tab)</span></a></figcaption></figure>
+  <div class="prose">
+<h2 id="what-makes-ugc-ads-different">What makes UGC ads different</h2>
+<p>UGC ads are short videos made by a real person, filmed the way you would film a regular post, that a brand then runs as paid ads. No studio set. No booming narrator. Just somebody in a kitchen, holding the product, talking to you like a friend would. That is my lane: I am a GenX UGC creator and model and a Navy veteran, and I make talking-head videos, product demos, lifestyle clips and b-roll for brands.</p>
+<p>Why does the casual look work? Because it reads like peer content, and people lean hard on what other people say before they buy. The cleanest numbers I know of on that come from product review data, not from a UGC study, so treat them as a close cousin of the idea and not as proof. Northwestern's Spiegel Research Center, working with 2017 data from the review vendor PowerReviews, found that a product with five reviews was 270% more likely to be bought than a product with none (<a href="https://spiegel.medill.northwestern.edu/wp-content/uploads/sites/2/2021/04/Spiegel_Online-Review_eBook_Jun2017_FINAL.pdf" target="_blank" rel="noopener noreferrer">Spiegel Research Center report<span class="sr-only"> (opens in a new tab)</span></a>). The same research found reviews lifted conversion 190% for lower-priced products and 380% for higher-priced ones (<a href="https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/" target="_blank" rel="noopener noreferrer">Spiegel Research Center<span class="sr-only"> (opens in a new tab)</span></a>).</p>
+<figure class="post-chart">
+  <figcaption class="post-chart-title">How product reviews lift sales (review data, not a UGC study)</figcaption>
+  <svg viewBox="0 0 340 157" width="340" height="157" role="img" aria-labelledby="post-chart-title post-chart-desc" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+    <title id="post-chart-title">How product reviews lift sales (review data, not a UGC study)</title>
+    <desc id="post-chart-desc">Purchase likelihood, 5 reviews vs none: 270%; Conversion lift, higher-priced items: 380%; Conversion lift, lower-priced items: 190%. Source: Spiegel Research Center, Northwestern University, using 2017 data from PowerReviews (a review vendor).</desc>
+    <text x="0" y="17" fill="#17193b" font-size="14" font-weight="600">Purchase likelihood, 5 reviews vs none</text><rect x="0" y="23" width="176.2" height="18" rx="3" fill="#c92c51"></rect><text x="183.2" y="37" fill="#17193b" font-size="14" font-weight="800">270%</text><text x="0" y="72" fill="#17193b" font-size="14" font-weight="600">Conversion lift, higher-priced items</text><rect x="0" y="78" width="248.0" height="18" rx="3" fill="#c92c51"></rect><text x="255.0" y="92" fill="#17193b" font-size="14" font-weight="800">380%</text><text x="0" y="127" fill="#17193b" font-size="14" font-weight="600">Conversion lift, lower-priced items</text><rect x="0" y="133" width="124.0" height="18" rx="3" fill="#c92c51"></rect><text x="131.0" y="147" fill="#17193b" font-size="14" font-weight="800">190%</text>
+  </svg>
+  <p class="post-source">Source: <a href="https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/" target="_blank" rel="noopener">Spiegel Research Center, Northwestern University, using 2017 data from PowerReviews (a review vendor)<span class="sr-only"> (opens in a new tab)</span></a></p>
+</figure>
+<p>Now, a UGC ad is not a review. It is an ad, and the law treats it like one (more on that below). But the instinct behind it is the same: buyers want to hear from somebody like them before they spend money. And my fellow Gen Xers have seen every infomercial ever made. We can smell a fake script from the parking lot.</p>
+<p>If you are brand new to creator content, start with my pillar guide, <a href="../../blog/ugc-for-brands/">UGC for brands</a>, then come back here for the build.</p>
+<h2 id="the-anatomy-of-a-ugc-ad-script">The anatomy of a UGC ad script</h2>
+<p>A good UGC ad script has six beats. The order can flex (sometimes the demo <em>is</em> the hook), but if one goes missing, the video tends to feel like it is wandering. Here they are, with sample lines I wrote for this post about a made-up drink mix. They are samples, not quotes from my videos.</p>
+<div class="post-table">
+  <div class="table-scroll" role="region" aria-labelledby="post-table-cap" tabindex="0">
+    <table>
+      <caption id="post-table-cap">The beats of a UGC ad script. Sample lines were written for this post about a made-up drink mix; they are samples, not quotes from my videos.</caption>
+      <thead><tr><th scope="col">Beat</th><th scope="col">What it does</th><th scope="col">Sample line (written for this post)</th><th scope="col">Compliance check</th></tr></thead>
+      <tbody><tr><th scope="row">Hook</th><td>Stops the scroll with a question, a POV, a joke or a visual surprise</td><td>&quot;POV: you swore you&#x27;d drink more water this year.&quot;</td><td>No health promise in the hook. A question is not a claim, so keep it that way.</td></tr><tr><th scope="row">Problem</th><td>Names the buyer&#x27;s real frustration in their own words</td><td>&quot;Plain water and I are not on speaking terms.&quot;</td><td>Only describe an experience the creator actually had.</td></tr><tr><th scope="row">Demo</th><td>Shows the product in use, hands on, in a real setting</td><td>&quot;One packet, one glass, stir. That&#x27;s it.&quot;</td><td>The creator must have really used the product.</td></tr><tr><th scope="row">Proof</th><td>Gives the viewer a reason to believe, in plain words</td><td>&quot;I&#x27;ve had it every afternoon this week.&quot;</td><td>Only if true. No disease claims and nothing the brand couldn&#x27;t prove itself.</td></tr><tr><th scope="row">Call to action</th><td>Tells the viewer exactly one thing to do next</td><td>&quot;If you want to try it, it&#x27;s linked here.&quot;</td><td>One ask. Do not add new claims at the end.</td></tr><tr><th scope="row">Disclosure</th><td>Tells the viewer about the brand connection</td><td>&quot;Ad. The brand sent me this to try.&quot;</td><td>Said or shown inside the video, in plain words like ad or sponsored.</td></tr></tbody>
+    </table>
+  </div>
+  <p class="post-source">Source: <a href="https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance" target="_blank" rel="noopener">Compliance checks from the FTC Health Products Compliance Guidance and FTC Disclosures 101 for Social Media Influencers. Sample lines written for this post.<span class="sr-only"> (opens in a new tab)</span></a></p>
+</div>
+<p>A few notes on the beats:</p>
+<ul>
+<li><strong>Hook.</strong> This is the whole ballgame. If the hook misses, the rest of the video never gets its chance.</li>
+<li><strong>Problem.</strong> One problem, in the buyer's words, not the marketing team's.</li>
+<li><strong>Demo.</strong> The product in hands, in use, in a real kitchen or bathroom or car. Not floating on a white background.</li>
+<li><strong>Proof.</strong> Plain, honest, specific. "I've had it every afternoon this week" beats "life-changing" every single time, and it only works if it is true.</li>
+<li><strong>Call to action.</strong> One ask. Not "follow, like, comment, shop, and tell your mama."</li>
+<li><strong>Disclosure.</strong> Inside the video, in plain words. I will get to why.</li>
+</ul>
+<h2 id="ugc-hooks-that-stop-the-scroll">UGC hooks that stop the scroll</h2>
+<p>The hook has one job: earn the rest of the video. Here are four hook styles I use, with real examples from my own TikTok.</p>
+<h3 id="question-and-pov-hooks">Question and POV hooks</h3>
+<p>Ask the question your buyer is already asking in their head. My zinc video opens with the on-screen text "POV: is taking zinc really doing anything???" That is a question real people have, and it is phrased the way they would say it.</p>
+<p>Notice what that hook does not do: it does not promise anything. That matters. A question hook for a supplement has to be followed by honest stuff, like the routine, the taste, the packaging or how easy it is to take. It is never followed by "and now I never get sick." I will show you the rule behind that in a minute.</p>
+<h3 id="humor-hooks">Humor hooks</h3>
+<p>My energy drink video opens with "'Patiently' waiting for tomorrow's energy drink" while I wait on the couch and the drink sits on the kitchen counter. The air quotes around patiently do all the work. GenX speaks fluent sarcasm, and a little self-aware humor tells the viewer, "relax, I'm a person, not a billboard."</p>
+<h3 id="extreme-close-ups">Extreme close-ups</h3>
+<p>Sometimes the hook is visual, not verbal. My beef tallow skin care video opens on an extreme close-up of my eye. You do not need a single word for a shot like that to make a thumb stop and go, "wait, what?"</p>
+<h3 id="comment-reply-hooks">Comment-reply hooks</h3>
+<p>My protein powder video is built as a reply, with the line "I love replying to comments about my favorite protein powder." Replying to a comment borrows a question the audience already asked, so the setup writes itself.</p>
+<div class="post-vids">
+<div class="vids vids-post"><article class="vid">
+  <div class="vid-media">
+    <a class="vid-cover" href="https://www.tiktok.com/@trishizzlefoshizzle/video/7690644146540776734" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/img/tiktok/7690644146540776734.webp" width="360" height="640" alt="" loading="lazy" decoding="async">
+    </a>
+    <span class="vid-badge">TikTok</span>
+    <button class="vid-play" type="button" data-tiktok="7690644146540776734" data-title="Zinc supplement video on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z"/></svg><span>Play here</span><span class="sr-only">: Zinc supplement (loads the TikTok player)</span></button>
+  </div>
+  <div class="vid-body">
+    <p class="vid-tag">Supplements</p>
+    <h3>Zinc supplement</h3>
+    <p class="vid-hook">Hook: “POV: is taking zinc really doing anything???”</p>
+    <p class="sr-only">Cover frame: Trish holds up a bottle of zinc supplements in her kitchen</p>
+    <a class="vid-link" href="https://www.tiktok.com/@trishizzlefoshizzle/video/7690644146540776734" target="_blank" rel="noopener">Watch on TikTok<span class="sr-only">: Zinc supplement (opens in a new tab)</span></a>
+  </div>
+</article><article class="vid">
+  <div class="vid-media">
+    <a class="vid-cover" href="https://www.tiktok.com/@trishizzlefoshizzle/video/7691470090906193182" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/img/tiktok/7691470090906193182.webp" width="360" height="640" alt="" loading="lazy" decoding="async">
+    </a>
+    <span class="vid-badge">TikTok</span>
+    <button class="vid-play" type="button" data-tiktok="7691470090906193182" data-title="Energy drink video on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z"/></svg><span>Play here</span><span class="sr-only">: Energy drink (loads the TikTok player)</span></button>
+  </div>
+  <div class="vid-body">
+    <p class="vid-tag">Food and drink · TikTok Shop</p>
+    <h3>Energy drink</h3>
+    <p class="vid-hook">Hook: “‘Patiently’ waiting for tomorrow’s energy drink…”</p>
+    <p class="sr-only">Cover frame: Trish waits on the couch while an energy drink sits on the kitchen counter</p>
+    <a class="vid-link" href="https://www.tiktok.com/@trishizzlefoshizzle/video/7691470090906193182" target="_blank" rel="noopener">Watch on TikTok<span class="sr-only">: Energy drink (opens in a new tab)</span></a>
+  </div>
+</article></div>
+<p class="disclosure">These are my own TikTok posts, shown as samples of my work. TikTok Shop videos can earn me a commission when viewers buy through them. A product appearing here does not mean that brand hired me.</p>
+</div>
+<p>These are my own organic posts. They are not paid ads and not client work, and showing a product does not mean that brand hired me. They are here as real hook examples.</p>
+<p>Hooks are the whole idea behind my Control the Scroll talk ("How to Grab Attention with Unlimited Content Ideas"). You can see it on my <a href="../../speaking/">speaking page</a>.</p>
+<figure class="post-figure"><img src="../../assets/img/blog/ugc-ads-inline-1200.webp" srcset="../../assets/img/blog/ugc-ads-inline-720.webp 720w, ../../assets/img/blog/ugc-ads-inline-1200.webp 1200w" sizes="(min-width: 800px) 720px, calc(100vw - 32px)" width="1200" height="800" alt="Close-up of two hands shaking a protein shaker bottle in front of a linen apron, a hands-only product demo shot" loading="lazy" decoding="async"><figcaption>Photo: <a href="https://www.pexels.com/@felicity-tai" target="_blank" rel="noopener">Felicity Tai<span class="sr-only"> (opens in a new tab)</span></a> on <a href="https://www.pexels.com/photo/a-person-holding-a-shaker-container-7965973/" target="_blank" rel="noopener">Pexels<span class="sr-only"> (opens in a new tab)</span></a></figcaption></figure>
+<h2 id="how-to-write-a-ugc-ad-script-that-sounds-human">How to write a UGC ad script that sounds human</h2>
+<p>You do not need a long brief to get a good UGC ad script. You need four habits.</p>
+<ol>
+<li><strong>Talk like the buyer.</strong> Use the words your customers use in reviews, DMs and comments. If your customers say "it doesn't clump," do not make the creator say "superior solubility."</li>
+<li><strong>One benefit per video.</strong> One video, one point. If your product does five things, that is five videos, which is great news because it means five chances to find a winner.</li>
+<li><strong>Show the product in use.</strong> Hands on the product. Pour it, shake it, open it, apply it. The demo is where trust gets built.</li>
+<li><strong>One call to action.</strong> Tell the viewer the one thing to do next, then stop talking.</li>
+</ol>
+<p>Here is the simple UGC script template I would hand any brand. Fill in the brackets and give it to your creator as a guide, not a word-for-word script:</p>
+<ol>
+<li><strong>Hook:</strong> [the question or feeling your buyer already has]</li>
+<li><strong>Problem:</strong> [one sentence, in your buyer's words]</li>
+<li><strong>Demo:</strong> [the product in use, hands on, in a real setting]</li>
+<li><strong>Proof:</strong> [what the creator actually noticed, only if it is true]</li>
+<li><strong>Call to action:</strong> [one ask]</li>
+<li><strong>Disclosure:</strong> [ad or sponsored, said or shown in the video]</li>
+</ol>
+<p>Let the creator say it their way. A script that a real person would never say out loud is the fastest way to make a UGC ad look like a regular ad.</p>
+<h2 id="claims-you-cannot-make-even-in-a-casual-video">Claims you cannot make, even in a casual video</h2>
+<p>This is the part brands skip and should not. A UGC ad is an endorsement, and endorsements have rules. Supplement and health brands get the closest look. This is general information, not legal advice, so have your own counsel review scripts for those products.</p>
+<ul>
+<li><strong>No disease claims for supplements.</strong> A supplement cannot claim to diagnose, treat, cure or prevent any disease. That language comes straight from the required label disclaimer in <a href="https://www.law.cornell.edu/cfr/text/21/101.93" target="_blank" rel="noopener noreferrer">21 CFR 101.93<span class="sr-only"> (opens in a new tab)</span></a>. So "POV: is taking zinc really doing anything???" can never be answered with "yep, no more colds."</li>
+<li><strong>Testimonials cannot say what the brand could not prove.</strong> The FTC's <a href="https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance" target="_blank" rel="noopener noreferrer">Health Products Compliance Guidance<span class="sr-only"> (opens in a new tab)</span></a> says advertisers should not make claims through consumer testimonials that would be deceptive or could not be substantiated if the advertiser made them directly. If a creator says "it fixed my joints," that claim needs the same proof as if you had said it yourself.</li>
+<li><strong>The creator must have used the product.</strong> Under the FTC Endorsement Guides, when an ad says the endorser uses the product, the endorser must have been a <a href="https://www.law.cornell.edu/cfr/text/16/255.1" target="_blank" rel="noopener noreferrer">bona fide user<span class="sr-only"> (opens in a new tab)</span></a> when the endorsement was given. The FTC also tells creators flat out that they cannot talk about their experience with a product they have not tried.</li>
+<li><strong>No fake reviews.</strong> The FTC's 2024 <a href="https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials" target="_blank" rel="noopener noreferrer">final rule on fake reviews and testimonials<span class="sr-only"> (opens in a new tab)</span></a> covers reviews by people who do not exist, including AI-generated ones, and reviews by people with no real experience with the product.</li>
+</ul>
+<p>My own definition of UGC has always been "fancy lingo for creating short-form videos for brands about products you're ALREADY using... and getting paid!" Already using is the whole point. And I do not do alcohol, tobacco or gambling at all.</p>
+<h2 id="put-the-disclosure-inside-the-ad">Put the disclosure inside the ad</h2>
+<p>If a brand pays a creator or gives them free product, that is a connection the viewer should know about. The Endorsement Guides spell out that free or discounted product counts, even when the brand did not require a post in return (<a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.5" target="_blank" rel="noopener noreferrer">16 CFR 255.5<span class="sr-only"> (opens in a new tab)</span></a>).</p>
+<p>Where the disclosure goes matters as much as what it says. The FTC's <a href="https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers" target="_blank" rel="noopener noreferrer">Disclosures 101 for Social Media Influencers<span class="sr-only"> (opens in a new tab)</span></a> says that in a video, the disclosure should be in the video itself and not just in the description. It also says plain words work: "ad," "advertisement," "sponsored," or a simple line like "Thanks to [brand] for the free product." Skip vague tags like "sp," "spon" or "collab."</p>
+<p>I would rather say it on camera and put it on screen. It costs almost nothing and it protects both of us.</p>
+<h2 id="test-ugc-hooks-not-just-videos">Test UGC hooks, not just videos</h2>
+<p>Here is where brands leave money on the table, in my opinion: they order one video, run it, and decide UGC "doesn't work." Instead, order several hooks for each product in a monthly batch. Same demo, same body, different openings. Then run them and keep what wins.</p>
+<p>The usual places to run them as ads:</p>
+<ul>
+<li><strong>TikTok Spark Ads</strong> let advertisers run organic TikTok posts as ads, including posts made by other creators with their authorization (<a href="https://ads.tiktok.com/help/article/spark-ads" target="_blank" rel="noopener noreferrer">TikTok Ads Help Center<span class="sr-only"> (opens in a new tab)</span></a>). I break it down in my guide to <a href="../../blog/tiktok-spark-ads/">TikTok Spark Ads</a>.</li>
+<li><strong>Meta Partnership Ads</strong> run creator content as ads on Facebook and Instagram. In 2025, Meta added the option to feature just one partner in the ad header (<a href="https://www.facebook.com/business/news/meta-at-iab-newfronts-2025" target="_blank" rel="noopener noreferrer">Meta for Business<span class="sr-only"> (opens in a new tab)</span></a>).</li>
+</ul>
+<p>Not sure which formats to test first? My post on the <a href="../../blog/types-of-ugc-videos/">types of UGC videos</a> walks through the main ones, and my <a href="../../portfolio/">portfolio</a> shows what I make.</p>
+<p>The way I like to work is simple: a batch of videos plus b-roll every month, delivered to your Google Drive, on a monthly retainer or per project. If you want the ads run too, I quote UGC and paid ads together with my ads partner. All of it lives on my <a href="../../work-with-me/">Work With Me</a> page.</p>
+<aside class="post-cta band-ink" aria-label="Work with Trish">
+  <p class="post-cta-kicker">PAID collabs ONLY</p>
+  <p class="post-cta-h">Want UGC like this for your brand?</p>
+  <p>I make short-form videos and b-roll for brands, delivered to Google Drive on a monthly retainer or per project.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="../../work-with-me/">Work with me</a><a class="btn btn-ghost" href="mailto:trishletospeaks@gmail.com?subject=UGC%20collab%3A%20%5Byour%20brand%5D&amp;body=Hi%20Trish%2C%0D%0A%0D%0ABrand%3A%0D%0AWebsite%3A%0D%0AProduct%28s%29%3A%0D%0ACan%20you%20ship%20the%20product%3F%20%28yes%20%2F%20no%29%0D%0AVideos%20needed%20%28how%20many%2C%20which%20formats%29%3A%0D%0AB-roll%20needed%3F%20%28yes%20%2F%20no%29%0D%0AWhere%20they%20will%20run%20%28organic%2C%20TikTok%20Shop%2C%20paid%20ads%29%20and%20for%20how%20long%3A%0D%0ATimeline%3A%0D%0ABudget%20range%3A%0D%0A%0D%0AThanks%21">Email Trish</a></div>
+</aside>
+  </div>
+  <section class="post-faq" aria-labelledby="post-faq-h">
+  <h2 id="post-faq-h">Questions people ask</h2>
+  <div class="faq"><details><summary>What is a UGC ad?</summary><div class="answer"><p>A UGC ad is a short video made by a creator in the casual style of a regular social post, which a brand then runs as a paid ad. On TikTok it can run as a Spark Ad, and on Facebook and Instagram as a Partnership Ad.</p></div></details><details><summary>Can a UGC ad make health claims about a supplement?</summary><div class="answer"><p>Not disease claims. A supplement cannot claim to diagnose, treat, cure or prevent any disease, and the FTC says a testimonial cannot carry a claim the brand could not prove if it said it directly. This is general information, not legal advice, so have your own counsel review supplement scripts.</p></div></details><details><summary>Do UGC ads need #ad in the video?</summary><div class="answer"><p>If the creator has a connection to the brand, including free product, the FTC says to disclose it clearly. In a video, the disclosure belongs in the video itself, not only in the description. Plain words like ad, advertisement or sponsored work. A hashtag is fine but not required.</p></div></details><details><summary>What makes a good UGC hook?</summary><div class="answer"><p>A good hook names something the viewer already thinks or feels, right away and in plain words. Questions, POV setups, a little humor, an extreme close-up or a reply to a comment all work. Write several hooks for the same product and test them.</p></div></details></div>
+</section>
+  <section class="post-refs" aria-labelledby="post-refs-h">
+    <h2 id="post-refs-h">References</h2>
+    <ol><li><a href="https://spiegel.medill.northwestern.edu/wp-content/uploads/sites/2/2021/04/Spiegel_Online-Review_eBook_Jun2017_FINAL.pdf" target="_blank" rel="noopener noreferrer">How Online Reviews Influence Sales (full report)<span class="sr-only"> (opens in a new tab)</span></a>. Spiegel Research Center, Northwestern University (2017 data from PowerReviews, a review vendor).</li><li><a href="https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/" target="_blank" rel="noopener noreferrer">How Online Reviews Influence Sales<span class="sr-only"> (opens in a new tab)</span></a>. Spiegel Research Center, Northwestern University (PowerReviews data).</li><li><a href="https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers" target="_blank" rel="noopener noreferrer">Disclosures 101 for Social Media Influencers<span class="sr-only"> (opens in a new tab)</span></a>. Federal Trade Commission.</li><li><a href="https://www.law.cornell.edu/cfr/text/16/255.1" target="_blank" rel="noopener noreferrer">16 CFR 255.1: General considerations (FTC Endorsement Guides)<span class="sr-only"> (opens in a new tab)</span></a>. Legal Information Institute, Cornell Law School.</li><li><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.5" target="_blank" rel="noopener noreferrer">16 CFR 255.5: Disclosure of material connections<span class="sr-only"> (opens in a new tab)</span></a>. eCFR (FTC Endorsement Guides).</li><li><a href="https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials" target="_blank" rel="noopener noreferrer">Federal Trade Commission Announces Final Rule Banning Fake Reviews and Testimonials<span class="sr-only"> (opens in a new tab)</span></a>. Federal Trade Commission (press release, August 2024).</li><li><a href="https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance" target="_blank" rel="noopener noreferrer">Health Products Compliance Guidance<span class="sr-only"> (opens in a new tab)</span></a>. Federal Trade Commission.</li><li><a href="https://www.law.cornell.edu/cfr/text/21/101.93" target="_blank" rel="noopener noreferrer">21 CFR 101.93: Certain types of statements for dietary supplements<span class="sr-only"> (opens in a new tab)</span></a>. Legal Information Institute, Cornell Law School.</li><li><a href="https://ads.tiktok.com/help/article/spark-ads" target="_blank" rel="noopener noreferrer">About Spark Ads<span class="sr-only"> (opens in a new tab)</span></a>. TikTok Ads Manager Help Center.</li><li><a href="https://www.facebook.com/business/news/meta-at-iab-newfronts-2025" target="_blank" rel="noopener noreferrer">Meta at IAB NewFronts 2025<span class="sr-only"> (opens in a new tab)</span></a>. Meta for Business.</li></ol>
+  </section>
+  <aside class="author-box" aria-label="About the author">
+    <img src="../../assets/img/trish-coffee-400.webp" srcset="../../assets/img/trish-coffee-400.webp 400w" sizes="80px" width="400" height="500" alt="Trish Leto smiling over a pink coffee mug in her kitchen" loading="lazy" decoding="async">
+    <div>
+      <p class="author-name"><a href="../../about/">Trish Leto</a></p>
+      <p>GenX UGC creator and U.S. Navy veteran. I make short-form product videos and b-roll for brands, and I speak about content ideas and getting set up for brand deals.</p>
+    </div>
+  </aside>
+</div>
+<section class="band-alt section-tight" aria-labelledby="post-related-h">
+  <div class="wrap">
+    <h2 id="post-related-h" class="post-related-h">Keep reading</h2>
+    <div class="grid grid-3 post-cards"><article class="card post-card">
+  <a class="post-card-media" href="../../blog/types-of-ugc-videos/" tabindex="-1" aria-hidden="true"><img src="../../assets/img/blog/types-of-ugc-videos-hero-1200.webp" srcset="../../assets/img/blog/types-of-ugc-videos-hero-720.webp 720w, ../../assets/img/blog/types-of-ugc-videos-hero-1200.webp 1200w" sizes="(min-width: 720px) 340px, calc(100vw - 32px)" width="1200" height="675" alt="" loading="lazy" decoding="async"></a>
+  <div class="post-card-body">
+    <h3><a href="../../blog/types-of-ugc-videos/">Types of UGC Videos: The 5 Formats Brands Actually Run</a></h3>
+    <p>Talking head, yap style, lifestyle, product demo and b-roll: the five types of UGC videos I make, what each one does, and how to brief it.</p>
+    <p class="post-card-meta"><time datetime="2026-10-01">October 1, 2026</time></p>
+  </div>
+</article><article class="card post-card">
+  <a class="post-card-media" href="../../blog/tiktok-spark-ads/" tabindex="-1" aria-hidden="true"><img src="../../assets/img/blog/tiktok-spark-ads-hero-1200.webp" srcset="../../assets/img/blog/tiktok-spark-ads-hero-720.webp 720w, ../../assets/img/blog/tiktok-spark-ads-hero-1200.webp 1200w" sizes="(min-width: 720px) 340px, calc(100vw - 32px)" width="1200" height="675" alt="" loading="lazy" decoding="async"></a>
+  <div class="post-card-body">
+    <h3><a href="../../blog/tiktok-spark-ads/">TikTok Spark Ads: Running a Creator&#x27;s Video as Your Ad</a></h3>
+    <p>TikTok Spark Ads let a brand run a creator&#x27;s real post as an ad. Here&#x27;s how the authorization code works, how it compares to whitelisting and Partnership Ads, and what to put in writing.</p>
+    <p class="post-card-meta"><time datetime="2026-10-01">October 1, 2026</time></p>
+  </div>
+</article><article class="card post-card">
+  <a class="post-card-media" href="../../blog/ugc-for-brands/" tabindex="-1" aria-hidden="true"><img src="../../assets/img/blog/ugc-for-brands-hero-1200.webp" srcset="../../assets/img/blog/ugc-for-brands-hero-720.webp 720w, ../../assets/img/blog/ugc-for-brands-hero-1200.webp 1200w" sizes="(min-width: 720px) 340px, calc(100vw - 32px)" width="1200" height="675" alt="" loading="lazy" decoding="async"></a>
+  <div class="post-card-body">
+    <p class="post-card-tag">Start here</p><h3><a href="../../blog/ugc-for-brands/">UGC for Brands: The Grown-Up Guide to Creator Videos That Sell</a></h3>
+    <p>What UGC means for a brand, where it runs, which rights to get in writing, and why households headed by Gen X are worth a creator who looks like them.</p>
+    <p class="post-card-meta"><time datetime="2026-10-01">October 1, 2026</time></p>
+  </div>
+</article></div>
+  </div>
+</section>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-name">Trish Leto<span class="dot" style="color:var(--coral-soft)">.</span></span>
+        <p>GenX UGC creator and model, U.S. Navy veteran and public speaker in Tampa, FL. Short-form videos for brands that sell to real grown-ups.</p>
+      </div>
+      <nav aria-label="Footer">
+        <p class="footer-h">Pages</p>
+        <ul class="footer-list"><li><a href="../../">Home</a></li><li><a href="../../work-with-me/">Work with me</a></li><li><a href="../../portfolio/">Portfolio</a></li><li><a href="../../about/">About</a></li><li><a href="../../speaking/">Speaking</a></li><li><a href="../../blog/">Blog</a></li><li><a href="../../nil-consulting/">NIL consulting</a></li><li><a href="../../contact/">Contact</a></li></ul>
+      </nav>
+      <div>
+        <p class="footer-h">Say hi</p>
+        <ul class="footer-list">
+          <li><a href="mailto:trishletospeaks@gmail.com">trishletospeaks@gmail.com</a></li>
+          <li><a href="https://www.tiktok.com/@trishizzlefoshizzle" target="_blank" rel="noopener">TikTok <span class="handle">@trishizzlefoshizzle</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li><a href="https://www.instagram.com/real_trish_leto/" target="_blank" rel="noopener">Instagram <span class="handle">@Real_trish_leto</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+          
+          <li><a href="https://stan.store/trishleto" target="_blank" rel="noopener">My guides <span class="handle">on Stan</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Trish Leto. PAID collabs ONLY.</span>
+      <span>Social numbers as of October 2026.</span>
+      <span class="built-by">Website built by Simply Digital</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

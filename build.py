@@ -73,6 +73,14 @@ TALK_GENX_CONFIRMED = False
 # Trish: will she post a brand's video on her own TikTok (TikTok Shop or Spark
 # Ads, with the paid-partnership label)? Off until she confirms.
 POSTS_ON_OWN_TIKTOK_CONFIRMED = False
+# Trish: does she offer NIL consulting (content and personal brand coaching for
+# athletes and parents)? Eddie pitched it; she has not confirmed. The page,
+# its footer link and the NIL posts render in the preview so she can review
+# them, but the audit warns while this is False and FAILS any INDEXABLE build
+# while the page exists. A Florida sports or entertainment attorney should
+# review the page copy before it goes live. When True, the page also joins
+# the main nav, the home "From the blog" row and the contact page.
+NIL_CONSULTING_CONFIRMED = False
 # Eddie (2026-10-01): Simply Digital is never mentioned on her site except the
 # "Website built by Simply Digital" credit in the footer (plain text, no link).
 # The ads partner in the packages stays unnamed. The audit enforces this.
@@ -238,6 +246,8 @@ NAV = [
     ("blog/", "Blog"),
     ("contact/", "Contact"),
 ]
+if NIL_CONSULTING_CONFIRMED:
+    NAV.insert(4, ("nil-consulting/", "NIL"))
 
 OG_IMAGE = "assets/img/og-image.jpg"
 OG_IMAGE_ALT = "Trish Leto, GenX UGC creator, model, Navy veteran and speaker"
@@ -279,6 +289,20 @@ Audience (who and about how many):
 Topic you would like:
 Format and length:
 Speaker budget or honorarium:
+
+Thanks!"""
+
+NIL_SUBJECT = "NIL inquiry: [athlete name]"
+NIL_TEMPLATE = """Hi Trish,
+
+Athlete name:
+Sport:
+School:
+Grade or year:
+High school or college:
+What the athlete wants help with (personal brand, content, pitching, disclosure):
+Parent or guardian name and email (required if the athlete is under 18):
+In person or virtual:
 
 Thanks!"""
 
@@ -428,7 +452,10 @@ def header(p, current):
 
 
 def footer(p):
-    links = "".join(f'<li><a href="{p}{h}">{l}</a></li>' for h, l in NAV[:-1])
+    # The NIL page sits in the footer even before Trish confirms it (preview only:
+    # the audit blocks an indexable build until she does).
+    foot = [(h, l) for h, l in NAV[:-1] if h != NIL_PATH] + [(NIL_PATH, "NIL consulting")]
+    links = "".join(f'<li><a href="{p}{h}">{l}</a></li>' for h, l in foot)
     return f"""<footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -667,8 +694,8 @@ def home(p):
     return f"""<section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="kicker">GenX UGC creator &middot; Model &middot; Speaker</p>
-      <h1>UGC for brands that sell to <span class="hl">real grown-ups</span>.</h1>
+      <p class="kicker">Model &middot; Speaker &middot; Tampa, FL</p>
+      <h1>A GenX UGC creator for brands that sell to <span class="hl">real grown-ups</span>.</h1>
       <p class="lede">I'm Trish Leto. I make short-form videos about products I ACTUALLY use: honest, funny, zero fluff, and built to stop the scroll.</p>
     </div>
     <div class="hero-photo">
@@ -765,6 +792,8 @@ def home(p):
   </div>
 </section>
 
+{home_blog(p)}
+
 {cta_band(p)}"""
 
 
@@ -781,8 +810,9 @@ def work_with_me(p):
     return f"""<section class="page-hero">
   <div class="wrap">
     <p class="kicker">Work with me</p>
-    <h1>UGC videos and b-roll, delivered every month and ready to run.</h1>
-    <p class="lede">UGC is fancy lingo for short-form videos about products I'm ALREADY using, made for your brand to post and run as ads. Here is exactly how working together works.</p>
+    <h1>Hire a UGC creator for your brand.</h1>
+    <p class="lede">UGC is fancy lingo for short-form videos about products I'm ALREADY using, made for your brand to post and run as ads. Videos and b-roll, delivered every month and ready to run. Here is exactly how working together works.</p>
+    <p>New to UGC? Start with my <a class="text-link" href="{p}blog/ugc-for-brands/">UGC for brands guide</a>.</p>
   </div>
 </section>
 
@@ -887,17 +917,43 @@ def work_with_me(p):
       <p class="kicker">Questions</p>
       <h2 id="faq-h">Good questions. STRAIGHT answers.</h2>
     </div>
-    <div class="faq">
-      <details><summary>What does it cost?</summary><div class="answer"><p>Every job is a custom quote. It depends on how many videos you need, how much b-roll, and where and for how long you will run them. Email me the details and I will send a quote.</p></div></details>
-      <details><summary>Do you post the videos for us?</summary><div class="answer"><p>Not on your brand accounts, and I don't start new accounts for you. You get the files and post or run them wherever you like.{OWN_TIKTOK_LINE if POSTS_ON_OWN_TIKTOK_CONFIRMED else ""}</p></div></details>
-      <details><summary>Can we run your videos as ads?</summary><div class="answer"><p>Yes. Tell me where and for how long when you ask for a quote, and it goes into the quote. If you want the ads run for you too, ask about a <a href="#packages">UGC + ads package</a>.</p></div></details>
-      <details><summary>Which categories are a fit?</summary><div class="answer"><p>Supplements, food and drink, pets, cars, kitchen and appliances, plants and gardening, makeup, skin care and hair care. Not a fit: alcohol, tobacco and gambling.</p></div></details>
-      <details><summary>How do the videos get to us?</summary><div class="answer"><p>Through a shared Google Drive folder, batch by batch.</p></div></details>
-    </div>
+    <div class="faq">{faq_html(wwm_faqs(p))}</div>
   </div>
 </section>
 
 {cta_band(p)}"""
+
+
+def wwm_faqs(p):
+    """Work-with-me FAQ as (question, answer HTML). The page and its FAQPage JSON-LD share it."""
+    return [
+        ("What does it cost?", "Every job is a custom quote. It depends on how many videos you need, how much "
+         "b-roll, and where and for how long you will run them. Email me the details and I will send a quote."),
+        ("Do you post the videos for us?", "Not on your brand accounts, and I don't start new accounts for you. "
+         "You get the files and post or run them wherever you like."
+         + (OWN_TIKTOK_LINE if POSTS_ON_OWN_TIKTOK_CONFIRMED else "")),
+        ("Can we run your videos as ads?", "Yes. Tell me where and for how long when you ask for a quote, and it "
+         f'goes into the quote. Not sure what to ask for? Read <a href="{p}blog/ugc-usage-rights/">UGC usage '
+         f'rights</a> and <a href="{p}blog/tiktok-spark-ads/">how TikTok Spark Ads work</a>. If you want the ads '
+         'run for you too, ask about a <a href="#packages">UGC + ads package</a>.'),
+        ("Which categories are a fit?", "Supplements, food and drink, pets, cars, kitchen and appliances, plants "
+         "and gardening, makeup, skin care and hair care. Not a fit: alcohol, tobacco and gambling."),
+        ("How do the videos get to us?", "Through a shared Google Drive folder, batch by batch."),
+    ]
+
+
+def faq_html(items):
+    return "".join(f'<details><summary>{esc(q)}</summary><div class="answer"><p>{a}</p></div></details>'
+                   for q, a in items)
+
+
+def faq_node(slug, items):
+    """FAQPage JSON-LD from the same (question, answer HTML) list the page renders."""
+    def text(a):
+        return html.unescape(re.sub(r"<[^>]+>", "", a))
+    return {"@type": "FAQPage", "@id": BASE + slug + "#faq", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": text(a)}}
+        for q, a in items]}
 
 
 def portfolio(p):
@@ -912,7 +968,7 @@ def portfolio(p):
     return f"""<section class="page-hero">
   <div class="wrap">
     <p class="kicker">Portfolio</p>
-    <h1>My UGC portfolio: real products, real reactions.</h1>
+    <h1>UGC creator portfolio: real products, real reactions.</h1>
     <p class="lede">Samples from my own TikTok, including recent TikTok Shop product videos. Tap Play to watch a video right here, or open it on TikTok.</p>
   </div>
 </section>
@@ -936,6 +992,7 @@ def portfolio(p):
       <p class="kicker">Product videos</p>
       <h2 id="products-h">Recent TikTok Shop and product videos</h2>
       <p class="lede">Supplements, drinks and skin care. Each one opens with a hook built to stop the scroll.</p>
+      <p>How the hooks work: <a href="{p}blog/ugc-ads/">UGC ads that stop the scroll</a>.</p>
     </div>
     <div class="vids">{vids}</div>
     {disclosure()}
@@ -967,6 +1024,7 @@ def portfolio(p):
     <div class="card">
       <h3>Formats I shoot</h3>
       <ul class="ticks">{"".join(f"<li><strong>{esc(t)}:</strong> {esc(d)}</li>" for t, d in FORMATS)}</ul>
+      <p style="margin-top:1rem"><a class="text-link" href="{p}blog/types-of-ugc-videos/">Which format fits your product &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -1046,6 +1104,7 @@ def about(p):
       <p class="kicker">For creators</p>
       <h2 id="learn-h">Want to make UGC yourself?</h2>
       <p class="lede">Turn your doom scrolling into money rolling! My guides live on my Stan store, plus a UGC course I recommend.</p>
+      <p>Free reads first: <a href="{p}blog/how-to-become-a-ugc-creator/">how to become a UGC creator over 40</a> and <a href="{p}blog/older-influencers/">why the grown-up lane is open</a>.</p>
     </div>
     <div class="grid grid-3">{stan}</div>
     <div class="btn-row">{ext(STAN_URL, 'Visit my Stan store', 'btn btn-primary')}</div>
@@ -1094,7 +1153,7 @@ def speaking(p):
         topics += ", plus GenX content that actually works"
     return f"""<section class="page-hero">
   <div class="wrap">
-    <p class="kicker">Speaking</p>
+    <p class="kicker">Social media speaker &middot; U.S. Navy veteran</p>
     <h1>I teach people how to control the scroll.</h1>
     <p class="lede">{topics}. Practical, funny and straight to the point.</p>
     <div class="btn-row">
@@ -1137,6 +1196,7 @@ def speaking(p):
     </div>
     <div class="grid {cols}">{cards}</div>
     <p style="margin-top:1.6rem">A great fit for entrepreneur events, creator conferences, veteran and military-connected communities, and virtual summits. In person or online.</p>
+    <p>Want the written version of Control the Scroll? Read <a href="{p}blog/ugc-ads/">UGC ads that stop the scroll</a>. Coach or parent of an athlete? See <a href="{p}nil-consulting/">NIL consulting</a>: content and personal brand coaching for athletes and their families.</p>
   </div>
 </section>
 
@@ -1158,6 +1218,15 @@ def speaking(p):
     </ul>
   </div>
 </section>"""
+
+
+def contact_nil_line(p):
+    if not NIL_CONSULTING_CONFIRMED:
+        return ""
+    return (f'<p style="margin-top:1.4rem"><strong>Athletes and parents:</strong> for '
+            f'<a href="{p}nil-consulting/">NIL coaching</a>, <a href="{esc(mailto(NIL_SUBJECT, NIL_TEMPLATE))}">'
+            "email me</a> with the sport, school and goals. If the athlete is under 18, include a parent or "
+            "guardian's name and email; a parent joins every conversation.</p>")
 
 
 def contact(p):
@@ -1195,6 +1264,7 @@ def contact(p):
       <div class="card"><span class="card-label">Brands</span><h3>UGC + ads package</h3><p>My videos plus paid ads, landing pages and tracking from my ads partner.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('Package inquiry: UGC + ads', PACKAGE_TEMPLATE))}">Email about a package</a></p></div>
       <div class="card"><span class="card-label">Events</span><h3>Speaking</h3><p>Your stage, breakout or virtual summit.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('Speaking inquiry: [event name]', SPEAKING_TEMPLATE))}">Email about speaking</a></p></div>
     </div>
+    {contact_nil_line(p)}
   </div>
 </section>
 
@@ -1233,6 +1303,258 @@ def contact(p):
 </section>"""
 
 
+# ----- NIL consulting (gated by NIL_CONSULTING_CONFIRMED; see the PENDING block) -----
+# Sources: the NIL fact base (CSC, 2026 Florida Statutes, FHSAA Handbook 2024-25
+# revised Feb 20, 2025, eCFR 16 CFR 255, FTC Disclosures 101, IRS Pub 525,
+# Opendorse July 2025). Content coaching only: no finding, pitching,
+# negotiating, signing or commission on deals (Florida s. 468.452 and 468.453(8)).
+SRC_FHSAA = "https://s3.amazonaws.com/fhsaa.org/documents/2024/11/20/2425_handbook_update_11424.pdf"
+SRC_CSC_NIL = "https://www.collegesportscommission.org/nil/"
+SRC_FTC_101 = "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers"
+SRC_FTC_2555 = "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.5"
+SRC_IRS_525 = "https://www.irs.gov/publications/p525"
+SRC_FL_468_453 = ("https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0400-0499%2F0468"
+                  "%2FSections%2F0468.453.html")
+SRC_FL_468_4561 = ("https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0400-0499%2F0468"
+                   "%2FSections%2F0468.4561.html")
+SRC_FL_DBPR = "https://www2.myfloridalicense.com/athlete-agents/"
+SRC_OPENDORSE = "https://biz.opendorse.com/wp-content/uploads/2025/07/NIL-at-Four-Monetizing-the-New-Reality_July2025.pdf"
+NIL_CLUSTER = "nil-for-athletes"
+
+
+def nil_faqs(p):
+    return [
+        ("Are you an NIL agent?", "No. I'm not a licensed athlete agent, and I don't represent athletes, negotiate "
+         "deals or take a commission. In Florida, representing a college athlete on NIL contracts takes an athlete "
+         "agent license."),
+        ("Can you get my athlete a deal?", "No. I teach the content and pitching skills. The deals are the "
+         "athlete's, and every one should go past the school's compliance office before anyone signs."),
+        ("Can Florida high school athletes do NIL?", "Yes, under FHSAA Bylaw 9.9, with limits: a written agreement "
+         "that ends at graduation, no school logos or uniforms, no banned categories, no recruiting use, and an "
+         "affidavit filed with the school within five business days of signing. "
+         f'More in <a href="{p}blog/florida-high-school-nil-rules/">Florida NIL rules for high school athletes</a>.'),
+        ("Do free products need a disclosure?", "Yes. Under the FTC Endorsement Guides, free or discounted product "
+         "is a material connection, so say so clearly, in the video itself. &ldquo;#ad&rdquo; works. "
+         "&ldquo;Collab&rdquo; or &ldquo;ambassador&rdquo; alone does not."),
+        ("Is NIL money taxable?", "NIL income is reportable income. Ask a tax professional how that applies to "
+         "you, including any free product you receive."),
+    ]
+
+
+def nil_rule_card(label, h, text, src_label, src_url, post=None, p=""):
+    more = f'<p style="margin-top:0.8rem"><a class="text-link" href="{p}blog/{post[0]}/">{esc(post[1])} &rarr;</a></p>' \
+        if post else ""
+    return f"""<div class="card"><span class="card-label">{esc(label)}</span><h3>{esc(h)}</h3><p>{text}</p>
+  <p class="small" style="margin-top:0.8rem">Source: {ext(src_url, esc(src_label))}</p>{more}</div>"""
+
+
+def nil_guides(p):
+    posts = live_posts(load_blog()[0])
+    items = sorted((q for q in posts if q["cluster"] == NIL_CLUSTER),
+                   key=lambda q: (not q["pillar"], -q["_date"].toordinal(), q["slug"]))[:3]
+    if not items:
+        return ""
+    return f"""<section class="section" aria-labelledby="nil-guides-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Free reads</p>
+      <h2 id="nil-guides-h">Latest NIL guides</h2>
+    </div>
+    <div class="grid grid-3 post-cards">{"".join(post_card(q, p) for q in items)}</div>
+  </div>
+</section>"""
+
+
+def nil_consulting(p):
+    nil_mail = esc(mailto(NIL_SUBJECT, NIL_TEMPLATE))
+    followers = next(n for n, label in STATS if label == "TikTok followers")
+    dominate = (f"spoke in the {EVENT['track']} at the {EVENT['name']} on {EVENT['short_date']}" if EVENT_PAST else
+                f"speaks in the {EVENT['track']} at the {EVENT['name']} on {EVENT['short_date']}")
+    rules = "".join([
+        nil_rule_card("High school in Florida", "FHSAA Bylaw 9.9",
+                      "Endorsements and social media are allowed. The agreement must be in writing and end by "
+                      "graduation. No school logos or uniforms, no banned categories (alcohol, vaping and gambling "
+                      "among them) and no using NIL to recruit. The student and parent file an Affidavit of "
+                      "Compliance with the school within five business days of signing.",
+                      "FHSAA Handbook 2024-25, revised Feb. 2025", SRC_FHSAA,
+                      ("florida-high-school-nil-rules", "Florida NIL rules for high school athletes"), p),
+        nil_rule_card("College, Division I", "NIL Go",
+                      "Third-party deals worth $600 or more must be reported to NIL Go within five business days. "
+                      "Each deal needs a valid business purpose: promoting a product or service sold to the public.",
+                      "College Sports Commission", SRC_CSC_NIL,
+                      ("how-to-get-nil-deals", "How to get NIL deals"), p),
+        nil_rule_card("Every athlete", "FTC disclosure",
+                      "Paid, or got free product? Say so clearly, inside the video, not just in the caption. "
+                      "&ldquo;#ad&rdquo; works. &ldquo;Collab&rdquo; or &ldquo;ambassador&rdquo; alone does not.",
+                      "FTC, Disclosures 101 for Social Media Influencers", SRC_FTC_101,
+                      ("nil-sponsorship", "NIL sponsorship content, done right"), p),
+        nil_rule_card("Every athlete", "Taxes",
+                      "The IRS says gig income has to be reported, whether or not a Form 1099-K shows up. Ask a "
+                      "tax professional how that applies to your NIL money and any free product.",
+                      "IRS Publication 525", SRC_IRS_525),
+    ])
+    return f"""<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">NIL consulting</p>
+    <h1>NIL consulting for student-athletes and parents</h1>
+    <p class="lede">I help student-athletes build a personal brand and make the kind of content sponsors pay for. I coach the content side. I'm not an agent or an attorney.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{nil_mail}">Email Trish</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" aria-labelledby="nil-who-h" style="padding-top:0">
+  <div class="wrap">
+    <h2 id="nil-who-h">Who it's for</h2>
+    <div class="grid grid-2">
+      <div class="card"><span class="card-label">High school</span><h3>Florida high school athletes and their parents</h3><p>A parent or guardian is part of every conversation. I work with families, never with a minor on their own.</p></div>
+      <div class="card"><span class="card-label">College</span><h3>College athletes</h3><p>You want your content to look as good as your game, and you want to understand the rules before a business slides into your DMs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-alt section" aria-labelledby="nil-help-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">What I help with</p>
+      <h2 id="nil-help-h">The content side of NIL</h2>
+      <p class="lede">The same skills I use to make product videos for brands, coached for athletes.</p>
+    </div>
+    <div class="grid grid-auto">
+      <div class="card"><h3>Personal brand and bio</h3><p>Your bio, your profile and a content lane that fits who you are, on and off the field.</p></div>
+      <div class="card"><h3>Content sponsors pay for</h3><p>Product-in-use demos, talking-head clips and b-roll, filmed on your phone.</p></div>
+      <div class="card"><h3>Your own pitch</h3><p>How to write your OWN pitch email or DM to a local business. You (or your parent) send it. I don't.</p></div>
+      <div class="card"><h3>A sample portfolio</h3><p>A simple page of your best clips, so a business can see what you make.</p></div>
+      <div class="card"><h3>Disclosure habits</h3><p>&ldquo;#ad&rdquo; in the video, free product counts, and why &ldquo;collab&rdquo; alone is not enough.</p></div>
+      <div class="card"><h3>Getting set up</h3><p>My Military Creator Con checklist, adapted: a way to get paid, written agreements, your bio and the right platforms. Contracts go to an attorney.</p></div>
+      <div class="card"><h3>Knowing the reporting steps</h3><p>The FHSAA affidavit for high school deals and NIL Go for Division I deals of $600 or more. You and your school handle them; I make sure you know they exist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="nil-nope-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Plain words</p>
+      <h2 id="nil-nope-h">What I don't do</h2>
+    </div>
+    <ul class="nope">
+      <li><strong>Not an agent, attorney or CPA</strong><span>I'm not a licensed athlete agent, attorney or CPA, and there is no &ldquo;certified NIL&rdquo; credential here.</span></li>
+      <li><strong>No deal-making</strong><span>I don't find, pitch, negotiate or sign deals for you, and I never take a commission on a deal.</span></li>
+      <li><strong>No contract or eligibility calls</strong><span>I don't review contracts or decide eligibility. Your school's compliance office or athletic director does.</span></li>
+      <li><strong>No guarantees</strong><span>I don't guarantee deals, income or followers.</span></li>
+      <li><strong>No affiliation</strong><span>I'm not affiliated with the NCAA, the College Sports Commission, the FHSAA or any school.</span></li>
+    </ul>
+    <p class="measure" style="margin-top:1.6rem">Why the line matters in Florida: representing a college athlete on NIL contracts requires an athlete agent license ({ext(SRC_FL_468_453, "s. 468.453(8), Florida Statutes")}), and acting as an unlicensed athlete agent is a third-degree felony ({ext(SRC_FL_468_4561, "s. 468.4561")}). Before anyone represents you, check their license with the {ext(SRC_FL_DBPR, "Florida DBPR")}. Eligibility questions go to your school's compliance office or athletic director. Legal and tax questions go to licensed professionals.</p>
+  </div>
+</section>
+
+<section class="band-alt section" aria-labelledby="nil-rules-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Know the rules</p>
+      <h2 id="nil-rules-h">The rules in 60 seconds</h2>
+      <p class="lede">Plain-English summaries, not legal advice. Rules change, so check with your school's compliance office before you sign anything.</p>
+    </div>
+    <div class="grid grid-2">{rules}</div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="nil-why-h">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Why Trish</p>
+      <h2 id="nil-why-h">Content is the job. Content is my lane.</h2>
+      <p class="lede">Opendorse reports that 80% of the commercial NIL dollars athletes receive come from services such as posts ({ext(SRC_OPENDORSE, "NIL at Four, July 2025")}). That is the part I coach.</p>
+    </div>
+    <ul class="ticks">
+      <li>GenX UGC creator and model who makes product videos for brands</li>
+      <li>U.S. Navy veteran</li>
+      <li>{followers} TikTok followers (as of {STATS_AS_OF})</li>
+      <li>Presented &ldquo;Getting set up: What You Need&rdquo; at Military Creator Con</li>
+      <li>{dominate[0].upper() + dominate[1:]} (a quick three-minute slot)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how" class="band-alt section anchor-target" aria-labelledby="nil-how-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How it works</p>
+      <h2 id="nil-how-h">Four steps, parents included</h2>
+    </div>
+    <ol class="steps steps-4">
+      <li><h3>Email me</h3><p>The athlete's sport, school, grade or year, goals, and a parent or guardian contact.</p></li>
+      <li><h3>First conversation</h3><p>With a parent or guardian there for high school athletes. We figure out what you need.</p></li>
+      <li><h3>Coaching</h3><p>Content, brand and pitch coaching. We set the format and the price together.</p></li>
+      <li><h3>You run your deals</h3><p>The deals are yours. Check every one with your compliance office before you sign.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="nil-faq-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Questions</p>
+      <h2 id="nil-faq-h">NIL questions, STRAIGHT answers</h2>
+    </div>
+    <div class="faq">{faq_html(nil_faqs(p))}</div>
+  </div>
+</section>
+
+<section class="band-coral section" aria-labelledby="nil-cta-h">
+  <div class="wrap center">
+    <p class="kicker">Athletes and parents</p>
+    <h2 id="nil-cta-h">Ready to build your brand the right way?</h2>
+    <p class="lede" style="margin-inline:auto">Email me the sport, school and goals. Under 18? Include a parent or guardian.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-sun" href="{nil_mail}">Email Trish</a>
+      <a class="btn btn-ghost" href="{p}blog/">Read the blog</a>
+    </div>
+  </div>
+</section>
+
+{nil_guides(p)}"""
+
+
+def nil_service():
+    return {
+        "@type": "Service",
+        "@id": BASE + NIL_PATH + "#service",
+        "name": "NIL consulting for student-athletes and parents",
+        "serviceType": "NIL content and personal brand coaching",
+        "description": "Content, personal brand and FTC disclosure coaching for student-athletes and their parents. "
+                       "Not an agent or attorney; no deal finding, negotiation or commission.",
+        "url": BASE + NIL_PATH,
+        "provider": {"@id": PERSON_ID},
+        "areaServed": [{"@type": "State", "name": "Florida"}, {"@type": "Country", "name": "United States"}],
+        "audience": {"@type": "Audience", "audienceType": "Student-athletes and parents"},
+    }
+
+
+def home_blog(p):
+    """Home 'From the blog' row: the cluster pillars (the NIL pillar only once Trish confirms NIL)."""
+    want = ["ugc-for-brands", "how-to-become-a-ugc-creator",
+            "how-to-get-nil-deals" if NIL_CONSULTING_CONFIRMED else "how-much-do-ugc-creators-make"]
+    live = {q["slug"]: q for q in live_posts(load_blog()[0])}
+    items = [live[s] for s in want if s in live]
+    if not items:
+        return ""
+    return f"""<section class="band-alt section" aria-labelledby="blog-h">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">From the blog</p>
+      <h2 id="blog-h">Free guides, no fluff</h2>
+      <p class="lede">How brands hire and use UGC, how to become a UGC creator over 40{", and NIL content basics for athletes" if NIL_CONSULTING_CONFIRMED else ", and what creators really earn"}.</p>
+    </div>
+    <div class="grid grid-3 post-cards">{"".join(post_card(q, p) for q in items)}</div>
+    <div class="btn-row"><a class="btn btn-ghost" href="{p}blog/">All posts</a></div>
+  </div>
+</section>"""
+
+
 def not_found(p):
     return f"""<section class="section">
   <div class="wrap measure">
@@ -1250,36 +1572,44 @@ def not_found(p):
 
 PAGES = [
     {"slug": "", "file": "index.html", "crumb": "Home", "body": home,
-     "title": "Trish Leto | GenX UGC Creator, Navy Veteran and Speaker",
-     "description": "Trish Leto is a GenX UGC creator and model in Tampa, FL. Scroll-stopping product videos "
-                    "and b-roll for brands that sell to real grown-ups. Paid collabs only.",
+     "title": "GenX UGC Creator and Model | Trish Leto, Navy Veteran",
+     "description": "Trish Leto is a GenX UGC creator and model in Tampa, FL. Product videos and b-roll for "
+                    "supplement, skin care, food and TikTok Shop brands nationwide.",
      "schema": [service]},
     {"slug": "work-with-me/", "file": "work-with-me/index.html", "crumb": "Work with me", "body": work_with_me,
-     "title": "Work With Me: UGC Retainers and Packages | Trish Leto",
-     "description": "Hire Trish Leto for UGC: batches of short-form videos and b-roll delivered to Google Drive "
-                    "on a monthly retainer or per project, plus UGC + paid ads packages.",
-     "schema": [service]},
+     "title": "Hire a UGC Creator: Monthly UGC Retainers | Trish Leto",
+     "description": "Hire a UGC creator on a monthly retainer: batches of short-form videos and b-roll delivered "
+                    "to Google Drive, plus UGC and paid ads packages for brands.",
+     "schema": [service, lambda: faq_node("work-with-me/", wwm_faqs(""))]},
     {"slug": "portfolio/", "file": "portfolio/index.html", "crumb": "Portfolio", "body": portfolio,
-     "title": "UGC Portfolio: TikTok Product Videos | Trish Leto",
-     "description": "Watch Trish Leto's UGC: TikTok Shop and product videos for supplements, drinks and skin care, "
-                    "plus a 1.1M-view TikTok. 30.1K followers as of October 2026.",
+     "title": "UGC Creator Portfolio: Product Video Examples | Trish Leto",
+     "description": "Trish Leto's UGC creator portfolio: TikTok Shop and product video examples for supplements, "
+                    "drinks and skin care, plus her 1.1M-view TikTok video.",
      "page_type": "CollectionPage"},
     {"slug": "about/", "file": "about/index.html", "crumb": "About", "body": about,
      "title": "About Trish Leto: GenX UGC Creator and Navy Veteran",
      "description": "Meet Trish Leto: GenX UGC creator and model, U.S. Navy veteran and public speaker in Tampa, FL, "
-                    "making honest product videos for brands.",
+                    "making honest product videos for brands that sell to grown-ups.",
      "page_type": "ProfilePage", "og_type": "profile"},
     {"slug": "speaking/", "file": "speaking/index.html", "crumb": "Speaking", "body": speaking,
-     "title": "Speaking: Control the Scroll | Trish Leto, Speaker",
-     "description": ("Book Trish Leto to speak on content ideas and getting set up for UGC brand deals. "
-                     + ("She spoke in the Power Track at the DOMINATE Summit, Oct 9, 2026." if EVENT_PAST else
-                        "Catch her Power Track at the DOMINATE Summit, October 9, 2026.")),
+     "title": "Social Media Speaker and Navy Veteran, Tampa FL | Trish Leto",
+     "description": ("Book Trish Leto, a social media speaker and U.S. Navy veteran in Tampa, FL, for Control the "
+                     "Scroll, her talk on content ideas that grab attention and hold it." if EVENT_PAST else
+                     "Book Trish Leto, a social media speaker and U.S. Navy veteran in Tampa, FL. Control the "
+                     "Scroll: content ideas that grab attention. DOMINATE Summit, Oct 9."),
      "schema": [] if EVENT_PAST else [event]},
     {"slug": "contact/", "file": "contact/index.html", "crumb": "Contact", "body": contact,
      "title": "Contact Trish Leto: Paid UGC Collabs and Speaking",
      "description": "Email Trish Leto at trishletospeaks@gmail.com for paid UGC collabs, UGC + ads packages "
                     "and speaking. What to include so you get a quote fast.",
      "page_type": "ContactPage"},
+    # Preview only until NIL_CONSULTING_CONFIRMED: the audit fails an INDEXABLE build while it is False.
+    {"slug": "nil-consulting/", "file": "nil-consulting/index.html", "crumb": "NIL consulting",
+     "body": nil_consulting,
+     "title": "NIL Consultant for Athletes and Parents | Trish Leto",
+     "description": "NIL consulting for student-athletes and parents in Florida: content, personal brand and FTC "
+                    "disclosure coaching. Not an agent or attorney. No deal negotiation.",
+     "schema": [nil_service, lambda: faq_node("nil-consulting/", nil_faqs(""))]},
     {"slug": "404.html", "file": "404.html", "crumb": "Not found", "body": not_found,
      "title": "Page not found | Trish Leto",
      "description": "This page does not exist. Head back to Trish Leto's home page to see her UGC work and contact details.",
@@ -1310,7 +1640,8 @@ SERVICE_PATHS = ("work-with-me/", "nil-consulting/", "speaking/")
 NIL_PATH = "nil-consulting/"
 # Optional hub headings per cluster id. Clusters not listed here get a heading
 # made from the id ("ugc-for-brands" becomes "UGC for brands").
-BLOG_CLUSTER_NAMES = {}
+BLOG_CLUSTER_NAMES = {"ugc-for-brands": "UGC for brands", "become-a-ugc-creator": "Become a UGC creator over 40",
+                      "nil-for-athletes": "NIL for athletes and parents"}
 CLUSTER_WORDS = {"ugc": "UGC", "nil": "NIL", "tiktok": "TikTok", "genx": "GenX", "ai": "AI",
                  "faq": "FAQ", "diy": "DIY", "roi": "ROI", "chatgpt": "ChatGPT", "instagram": "Instagram",
                  "ncaa": "NCAA", "navy": "Navy", "gen": "Gen", "x": "X", "b-roll": "b-roll"}
@@ -1318,9 +1649,12 @@ PLACEHOLDERS = ("IMAGE", "TABLE", "CHART", "TIKTOK", "CTA")
 REQUIRED_PLACEHOLDERS = ("IMAGE", "TABLE", "CHART", "CTA")
 WORDS_MIN, WORDS_MAX = 1200, 2000
 WORDS_PER_MINUTE = 230
-BLOG_TITLE = "The Blog: UGC Tips for Brands and Creators | Trish Leto"
-BLOG_DESCRIPTION = ("UGC tips from Trish Leto, GenX UGC creator and Navy veteran: how brands brief and use "
-                    "creator videos, how creators land paid collabs, and NIL for athletes.")
+BLOG_TITLE = "UGC Blog: Guides for Brands and Creators | Trish Leto"
+BLOG_DESCRIPTION = (("Guides from GenX UGC creator Trish Leto: how brands hire and use UGC, how to become a UGC "
+                     "creator over 40, and NIL content basics for athletes and parents.")
+                    if NIL_CONSULTING_CONFIRMED else
+                    ("Guides from GenX UGC creator Trish Leto: how brands hire and use UGC videos, how to become a "
+                     "UGC creator over 40, and what creators earn and need to know."))
 
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 PH_LINE_RE = re.compile(r"^\s*\[\[([A-Z]+)\]\]\s*$")
@@ -1618,7 +1952,7 @@ def post_cta(audience, p):
   <p class="post-cta-kicker">For athletes and families</p>
   <p class="post-cta-h">Building your NIL brand? Let's talk.</p>
   <p>See how my NIL consulting works, then email me with your sport, school and goals.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="{href}">{label}</a><a class="btn btn-ghost" href="{esc(mailto('NIL consulting: [athlete name]'))}">Email Trish</a></div>
+  <div class="btn-row"><a class="btn btn-primary" href="{href}">{label}</a><a class="btn btn-ghost" href="{esc(mailto(NIL_SUBJECT, NIL_TEMPLATE))}">Email Trish</a></div>
 </aside>"""
     return f"""<aside class="post-cta band-ink" aria-label="Work with Trish">
   <p class="post-cta-kicker">PAID collabs ONLY</p>
@@ -1766,9 +2100,10 @@ def blog_hub(posts, p):
         sections = [f'<p class="lede">The first posts are on the way. In the meantime, see my work on the <a href="{p}portfolio/">portfolio</a>.</p>']
     return f"""<section class="page-hero">
   <div class="wrap">
-    <p class="kicker">The blog</p>
+    <p class="kicker">The UGC blog</p>
     <h1>Real talk about UGC, content and brand deals.</h1>
     <p class="lede">How brands get UGC that works, how creators land PAID collabs, and what athletes should know about NIL. Straight from a GenX UGC creator and Navy veteran.</p>
+    <p>Brands: <a href="{p}work-with-me/">work with me</a>. Athletes and parents: <a href="{p}nil-consulting/">NIL consulting</a>.</p>
   </div>
 </section>
 <section class="section-tight hub">
@@ -2164,6 +2499,12 @@ def audit():
             t = t.replace('<span class="built-by">Website built by Simply Digital</span>', "")
             if re.search(r"simply\s*digital", t, re.I):
                 errors.append(f"{os.path.relpath(fp, ROOT)}: mentions Simply Digital outside the footer credit")
+
+    # NIL consulting is Eddie's pitch; Trish has not confirmed she offers it (2026-10-01).
+    if nil_page_exists() and not NIL_CONSULTING_CONFIRMED:
+        msg = ("NIL_CONSULTING_CONFIRMED is False: /nil-consulting/ is preview only until Trish confirms "
+               "(and a Florida sports or entertainment attorney reviews the copy)")
+        (errors if INDEXABLE else warnings).append(msg + (". Cannot go INDEXABLE." if INDEXABLE else ""))
 
     posts, bad = load_blog()
     blog = blog_pages(posts)
