@@ -9,23 +9,77 @@
   "cluster": "become-a-ugc-creator",
   "pillar": false,
   "primary_keyword": "how much do ugc creators make",
-  "secondary_keywords": ["ugc rates", "ugc pricing", "ugc rates for beginners", "ugc rate card", "ugc creator pricing"],
+  "secondary_keywords": [
+    "ugc rates",
+    "ugc pricing",
+    "ugc rates for beginners",
+    "ugc rate card",
+    "ugc creator pricing"
+  ],
   "audience": "creators",
   "excerpt": "Labeled 2026 UGC rate ranges from vendor guides and marketplaces, what pushes a quote up, how TikTok Shop commission works, and a rate card you can build today.",
-  "hero": {"file": "how-much-do-ugc-creators-make-hero", "alt": "Woman at a desk holding a calculator and writing figures on a notepad beside a laptop", "credit": "Mikhail Nilov", "credit_url": "https://www.pexels.com/@mikhail-nilov", "source_url": "https://www.pexels.com/photo/woman-writing-on-a-notepad-while-holding-a-calculator-8297059/"},
-  "inline_image": {"file": "how-much-do-ugc-creators-make-inline", "alt": "Woman photographing a pair of shoes for an online listing in a home workspace with a laptop and shipping boxes", "credit": "Kampus Production", "credit_url": "https://www.pexels.com/@kampus", "source_url": "https://www.pexels.com/photo/woman-taking-photo-of-the-product-7289723/"},
+  "hero": {
+    "file": "how-much-do-ugc-creators-make-hero",
+    "alt": "Woman at a desk holding a calculator and writing figures on a notepad beside a laptop",
+    "credit": "Mikhail Nilov",
+    "credit_url": "https://www.pexels.com/@mikhail-nilov",
+    "source_url": "https://www.pexels.com/photo/woman-writing-on-a-notepad-while-holding-a-calculator-8297059/"
+  },
+  "inline_image": {
+    "file": "how-much-do-ugc-creators-make-inline",
+    "alt": "Hands using a smartphone to photograph black sneakers on a wooden surface",
+    "credit": "Kampus Production",
+    "credit_url": "https://www.pexels.com/@kampus",
+    "source_url": "https://www.pexels.com/photo/a-person-taking-a-photo-of-a-pair-of-shoes-7857494/"
+  },
   "table": {
     "caption": "What changes a UGC quote, per vendor guides and TikTok Shop (as of October 2026)",
-    "columns": ["Factor", "What the source says", "Source"],
+    "columns": [
+      "Factor",
+      "What the source says",
+      "Source"
+    ],
     "rows": [
-      ["Experience tier", "Beginner $150 to $400, intermediate $400 to $1,000, established $1,000 to $3,000+ per piece", "JoinBrands (vendor)"],
-      ["Limited usage (one platform, 3 months)", "Priced at the base rate", "JoinBrands (vendor)"],
-      ["Expanded paid usage (all paid channels, 6 to 12 months)", "+25% to 40% of the base rate", "JoinBrands (vendor)"],
-      ["Unlimited perpetual rights", "+50% to 100% of the base rate", "JoinBrands (vendor)"],
-      ["Extended usage rights (larger creators)", "+30% to 50% of the base rate", "ppc.io (vendor)"],
-      ["Raw, unedited footage", "+30% to 50% of the base rate (some creators)", "ppc.io (vendor)"],
-      ["Whitelisting (ads run through the creator's account)", "+30% to 100% of the base fee, per month", "ppc.io (vendor)"],
-      ["TikTok Shop affiliate video", "(Revenue minus refunds) x commission rate; sellers set 1% to 80%", "TikTok Shop Academy"]
+      [
+        "Experience tier",
+        "Beginner $150 to $400, intermediate $400 to $1,000, established $1,000 to $3,000+ per piece",
+        "JoinBrands (vendor)"
+      ],
+      [
+        "Limited usage (one platform, 3 months)",
+        "Priced at the base rate",
+        "JoinBrands (vendor)"
+      ],
+      [
+        "Expanded paid usage (all paid channels, 6 to 12 months)",
+        "+25% to 40% of the base rate",
+        "JoinBrands (vendor)"
+      ],
+      [
+        "Unlimited perpetual rights",
+        "+50% to 100% of the base rate",
+        "JoinBrands (vendor)"
+      ],
+      [
+        "Extended usage rights (larger creators)",
+        "+30% to 50% of the base rate",
+        "ppc.io (vendor)"
+      ],
+      [
+        "Raw, unedited footage",
+        "+30% to 50% of the base rate (some creators)",
+        "ppc.io (vendor)"
+      ],
+      [
+        "Whitelisting (ads run through the creator's account)",
+        "+30% to 100% of the base fee, per month",
+        "ppc.io (vendor)"
+      ],
+      [
+        "TikTok Shop affiliate video",
+        "(Revenue minus refunds) x commission rate; sellers set 1% to 80%",
+        "TikTok Shop Academy"
+      ]
     ],
     "source": "JoinBrands and ppc.io vendor blogs; TikTok Shop Academy",
     "source_url": "https://joinbrands.com/blog/ugc-creator-rates/"
@@ -34,33 +88,109 @@
     "title": "UGC rate tiers in one vendor guide ($ per piece; the top tier is open-ended at 3,000+)",
     "unit": "$",
     "data": [
-      {"label": "Beginner, low end", "value": 150},
-      {"label": "Beginner, high end", "value": 400},
-      {"label": "Intermediate, low end", "value": 400},
-      {"label": "Intermediate, high end", "value": 1000},
-      {"label": "Established, low end", "value": 1000},
-      {"label": "Established, high end (3,000+)", "value": 3000}
+      {
+        "label": "Beginner, low end",
+        "value": 150
+      },
+      {
+        "label": "Beginner, high end",
+        "value": 400
+      },
+      {
+        "label": "Intermediate, low end",
+        "value": 400
+      },
+      {
+        "label": "Intermediate, high end",
+        "value": 1000
+      },
+      {
+        "label": "Established, low end",
+        "value": 1000
+      },
+      {
+        "label": "Established, high end (3,000+)",
+        "value": 3000
+      }
     ],
     "source": "JoinBrands blog (vendor marketplace), 2026 rate guide, Aug 15, 2026",
     "source_url": "https://joinbrands.com/blog/ugc-creator-rates/"
   },
   "tiktok": [],
   "faq": [
-    {"q": "How much do beginner UGC creators charge?", "a": "One vendor rate guide, from JoinBrands (August 2026), lists beginner UGC creators at $150 to $400 per piece. It does not share how it got those numbers, so treat it as one reference point, not a rule."},
-    {"q": "Do UGC creators get paid per video or monthly?", "a": "Both exist. Some deals pay per video, others are monthly retainers for a batch of videos and b-roll, and TikTok Shop affiliate videos pay commission on sales instead of a flat fee."},
-    {"q": "Do UGC creators charge extra for usage rights?", "a": "Vendor guides say yes. JoinBrands lists an extra 25% to 40% of the base rate for 6 to 12 months of paid use across channels, and an extra 50% to 100% for unlimited perpetual rights."},
-    {"q": "Is UGC income taxable?", "a": "The IRS says gig income must be reported whether or not you receive a Form 1099-K. This is not tax advice, so talk to a tax professional about your own situation."}
+    {
+      "q": "How much do beginner UGC creators charge?",
+      "a": "One vendor rate guide, from JoinBrands (August 2026), lists beginner UGC creators at $150 to $400 per piece. It does not share how it got those numbers, so treat it as one reference point, not a rule."
+    },
+    {
+      "q": "Do UGC creators get paid per video or monthly?",
+      "a": "Both exist. Some deals pay per video, others are monthly retainers for a batch of videos and b-roll, and TikTok Shop affiliate videos pay commission on sales instead of a flat fee."
+    },
+    {
+      "q": "Do UGC creators charge extra for usage rights?",
+      "a": "Vendor guides say yes. JoinBrands lists an extra 25% to 40% of the base rate for 6 to 12 months of paid use across channels, and an extra 50% to 100% for unlimited perpetual rights."
+    },
+    {
+      "q": "Is UGC income taxable?",
+      "a": "The IRS says gig income must be reported whether or not you receive a Form 1099-K. This is not tax advice, so talk to a tax professional about your own situation."
+    }
   ],
   "references": [
-    {"title": "How Much Do UGC Creators Charge? 2026 Rate Guide", "publisher": "JoinBrands blog (vendor marketplace), Aug 15, 2026", "url": "https://joinbrands.com/blog/ugc-creator-rates/", "quote": "Typical rate: $150-$400 per piece", "supports": "Experience tiers ($150 to $400, $400 to $1,000, $1,000 to $3,000+ per piece); limited usage at base rate; +25% to 40% expanded paid usage; +50% to 100% perpetual rights"},
-    {"title": "UGC Rates in 2026: What 6 Marketplaces Actually Charge", "publisher": "ppc.io blog (vendor), Jan 12, 2026", "url": "https://ppc.io/blog/ugc-pricing", "quote": "Some brands will pay an extra 30-100% of the base fee per month for permission of running ads through the creator", "supports": "Whitelisting +30% to 100% per month; Collabstr $50 to $1,000+ per video and Billo 6 videos for $500 (as reported); +30% to 50% extended usage; +30% to 50% raw footage; exclusivity and long-term deals affect pricing"},
-    {"title": "How Standard Affiliate Commission Works", "publisher": "TikTok Shop Academy (Seller University US)", "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6077860360177451&lang=en", "quote": "Commission = (Revenue - Refunds) x Commission rate.", "supports": "TikTok Shop affiliate commission formula"},
-    {"title": "Setting Up Affiliate Collaborations", "publisher": "TikTok Shop Academy (Seller University US)", "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6837873164896001", "quote": "Can be set for each individual product or for a group of selected products (ranging from 1%-80%)", "supports": "Sellers set commission from 1% to 80%; target collaboration rates override open rates"},
-    {"title": "Creator Eligibility Policy", "publisher": "TikTok Shop Academy (Seller University US), updated Sept 25, 2026", "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6939143037667118&lang=en", "quote": "Affiliate Creators with fewer than 5,000 followers are automatically enrolled in the Affiliate Creator Pilot Program for at least 30 days.", "supports": "1,000-follower minimum to self-apply; pilot program under 5,000 followers; 3 shoppable videos a day, 3 shoppable LIVEs a week, 95% Shop Performance Score products, no campaigns"},
-    {"title": "Disclosures 101 for Social Media Influencers", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers", "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure", "supports": "Free or discounted product must be disclosed"},
-    {"title": "Publication 525 (2025), Taxable and Nontaxable Income", "publisher": "Internal Revenue Service", "url": "https://www.irs.gov/publications/p525", "quote": "or you did gig work, you must include all income received whether you received a Form 1099-K", "supports": "Gig income is reportable with or without a Form 1099-K"}
+    {
+      "title": "How Much Do UGC Creators Charge? 2026 Rate Guide",
+      "publisher": "JoinBrands blog (vendor marketplace), Aug 15, 2026",
+      "url": "https://joinbrands.com/blog/ugc-creator-rates/",
+      "quote": "Typical rate: $150-$400 per piece",
+      "supports": "Experience tiers ($150 to $400, $400 to $1,000, $1,000 to $3,000+ per piece); limited usage at base rate; +25% to 40% expanded paid usage; +50% to 100% perpetual rights"
+    },
+    {
+      "title": "UGC Rates in 2026: What 6 Marketplaces Actually Charge",
+      "publisher": "ppc.io blog (vendor), Jan 12, 2026",
+      "url": "https://ppc.io/blog/ugc-pricing",
+      "quote": "Some brands will pay an extra 30-100% of the base fee per month for permission of running ads through the creator",
+      "supports": "Whitelisting +30% to 100% per month; Collabstr $50 to $1,000+ per video and Billo 6 videos for $500 (as reported); +30% to 50% extended usage; +30% to 50% raw footage; exclusivity and long-term deals affect pricing"
+    },
+    {
+      "title": "How Standard Affiliate Commission Works",
+      "publisher": "TikTok Shop Academy (Seller University US)",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6077860360177451&lang=en",
+      "quote": "Commission = (Revenue - Refunds) x Commission rate.",
+      "supports": "TikTok Shop affiliate commission formula"
+    },
+    {
+      "title": "Setting Up Affiliate Collaborations",
+      "publisher": "TikTok Shop Academy (Seller University US)",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6837873164896001",
+      "quote": "Can be set for each individual product or for a group of selected products (ranging from 1%-80%)",
+      "supports": "Sellers set commission from 1% to 80%; target collaboration rates override open rates"
+    },
+    {
+      "title": "Creator Eligibility Policy",
+      "publisher": "TikTok Shop Academy (Seller University US), updated Sept 25, 2026",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6939143037667118&lang=en",
+      "quote": "Affiliate Creators with fewer than 5,000 followers are automatically enrolled in the Affiliate Creator Pilot Program for at least 30 days.",
+      "supports": "1,000-follower minimum to self-apply; pilot program under 5,000 followers; 3 shoppable videos a day, 3 shoppable LIVEs a week, 95% Shop Performance Score products, no campaigns"
+    },
+    {
+      "title": "Disclosures 101 for Social Media Influencers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure",
+      "supports": "Free or discounted product must be disclosed"
+    },
+    {
+      "title": "Publication 525 (2025), Taxable and Nontaxable Income",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/publications/p525",
+      "quote": "or you did gig work, you must include all income received whether you received a Form 1099-K",
+      "supports": "Gig income is reportable with or without a Form 1099-K"
+    }
   ],
-  "related": ["how-to-become-a-ugc-creator", "ugc-usage-rights", "older-influencers"]
+  "related": [
+    "how-to-become-a-ugc-creator",
+    "ugc-usage-rights",
+    "older-influencers"
+  ]
 }
 ---
 How much do UGC creators make? Ask the internet and you get the Magic 8 Ball answer: "Reply hazy, try again." So let's do this the GenX way, with straight talk, labeled sources and zero hype.

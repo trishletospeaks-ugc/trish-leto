@@ -9,21 +9,67 @@
   "cluster": "become-a-ugc-creator",
   "pillar": true,
   "primary_keyword": "how to become a ugc creator",
-  "secondary_keywords": ["become a ugc creator", "how to become a ugc content creator", "ugc creator for beginners", "ugc creator over 40", "ugc pitch email template"],
+  "secondary_keywords": [
+    "become a ugc creator",
+    "how to become a ugc content creator",
+    "ugc creator for beginners",
+    "ugc creator over 40",
+    "ugc pitch email template"
+  ],
   "audience": "creators",
   "excerpt": "A GenX creator's step-by-step guide to starting UGC after 40: pick your niches, film samples with products you already use, get set up, pitch brands and disclose the right way.",
-  "hero": {"file": "how-to-become-a-ugc-creator-hero", "alt": "A woman waves at a smartphone on a small tripod while filming a video at her kitchen counter, with bowls and pears in front of her", "credit": "Polina Tankilevitch", "credit_url": "https://www.pexels.com/@polina-tankilevitch", "source_url": "https://www.pexels.com/photo/a-woman-waving-her-hand-at-her-smartphone-while-recording-a-video-7669738/"},
-  "inline_image": {"file": "how-to-become-a-ugc-creator-inline", "alt": "A woman holds up a white pump bottle of skin care toward a camera on a tripod while filming a product demo at a table", "credit": "Mikael Blomkvist", "credit_url": "https://www.pexels.com/@mikael-blomkvist", "source_url": "https://www.pexels.com/photo/woman-in-yellow-and-black-long-sleeves-holding-a-glass-pump-bottle-4152967/"},
+  "hero": {
+    "file": "how-to-become-a-ugc-creator-hero",
+    "alt": "A smartphone on a tripod surrounded by ring lights, ready to film UGC",
+    "credit": "Markus Winkler",
+    "credit_url": "https://www.pexels.com/@markus-winkler-1430818",
+    "source_url": "https://www.pexels.com/photo/mobile-phone-in-a-phonestand-beside-ring-lights-12199411/"
+  },
+  "inline_image": {
+    "file": "how-to-become-a-ugc-creator-inline",
+    "alt": "Hands arranging items on a clean white surface for a flat lay shot",
+    "credit": "Artem Podrez",
+    "credit_url": "https://www.pexels.com/@artempodrez",
+    "source_url": "https://www.pexels.com/photo/person-holding-a-round-cardboard-with-white-paper-6787052/"
+  },
   "table": {
     "caption": "Getting set up: what a new UGC creator needs",
-    "columns": ["Item", "Why it matters", "Rule or source"],
+    "columns": [
+      "Item",
+      "Why it matters",
+      "Rule or source"
+    ],
     "rows": [
-      ["Payment gateway", "Gives brands a simple, professional way to pay you, and gives you one clean record of what came in.", "My Military Creator Con slide"],
-      ["Contract template", "Puts deliverables, deadlines, usage rights and payment terms in writing before you film.", "My Military Creator Con slide"],
-      ["Pitch email and DM", "Your opener with a brand. Short, specific and about them.", "My Military Creator Con slide (sample below)"],
-      ["Bio and portfolio link", "Tells a brand who you are, what you make and how to reach you, in one tap.", "My Military Creator Con slide"],
-      ["Best platforms", "TikTok Shop affiliates need 1,000 or more followers, must be 18 or older and US-based. Under 5,000 followers, you start in a pilot program for at least 30 days.", "TikTok Shop Creator Eligibility Policy, as of October 2026"],
-      ["Disclosure habit", "Free or discounted product counts as a connection you disclose.", "FTC Disclosures 101"]
+      [
+        "Payment gateway",
+        "Gives brands a simple, professional way to pay you, and gives you one clean record of what came in.",
+        "My Military Creator Con slide"
+      ],
+      [
+        "Contract template",
+        "Puts deliverables, deadlines, usage rights and payment terms in writing before you film.",
+        "My Military Creator Con slide"
+      ],
+      [
+        "Pitch email and DM",
+        "Your opener with a brand. Short, specific and about them.",
+        "My Military Creator Con slide (sample below)"
+      ],
+      [
+        "Bio and portfolio link",
+        "Tells a brand who you are, what you make and how to reach you, in one tap.",
+        "My Military Creator Con slide"
+      ],
+      [
+        "Best platforms",
+        "TikTok Shop affiliates need 1,000 or more followers, must be 18 or older and US-based. Under 5,000 followers, you start in a pilot program for at least 30 days.",
+        "TikTok Shop Creator Eligibility Policy, as of October 2026"
+      ],
+      [
+        "Disclosure habit",
+        "Free or discounted product counts as a connection you disclose.",
+        "FTC Disclosures 101"
+      ]
     ],
     "source": "Trish Leto's Military Creator Con checklist; TikTok Shop Academy, Creator Eligibility Policy (updated September 25, 2026); FTC",
     "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6939143037667118&lang=en"
@@ -32,33 +78,121 @@
     "title": "Economic activity of Americans 50 and older (trillions of dollars)",
     "unit": "$",
     "data": [
-      {"label": "2018", "value": 8.3},
-      {"label": "2024", "value": 12.5},
-      {"label": "2060 (projected)", "value": 24}
+      {
+        "label": "2018",
+        "value": 8.3
+      },
+      {
+        "label": "2024",
+        "value": 12.5
+      },
+      {
+        "label": "2060 (projected)",
+        "value": 24
+      }
     ],
     "source": "AARP, Longevity Economy Outlook 2026",
     "source_url": "https://www.aarp.org/money/personal-finance/longevity-economy-report-2026/"
   },
-  "tiktok": ["7486834491520994591", "7689485389450497311"],
+  "tiktok": [
+    "7486834491520994591",
+    "7689485389450497311"
+  ],
   "faq": [
-    {"q": "Can you become a UGC creator with no followers?", "a": "You can start without a big following. UGC creators make content for a brand's own channels, so the video is the product, not your follower count. Some platform programs do have minimums: as of October 2026, TikTok Shop affiliate creators need at least 1,000 followers."},
-    {"q": "Am I too old to become a UGC creator?", "a": "No. AARP reports that Americans 50 and older generated $12.5 trillion in economic activity in 2024. Brands that sell to grown-ups need creators their buyers can relate to, and GenX creators fit that brief."},
-    {"q": "What do I need to start making UGC?", "a": "A phone, decent light, products you already use, and the basics from my Military Creator Con checklist: a payment gateway, a contract template, a pitch email and DM, a bio with a portfolio link, and a plan for which platforms to use. Add a disclosure habit from day one."},
-    {"q": "Do UGC creators have to disclose free products?", "a": "When you post about a brand that gave you free or discounted product, the FTC says to disclose it, even if you were not asked to mention the product. On TikTok, gifted products count as branded content, which needs the commercial content disclosure toggle. This is general information, not legal advice."}
+    {
+      "q": "Can you become a UGC creator with no followers?",
+      "a": "You can start without a big following. UGC creators make content for a brand's own channels, so the video is the product, not your follower count. Some platform programs do have minimums: as of October 2026, TikTok Shop affiliate creators need at least 1,000 followers."
+    },
+    {
+      "q": "Am I too old to become a UGC creator?",
+      "a": "No. AARP reports that Americans 50 and older generated $12.5 trillion in economic activity in 2024. Brands that sell to grown-ups need creators their buyers can relate to, and GenX creators fit that brief."
+    },
+    {
+      "q": "What do I need to start making UGC?",
+      "a": "A phone, decent light, products you already use, and the basics from my Military Creator Con checklist: a payment gateway, a contract template, a pitch email and DM, a bio with a portfolio link, and a plan for which platforms to use. Add a disclosure habit from day one."
+    },
+    {
+      "q": "Do UGC creators have to disclose free products?",
+      "a": "When you post about a brand that gave you free or discounted product, the FTC says to disclose it, even if you were not asked to mention the product. On TikTok, gifted products count as branded content, which needs the commercial content disclosure toggle. This is general information, not legal advice."
+    }
   ],
   "references": [
-    {"title": "Participative Web and User-Created Content", "publisher": "OECD", "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2007/09/participative-web-and-user-created-content_g1gh826c/9789264037472-en.pdf", "quote": "content made publicly available over the Internet, ii) which reflects a certain amount of creative effort", "supports": "The OECD definition of user-created content (2007)"},
-    {"title": "User-generated content (UGC): What it is and how to use it", "publisher": "Hootsuite blog (vendor)", "url": "https://blog.hootsuite.com/user-generated-content-ugc/", "quote": "UGC creators make content for your channels, while influencers post content on theirs.", "supports": "UGC creators make content for the brand's channels; influencers post on their own"},
-    {"title": "AARP Report: Older Americans Are Boosting the Economy", "publisher": "AARP", "url": "https://www.aarp.org/money/personal-finance/longevity-economy-report-2026/", "quote": "$12.5 trillion in economic activity accounted for 43 percent of U.S. gross domestic product (GDP) in 2024, up from $8.3 trillion", "supports": "Americans 50+ generated $12.5 trillion in 2024, up from $8.3 trillion in 2018 (chart); same page: The 50+ economic contribution is projected to reach $24 trillion by 2060 (chart) (\"their economic contribution is expected to nearly double to $24 trillion, according to the report.\")"},
-    {"title": "Consumer Expenditure Surveys, Table 2602: generation of reference person, aggregate shares, 2024", "publisher": "U.S. Bureau of Labor Statistics", "url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx", "quote": "Annual aggregate expenditures | 10655034.0 | 5.7 | 29.6 | 32.9 | 27.0 | 4.8", "supports": "Households headed by someone born 1965 to 1980 accounted for 32.9% of 2024 consumer spending, the largest share"},
-    {"title": "Social Media Fact Sheet", "publisher": "Pew Research Center", "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/", "quote": "Ages 18-29 30-49 50-64 65+ YouTube 95 92 85 64 Facebook 68 80 74 57", "supports": "85% of U.S. adults ages 50 to 64 use YouTube and 74% use Facebook"},
-    {"title": "Creator Eligibility Policy", "publisher": "TikTok Shop Academy", "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6939143037667118&lang=en", "quote": "Have a minimum of 1,000 followers", "supports": "TikTok Shop affiliate creators need 1,000 followers; the same page says 'Be at least 18 years old' and applies to creators based in the United States (table); same page: The pilot program for affiliates under 5,000 followers, at least 30 days (table) (\"Affiliate Creators with fewer than 5,000 followers are automatically enrolled in the Affiliate Creator Pilot Program for at least 30 days.\")"},
-    {"title": "How Standard Affiliate Commission Works", "publisher": "TikTok Shop Academy", "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6077860360177451&lang=en", "quote": "Commission = (Revenue - Refunds) x Commission rate.", "supports": "How TikTok Shop affiliate commission is figured"},
-    {"title": "Branded Content Policy", "publisher": "TikTok", "url": "https://www.tiktok.com/legal/page/global/bc-policy/en", "quote": "When posting Branded Content, you must enable the commercial content disclosure toggle.", "supports": "The TikTok disclosure toggle; gifted products and affiliate links count as branded content"},
-    {"title": "Disclosures 101 for Social Media Influencers", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers", "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure", "supports": "Free product counts; plain words like 'ad' work; never discuss a product you have not tried; platform tools alone are not enough"},
-    {"title": "16 CFR 255.1: General considerations (Endorsement Guides)", "publisher": "eCFR (Federal Trade Commission)", "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.1", "quote": "the endorser must have been a bona fide user of it at the time the endorsement was given.", "supports": "Endorsers who say they use a product must be bona fide users"}
+    {
+      "title": "Participative Web and User-Created Content",
+      "publisher": "OECD",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2007/09/participative-web-and-user-created-content_g1gh826c/9789264037472-en.pdf",
+      "quote": "content made publicly available over the Internet, ii) which reflects a certain amount of creative effort",
+      "supports": "The OECD definition of user-created content (2007)"
+    },
+    {
+      "title": "User-generated content (UGC): What it is and how to use it",
+      "publisher": "Hootsuite blog (vendor)",
+      "url": "https://blog.hootsuite.com/user-generated-content-ugc/",
+      "quote": "UGC creators make content for your channels, while influencers post content on theirs.",
+      "supports": "UGC creators make content for the brand's channels; influencers post on their own"
+    },
+    {
+      "title": "AARP Report: Older Americans Are Boosting the Economy",
+      "publisher": "AARP",
+      "url": "https://www.aarp.org/money/personal-finance/longevity-economy-report-2026/",
+      "quote": "$12.5 trillion in economic activity accounted for 43 percent of U.S. gross domestic product (GDP) in 2024, up from $8.3 trillion",
+      "supports": "Americans 50+ generated $12.5 trillion in 2024, up from $8.3 trillion in 2018 (chart); same page: The 50+ economic contribution is projected to reach $24 trillion by 2060 (chart) (\"their economic contribution is expected to nearly double to $24 trillion, according to the report.\")"
+    },
+    {
+      "title": "Consumer Expenditure Surveys, Table 2602: generation of reference person, aggregate shares, 2024",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx",
+      "quote": "Annual aggregate expenditures | 10655034.0 | 5.7 | 29.6 | 32.9 | 27.0 | 4.8",
+      "supports": "Households headed by someone born 1965 to 1980 accounted for 32.9% of 2024 consumer spending, the largest share"
+    },
+    {
+      "title": "Social Media Fact Sheet",
+      "publisher": "Pew Research Center",
+      "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/",
+      "quote": "Ages 18-29 30-49 50-64 65+ YouTube 95 92 85 64 Facebook 68 80 74 57",
+      "supports": "85% of U.S. adults ages 50 to 64 use YouTube and 74% use Facebook"
+    },
+    {
+      "title": "Creator Eligibility Policy",
+      "publisher": "TikTok Shop Academy",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6939143037667118&lang=en",
+      "quote": "Have a minimum of 1,000 followers",
+      "supports": "TikTok Shop affiliate creators need 1,000 followers; the same page says 'Be at least 18 years old' and applies to creators based in the United States (table); same page: The pilot program for affiliates under 5,000 followers, at least 30 days (table) (\"Affiliate Creators with fewer than 5,000 followers are automatically enrolled in the Affiliate Creator Pilot Program for at least 30 days.\")"
+    },
+    {
+      "title": "How Standard Affiliate Commission Works",
+      "publisher": "TikTok Shop Academy",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6077860360177451&lang=en",
+      "quote": "Commission = (Revenue - Refunds) x Commission rate.",
+      "supports": "How TikTok Shop affiliate commission is figured"
+    },
+    {
+      "title": "Branded Content Policy",
+      "publisher": "TikTok",
+      "url": "https://www.tiktok.com/legal/page/global/bc-policy/en",
+      "quote": "When posting Branded Content, you must enable the commercial content disclosure toggle.",
+      "supports": "The TikTok disclosure toggle; gifted products and affiliate links count as branded content"
+    },
+    {
+      "title": "Disclosures 101 for Social Media Influencers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure",
+      "supports": "Free product counts; plain words like 'ad' work; never discuss a product you have not tried; platform tools alone are not enough"
+    },
+    {
+      "title": "16 CFR 255.1: General considerations (Endorsement Guides)",
+      "publisher": "eCFR (Federal Trade Commission)",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.1",
+      "quote": "the endorser must have been a bona fide user of it at the time the endorsement was given.",
+      "supports": "Endorsers who say they use a product must be bona fide users"
+    }
   ],
-  "related": ["how-much-do-ugc-creators-make", "older-influencers", "types-of-ugc-videos"]
+  "related": [
+    "how-much-do-ugc-creators-make",
+    "older-influencers",
+    "types-of-ugc-videos"
+  ]
 }
 ---
 So you want to know how to become a UGC creator, and you're over 40. Good. Pull up a chair (the one with lumbar support). I'm Trish Leto, a GenX UGC creator, model and U.S. Navy veteran in Tampa, and this is the guide I'd hand any grown-up who keeps saying "I could do that" while scrolling past creator videos.

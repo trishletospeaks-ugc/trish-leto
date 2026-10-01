@@ -9,20 +9,59 @@
   "cluster": "become-a-ugc-creator",
   "pillar": false,
   "primary_keyword": "older influencers",
-  "secondary_keywords": ["influencers over 50", "genx influencer"],
+  "secondary_keywords": [
+    "influencers over 50",
+    "genx influencer"
+  ],
   "audience": "creators",
   "excerpt": "Older influencers and GenX creators have a real lane. Here is the spending and audience data behind it, and how grown-up creators can stand out.",
-  "hero": {"file": "older-influencers-hero", "alt": "Three stylish grown-up women in hats and bold necklaces smile at each other on a seaside promenade", "credit": "RDNE Stock project", "credit_url": "https://www.pexels.com/@rdne", "source_url": "https://www.pexels.com/photo/women-happy-together-6540137/"},
-  "inline_image": {"file": "older-influencers-inline", "alt": "A woman with silver blond hair in pajamas checks her skin care in a brightly lit bathroom mirror", "credit": "Ron Lach", "credit_url": "https://www.pexels.com/@ron-lach", "source_url": "https://www.pexels.com/photo/woman-in-bathroom-10221832/"},
+  "hero": {
+    "file": "older-influencers-hero",
+    "alt": "Three stylish grown-up women in hats and bold necklaces smile at each other on a seaside promenade",
+    "credit": "RDNE Stock project",
+    "credit_url": "https://www.pexels.com/@rdne",
+    "source_url": "https://www.pexels.com/photo/women-happy-together-6540137/"
+  },
+  "inline_image": {
+    "file": "older-influencers-inline",
+    "alt": "Skin care products lined up on a minimalist bathroom shelf",
+    "credit": "Valeriia Miller",
+    "credit_url": "https://www.pexels.com/@valeriiamiller",
+    "source_url": "https://www.pexels.com/photo/minimalist-bathroom-beauty-products-display-32435037/"
+  },
   "table": {
     "caption": "The grown-up market by the numbers",
-    "columns": ["Measure", "Figure", "Source"],
+    "columns": [
+      "Measure",
+      "Figure",
+      "Source"
+    ],
     "rows": [
-      ["Americans in the Gen X birth years (ages 44 to 59 on July 1, 2024)", "About 65.6 million (our calculation)", "U.S. Census Bureau, Vintage 2024 estimates"],
-      ["Gen X share of US households (2024)", "26.7%", "BLS Consumer Expenditure Surveys"],
-      ["Gen X share of US consumer spending (2024)", "32.9%", "BLS Consumer Expenditure Surveys"],
-      ["Spending by households headed by someone 50+ (2024)", "$10.7 trillion, more than half of US consumer spending", "AARP Longevity Economy Outlook 2026"],
-      ["Economic activity of Americans 50+ (2024)", "$12.5 trillion, 43% of US GDP", "AARP Longevity Economy Outlook 2026"]
+      [
+        "Americans in the Gen X birth years (ages 44 to 59 on July 1, 2024)",
+        "About 65.6 million (our calculation)",
+        "U.S. Census Bureau, Vintage 2024 estimates"
+      ],
+      [
+        "Gen X share of US households (2024)",
+        "26.7%",
+        "BLS Consumer Expenditure Surveys"
+      ],
+      [
+        "Gen X share of US consumer spending (2024)",
+        "32.9%",
+        "BLS Consumer Expenditure Surveys"
+      ],
+      [
+        "Spending by households headed by someone 50+ (2024)",
+        "$10.7 trillion, more than half of US consumer spending",
+        "AARP Longevity Economy Outlook 2026"
+      ],
+      [
+        "Economic activity of Americans 50+ (2024)",
+        "$12.5 trillion, 43% of US GDP",
+        "AARP Longevity Economy Outlook 2026"
+      ]
     ],
     "source": "BLS Consumer Expenditure Surveys 2024 (households by the birth year of the person who heads them), U.S. Census Bureau Vintage 2024 estimates (our own sum) and AARP",
     "source_url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx"
@@ -31,32 +70,113 @@
     "title": "Instagram and TikTok use among US adults, by age (2025)",
     "unit": "%",
     "data": [
-      {"label": "Instagram, ages 30 to 49", "value": 62},
-      {"label": "Instagram, ages 50 to 64", "value": 40},
-      {"label": "TikTok, ages 30 to 49", "value": 44},
-      {"label": "TikTok, ages 50 to 64", "value": 30}
+      {
+        "label": "Instagram, ages 30 to 49",
+        "value": 62
+      },
+      {
+        "label": "Instagram, ages 50 to 64",
+        "value": 40
+      },
+      {
+        "label": "TikTok, ages 30 to 49",
+        "value": 44
+      },
+      {
+        "label": "TikTok, ages 50 to 64",
+        "value": 30
+      }
     ],
     "source": "Pew Research Center, Social Media Fact Sheet (survey of US adults, February 5 to June 18, 2025)",
     "source_url": "https://www.pewresearch.org/internet/fact-sheet/social-media/"
   },
-  "tiktok": ["7606378740683164958"],
+  "tiktok": [
+    "7606378740683164958"
+  ],
   "faq": [
-    {"q": "Are older influencers in demand?", "a": "I can't point you to a study that measures how often brands hire older creators, so I won't pretend one exists. What the data does show is a big grown-up audience that spends: per the BLS, households headed by Gen X were 26.7% of US households in 2024 but accounted for 32.9% of consumer spending, and Pew finds 30% of US adults ages 50 to 64 use TikTok. Brands that sell to grown-ups need content that speaks to them."},
-    {"q": "What is a GenX UGC creator?", "a": "A GenX UGC creator is someone from Generation X (born 1965 to 1980, per Pew Research Center) who makes short-form videos that brands run on their own channels and in their own ads. The brand gets the content, so the creator does not need a big following of their own."},
-    {"q": "Do you have to be young to make UGC?", "a": "No. UGC is about making content a brand can use, not about your age or the size of your audience. Some platform programs have their own rules. TikTok Shop's US affiliate program, for example, requires at least 1,000 followers as of October 2026, so check the current policy for any program you join."}
+    {
+      "q": "Are older influencers in demand?",
+      "a": "I can't point you to a study that measures how often brands hire older creators, so I won't pretend one exists. What the data does show is a big grown-up audience that spends: per the BLS, households headed by Gen X were 26.7% of US households in 2024 but accounted for 32.9% of consumer spending, and Pew finds 30% of US adults ages 50 to 64 use TikTok. Brands that sell to grown-ups need content that speaks to them."
+    },
+    {
+      "q": "What is a GenX UGC creator?",
+      "a": "A GenX UGC creator is someone from Generation X (born 1965 to 1980, per Pew Research Center) who makes short-form videos that brands run on their own channels and in their own ads. The brand gets the content, so the creator does not need a big following of their own."
+    },
+    {
+      "q": "Do you have to be young to make UGC?",
+      "a": "No. UGC is about making content a brand can use, not about your age or the size of your audience. Some platform programs have their own rules. TikTok Shop's US affiliate program, for example, requires at least 1,000 followers as of October 2026, so check the current policy for any program you join."
+    }
   ],
   "references": [
-    {"title": "Where Millennials end and Generation Z begins", "publisher": "Pew Research Center", "url": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/", "quote": "Generation X (born between 1965 and 1980)", "supports": "Gen X means people born 1965 through 1980"},
-    {"title": "Annual estimates of the resident population by single year of age and sex, Vintage 2024 (data file)", "publisher": "U.S. Census Bureau", "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/national/asrh/nc-est2024-agesex-res.csv", "quote": "SEX,AGE,ESTIMATESBASE2020,POPESTIMATE2020,POPESTIMATE2021,POPESTIMATE2022,POPESTIMATE2023,POPESTIMATE2024", "supports": "Our calculation: the sum of POPESTIMATE2024 for SEX=0, ages 44 to 59, is 65,551,064 (about 65.6 million in the Gen X birth years)"},
-    {"title": "Consumer Expenditure Surveys, generation of reference person: aggregate expenditure shares, 2024 (Table 2602)", "publisher": "U.S. Bureau of Labor Statistics", "url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx", "quote": "Percent distribution of consumer units 100.0 8.2 27.1 26.7 30.6 7.4 Annual aggregate expenditures 10655034.0 5.7 29.6 32.9 27.0 4.8", "supports": "Fourth column (born 1965 to 1980): Gen X households were 26.7% of consumer units and 32.9% of aggregate spending in 2024"},
-    {"title": "Older Americans Are Boosting the Economy for All (Longevity Economy Outlook 2026)", "publisher": "AARP", "url": "https://www.aarp.org/money/personal-finance/longevity-economy-report-2026/", "quote": "Households headed by someone 50 or older account for more than half of all consumer spending in the U.S.", "supports": "Households headed by someone 50+ account for more than half of US consumer spending; the same sentence continues after a dash with $10.7 trillion in 2024; same page: Americans 50+ generated $12.5 trillion in economic activity, 43% of US GDP, in 2024 (\"Older adults’ $12.5 trillion in economic activity accounted for 43 percent of U.S. gross domestic product (GDP) in 2024\")"},
-    {"title": "Social Media Fact Sheet", "publisher": "Pew Research Center", "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/", "quote": "YouTube 95 92 85 64 Facebook 68 80 74 57 Instagram 80 62 40 19 TikTok 63 44 30 12", "supports": "Columns are ages 18-29, 30-49, 50-64, 65+: Instagram 62% and 40%, TikTok 44% and 30%, YouTube 85% and Facebook 74% for ages 50 to 64"},
-    {"title": "User-generated content (UGC) guide (vendor blog)", "publisher": "Hootsuite", "url": "https://blog.hootsuite.com/user-generated-content-ugc/", "quote": "UGC creators make content for your channels, while influencers post content on theirs.", "supports": "The industry split between UGC creators and influencers"},
-    {"title": "Creator Eligibility Policy", "publisher": "TikTok Shop Academy (Seller University US)", "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6939143037667118&lang=en", "quote": "Have a minimum of 1,000 followers", "supports": "TikTok Shop US affiliate creators need at least 1,000 followers (page last updated 2026-09-25)"},
-    {"title": "Disclosures 101 for Social Media Influencers", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers", "quote": "You can’t talk about your experience with a product you haven’t tried.", "supports": "Creators may only describe experience with products they have actually tried"},
-    {"title": "Facts About Small Business: Veteran Ownership Statistics 2025", "publisher": "U.S. SBA Office of Advocacy", "url": "https://advocacy.sba.gov/2025/11/11/facts-about-small-business-veteran-ownership-statistics-2025/", "quote": "According to the latest official data, veterans represent 4.3% of business owners in the U.S.", "supports": "Veterans are 4.3% of US business owners (2022 data, 2025 release)"}
+    {
+      "title": "Where Millennials end and Generation Z begins",
+      "publisher": "Pew Research Center",
+      "url": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/",
+      "quote": "Generation X (born between 1965 and 1980)",
+      "supports": "Gen X means people born 1965 through 1980"
+    },
+    {
+      "title": "Annual estimates of the resident population by single year of age and sex, Vintage 2024 (data file)",
+      "publisher": "U.S. Census Bureau",
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/national/asrh/nc-est2024-agesex-res.csv",
+      "quote": "SEX,AGE,ESTIMATESBASE2020,POPESTIMATE2020,POPESTIMATE2021,POPESTIMATE2022,POPESTIMATE2023,POPESTIMATE2024",
+      "supports": "Our calculation: the sum of POPESTIMATE2024 for SEX=0, ages 44 to 59, is 65,551,064 (about 65.6 million in the Gen X birth years)"
+    },
+    {
+      "title": "Consumer Expenditure Surveys, generation of reference person: aggregate expenditure shares, 2024 (Table 2602)",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx",
+      "quote": "Percent distribution of consumer units 100.0 8.2 27.1 26.7 30.6 7.4 Annual aggregate expenditures 10655034.0 5.7 29.6 32.9 27.0 4.8",
+      "supports": "Fourth column (born 1965 to 1980): Gen X households were 26.7% of consumer units and 32.9% of aggregate spending in 2024"
+    },
+    {
+      "title": "Older Americans Are Boosting the Economy for All (Longevity Economy Outlook 2026)",
+      "publisher": "AARP",
+      "url": "https://www.aarp.org/money/personal-finance/longevity-economy-report-2026/",
+      "quote": "Households headed by someone 50 or older account for more than half of all consumer spending in the U.S.",
+      "supports": "Households headed by someone 50+ account for more than half of US consumer spending; the same sentence continues after a dash with $10.7 trillion in 2024; same page: Americans 50+ generated $12.5 trillion in economic activity, 43% of US GDP, in 2024 (\"Older adults’ $12.5 trillion in economic activity accounted for 43 percent of U.S. gross domestic product (GDP) in 2024\")"
+    },
+    {
+      "title": "Social Media Fact Sheet",
+      "publisher": "Pew Research Center",
+      "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/",
+      "quote": "YouTube 95 92 85 64 Facebook 68 80 74 57 Instagram 80 62 40 19 TikTok 63 44 30 12",
+      "supports": "Columns are ages 18-29, 30-49, 50-64, 65+: Instagram 62% and 40%, TikTok 44% and 30%, YouTube 85% and Facebook 74% for ages 50 to 64"
+    },
+    {
+      "title": "User-generated content (UGC) guide (vendor blog)",
+      "publisher": "Hootsuite",
+      "url": "https://blog.hootsuite.com/user-generated-content-ugc/",
+      "quote": "UGC creators make content for your channels, while influencers post content on theirs.",
+      "supports": "The industry split between UGC creators and influencers"
+    },
+    {
+      "title": "Creator Eligibility Policy",
+      "publisher": "TikTok Shop Academy (Seller University US)",
+      "url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6939143037667118&lang=en",
+      "quote": "Have a minimum of 1,000 followers",
+      "supports": "TikTok Shop US affiliate creators need at least 1,000 followers (page last updated 2026-09-25)"
+    },
+    {
+      "title": "Disclosures 101 for Social Media Influencers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "quote": "You can’t talk about your experience with a product you haven’t tried.",
+      "supports": "Creators may only describe experience with products they have actually tried"
+    },
+    {
+      "title": "Facts About Small Business: Veteran Ownership Statistics 2025",
+      "publisher": "U.S. SBA Office of Advocacy",
+      "url": "https://advocacy.sba.gov/2025/11/11/facts-about-small-business-veteran-ownership-statistics-2025/",
+      "quote": "According to the latest official data, veterans represent 4.3% of business owners in the U.S.",
+      "supports": "Veterans are 4.3% of US business owners (2022 data, 2025 release)"
+    }
   ],
-  "related": ["how-to-become-a-ugc-creator", "how-much-do-ugc-creators-make", "ugc-for-brands"]
+  "related": [
+    "how-to-become-a-ugc-creator",
+    "how-much-do-ugc-creators-make",
+    "ugc-for-brands"
+  ]
 }
 ---
 ## Older influencers: who counts, and why it matters

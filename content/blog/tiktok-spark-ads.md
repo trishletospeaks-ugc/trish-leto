@@ -9,20 +9,67 @@
   "cluster": "ugc-for-brands",
   "pillar": false,
   "primary_keyword": "tiktok spark ads",
-  "secondary_keywords": ["spark ads code", "ugc whitelisting", "spark ads vs whitelisting", "partnership ads"],
+  "secondary_keywords": [
+    "spark ads code",
+    "ugc whitelisting",
+    "spark ads vs whitelisting",
+    "partnership ads"
+  ],
   "audience": "brands",
   "excerpt": "TikTok Spark Ads let a brand run a creator's real post as an ad. Here's how the authorization code works, how it compares to whitelisting and Partnership Ads, and what to put in writing.",
-  "hero": {"file": "tiktok-spark-ads-hero", "alt": "A woman in a bright kitchen holds a plate of food while filming herself on a smartphone mounted on a tripod, the kind of shoot behind a TikTok Spark Ad", "credit": "Mikael Blomkvist", "credit_url": "https://www.pexels.com/@mikael-blomkvist", "source_url": "https://www.pexels.com/photo/woman-standing-beside-kitchen-cabinets-while-holding-plate-with-bread-4152461/"},
-  "inline_image": {"file": "tiktok-spark-ads-inline", "alt": "Two people's hands sorting printed photos on a dark table, like a brand team choosing which creator videos to run as Spark Ads", "credit": "Vitaly Gariev", "credit_url": "https://www.pexels.com/@silverkblack", "source_url": "https://www.pexels.com/photo/collaborative-photo-selection-process-36765639/"},
+  "hero": {
+    "file": "tiktok-spark-ads-hero",
+    "alt": "Hands setting up a smartphone on a tripod indoors",
+    "credit": "Kampus Production",
+    "credit_url": "https://www.pexels.com/@kampus",
+    "source_url": "https://www.pexels.com/photo/a-person-holding-a-smartphone-on-a-tripod-7514824/"
+  },
+  "inline_image": {
+    "file": "tiktok-spark-ads-inline",
+    "alt": "Two people's hands sorting printed photos on a dark table, like a brand team choosing which creator videos to run as Spark Ads",
+    "credit": "Vitaly Gariev",
+    "credit_url": "https://www.pexels.com/@silverkblack",
+    "source_url": "https://www.pexels.com/photo/collaborative-photo-selection-process-36765639/"
+  },
   "table": {
     "caption": "Ways to run creator content as ads",
-    "columns": ["Option", "Account the ad runs from", "Permission needed", "Where engagement goes"],
+    "columns": [
+      "Option",
+      "Account the ad runs from",
+      "Permission needed",
+      "Where engagement goes"
+    ],
     "rows": [
-      ["TikTok Spark Ads with a creator's post", "The creator's TikTok account", "A video code the creator generates, good for 7, 30, 60 or 365 days", "The creator's original organic post"],
-      ["TikTok Spark Ads with the brand's own post", "The brand's own TikTok account, linked as the ad identity", "None from a creator for the post itself (usage rights still apply if a creator made the video)", "The brand's original organic post"],
-      ["Meta Partnership Ads", "The brand's ads, with the partner listed in the ad header (since May 2025 the partner can appear alone)", "The creator agrees to partner with the brand on Facebook or Instagram", "Not covered by the sources here; check Meta's current help pages"],
-      ["\"Whitelisting\" (industry term)", "The creator's account", "Access to run ads through the creator's account, agreed in the contract", "Depends on which platform format is used"],
-      ["Brand uploads the UGC file as a normal ad", "The brand's own account", "A written license for paid use, since the creator is ordinarily the author", "The brand's ad itself"]
+      [
+        "TikTok Spark Ads with a creator's post",
+        "The creator's TikTok account",
+        "A video code the creator generates, good for 7, 30, 60 or 365 days",
+        "The creator's original organic post"
+      ],
+      [
+        "TikTok Spark Ads with the brand's own post",
+        "The brand's own TikTok account, linked as the ad identity",
+        "None from a creator for the post itself (usage rights still apply if a creator made the video)",
+        "The brand's original organic post"
+      ],
+      [
+        "Meta Partnership Ads",
+        "The brand's ads, with the partner listed in the ad header (since May 2025 the partner can appear alone)",
+        "The creator agrees to partner with the brand on Facebook or Instagram",
+        "Not covered by the sources here; check Meta's current help pages"
+      ],
+      [
+        "\"Whitelisting\" (industry term)",
+        "The creator's account",
+        "Access to run ads through the creator's account, agreed in the contract",
+        "Depends on which platform format is used"
+      ],
+      [
+        "Brand uploads the UGC file as a normal ad",
+        "The brand's own account",
+        "A written license for paid use, since the creator is ordinarily the author",
+        "The brand's ad itself"
+      ]
     ],
     "source": "TikTok Ads Manager Help Center (Spark Ads pages, as of October 2026); Meta for Business (May 2025); U.S. Copyright Office Circular 30",
     "source_url": "https://ads.tiktok.com/help/article/spark-ads"
@@ -31,34 +78,124 @@
     "title": "Share of US adults who use TikTok, by age (2025)",
     "unit": "%",
     "data": [
-      {"label": "Ages 18 to 29", "value": 63},
-      {"label": "Ages 30 to 49", "value": 44},
-      {"label": "Ages 50 to 64", "value": 30},
-      {"label": "Ages 65 and older", "value": 12}
+      {
+        "label": "Ages 18 to 29",
+        "value": 63
+      },
+      {
+        "label": "Ages 30 to 49",
+        "value": 44
+      },
+      {
+        "label": "Ages 50 to 64",
+        "value": 30
+      },
+      {
+        "label": "Ages 65 and older",
+        "value": 12
+      }
     ],
     "source": "Pew Research Center, Social Media Fact Sheet (survey of 5,022 US adults, Feb 5 to June 18, 2025)",
     "source_url": "https://www.pewresearch.org/internet/fact-sheet/social-media/"
   },
-  "tiktok": ["7690955913506622750"],
+  "tiktok": [
+    "7690955913506622750"
+  ],
   "faq": [
-    {"q": "What is a Spark Ads code?", "a": "It's a video code a creator generates in the TikTok app for one post (three dots, then Ad settings, then Generate). The brand pastes it into TikTok Ads Manager to apply for authorization to run that post as a Spark Ad. Steps are per TikTok's help pages as of October 2026."},
-    {"q": "Is Spark Ads the same as whitelisting?", "a": "Not exactly. Whitelisting is industry shorthand for running ads through a creator's account. Spark Ads is TikTok's own ad format for running organic posts, including a creator's post with their authorization. On Facebook and Instagram, the closest format is Partnership Ads."},
-    {"q": "Do Spark Ads need a paid partnership label?", "a": "If the post promotes a brand in exchange for payment or any other incentive, TikTok's Branded Content Policy treats it as branded content, and the creator turns on TikTok's content disclosure setting. The FTC also wants the disclosure in the video itself. This is general information, not legal advice."},
-    {"q": "How long does Spark Ads authorization last?", "a": "The creator picks 7, 30, 60 or 365 days when generating the code, per TikTok's help pages as of October 2026. TikTok says requests sent through its Content Suite default to 365 days, so put the agreed length in writing."}
+    {
+      "q": "What is a Spark Ads code?",
+      "a": "It's a video code a creator generates in the TikTok app for one post (three dots, then Ad settings, then Generate). The brand pastes it into TikTok Ads Manager to apply for authorization to run that post as a Spark Ad. Steps are per TikTok's help pages as of October 2026."
+    },
+    {
+      "q": "Is Spark Ads the same as whitelisting?",
+      "a": "Not exactly. Whitelisting is industry shorthand for running ads through a creator's account. Spark Ads is TikTok's own ad format for running organic posts, including a creator's post with their authorization. On Facebook and Instagram, the closest format is Partnership Ads."
+    },
+    {
+      "q": "Do Spark Ads need a paid partnership label?",
+      "a": "If the post promotes a brand in exchange for payment or any other incentive, TikTok's Branded Content Policy treats it as branded content, and the creator turns on TikTok's content disclosure setting. The FTC also wants the disclosure in the video itself. This is general information, not legal advice."
+    },
+    {
+      "q": "How long does Spark Ads authorization last?",
+      "a": "The creator picks 7, 30, 60 or 365 days when generating the code, per TikTok's help pages as of October 2026. TikTok says requests sent through its Content Suite default to 365 days, so put the agreed length in writing."
+    }
   ],
   "references": [
-    {"title": "About Spark Ads", "publisher": "TikTok Ads Manager Help Center", "url": "https://ads.tiktok.com/help/article/spark-ads", "quote": "Spark Ads is a native ad format that allows you to leverage organic TikTok posts and their features in your advertising.", "supports": "Definition of Spark Ads (own posts or creators' posts with their authorization); also: 'all of the Spark Ads post engagement will be attributed to the original organic post.' Table source."},
-    {"title": "How to create Spark Ads for Smart+ Campaigns on TikTok Ads Manager", "publisher": "TikTok Ads Manager Help Center", "url": "https://ads.tiktok.com/help/article/how-to-create-spark-ads-for-smart-campaigns-on-tiktok-ads-manager", "quote": "select the authorization duration (7, 30, 60, or 365 days). Tap Copy Code to share the code with the advertiser.", "supports": "Creator steps (allow authorized posts, Ad settings, Ad authorization toggle, generate code, 7/30/60/365 days, copy code), the brand steps (Tools, Creative library, Spark Ads posts, Apply for Authorization, paste code) and the Duet/Stitch two-code rule. Page last updated October 2025, read 2026-10-01."},
-    {"title": "Spark Ads creation guide", "publisher": "TikTok Ads Manager Help Center", "url": "https://ads.tiktok.com/help/article/spark-ads-creation-guide", "quote": "Creators can find the authorization code in the TikTok app by going to the video that they want to share, tapping the three dots", "supports": "The in-app path to the code; also that captions cannot be edited after authorization and that a private video becomes public once used in a campaign. Page last updated June 2026."},
-    {"title": "How to use Content Suite to create and launch Spark Ads", "publisher": "TikTok Ads Manager Help Center", "url": "https://ads.tiktok.com/help/article/how-to-use-content-suite-to-create-and-launch-spark-ads", "quote": "All Spark authorization requests are defaulted to 365 days for authorization period.", "supports": "Content Suite authorization requests default to 365 days. Page last updated December 2025."},
-    {"title": "Meta at IAB NewFronts 2025", "publisher": "Meta for Business", "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025", "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.", "supports": "Partnership Ads header change, May 2025 (F09)."},
-    {"title": "Social Media Fact Sheet", "publisher": "Pew Research Center", "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/", "quote": "Facebook 68 80 74 57 Instagram 80 62 40 19 TikTok 63 44 30 12", "supports": "Table rows by age (18-29, 30-49, 50-64, 65+): TikTok 63/44/30/12, Facebook 74 and Instagram 40 for ages 50 to 64. Chart source (F35)."},
-    {"title": "Branded Content Policy", "publisher": "TikTok", "url": "https://www.tiktok.com/legal/page/global/bc-policy/en", "quote": "content that promotes or reviews a third-party brand or its products or services in exchange for payment or any other incentive", "supports": "TikTok's branded content definition, the disclosure toggle and creator responsibility for legal compliance (F17, F18)."},
-    {"title": "Disclosures 101 for Social Media Influencers", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers", "quote": "the disclosure should be in the video and not just in the description uploaded with the video.", "supports": "In-video disclosure rule (F40)."},
-    {"title": "UGC Pricing (vendor blog)", "publisher": "ppc.io", "url": "https://ppc.io/blog/ugc-pricing", "quote": "Some brands will pay an extra 30-100% of the base fee per month for permission of running ads through the creator's account.", "supports": "Vendor-reported whitelisting add-on range, labeled as a vendor source (F12)."},
-    {"title": "Circular 30: Works Made for Hire", "publisher": "U.S. Copyright Office", "url": "https://www.copyright.gov/circs/circ30.pdf", "quote": "Ordinarily, the author is the person or persons who actually created the work you intend to register.", "supports": "The creator is ordinarily the author, so paid usage needs a written license (F23)."}
+    {
+      "title": "About Spark Ads",
+      "publisher": "TikTok Ads Manager Help Center",
+      "url": "https://ads.tiktok.com/help/article/spark-ads",
+      "quote": "Spark Ads is a native ad format that allows you to leverage organic TikTok posts and their features in your advertising.",
+      "supports": "Definition of Spark Ads (own posts or creators' posts with their authorization); also: 'all of the Spark Ads post engagement will be attributed to the original organic post.' Table source."
+    },
+    {
+      "title": "How to create Spark Ads for Smart+ Campaigns on TikTok Ads Manager",
+      "publisher": "TikTok Ads Manager Help Center",
+      "url": "https://ads.tiktok.com/help/article/how-to-create-spark-ads-for-smart-campaigns-on-tiktok-ads-manager",
+      "quote": "select the authorization duration (7, 30, 60, or 365 days). Tap Copy Code to share the code with the advertiser.",
+      "supports": "Creator steps (allow authorized posts, Ad settings, Ad authorization toggle, generate code, 7/30/60/365 days, copy code), the brand steps (Tools, Creative library, Spark Ads posts, Apply for Authorization, paste code) and the Duet/Stitch two-code rule. Page last updated October 2025, read 2026-10-01."
+    },
+    {
+      "title": "Spark Ads creation guide",
+      "publisher": "TikTok Ads Manager Help Center",
+      "url": "https://ads.tiktok.com/help/article/spark-ads-creation-guide",
+      "quote": "Creators can find the authorization code in the TikTok app by going to the video that they want to share, tapping the three dots",
+      "supports": "The in-app path to the code; also that captions cannot be edited after authorization and that a private video becomes public once used in a campaign. Page last updated June 2026."
+    },
+    {
+      "title": "How to use Content Suite to create and launch Spark Ads",
+      "publisher": "TikTok Ads Manager Help Center",
+      "url": "https://ads.tiktok.com/help/article/how-to-use-content-suite-to-create-and-launch-spark-ads",
+      "quote": "All Spark authorization requests are defaulted to 365 days for authorization period.",
+      "supports": "Content Suite authorization requests default to 365 days. Page last updated December 2025."
+    },
+    {
+      "title": "Meta at IAB NewFronts 2025",
+      "publisher": "Meta for Business",
+      "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025",
+      "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.",
+      "supports": "Partnership Ads header change, May 2025 (F09)."
+    },
+    {
+      "title": "Social Media Fact Sheet",
+      "publisher": "Pew Research Center",
+      "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/",
+      "quote": "Facebook 68 80 74 57 Instagram 80 62 40 19 TikTok 63 44 30 12",
+      "supports": "Table rows by age (18-29, 30-49, 50-64, 65+): TikTok 63/44/30/12, Facebook 74 and Instagram 40 for ages 50 to 64. Chart source (F35)."
+    },
+    {
+      "title": "Branded Content Policy",
+      "publisher": "TikTok",
+      "url": "https://www.tiktok.com/legal/page/global/bc-policy/en",
+      "quote": "content that promotes or reviews a third-party brand or its products or services in exchange for payment or any other incentive",
+      "supports": "TikTok's branded content definition, the disclosure toggle and creator responsibility for legal compliance (F17, F18)."
+    },
+    {
+      "title": "Disclosures 101 for Social Media Influencers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "quote": "the disclosure should be in the video and not just in the description uploaded with the video.",
+      "supports": "In-video disclosure rule (F40)."
+    },
+    {
+      "title": "UGC Pricing (vendor blog)",
+      "publisher": "ppc.io",
+      "url": "https://ppc.io/blog/ugc-pricing",
+      "quote": "Some brands will pay an extra 30-100% of the base fee per month for permission of running ads through the creator's account.",
+      "supports": "Vendor-reported whitelisting add-on range, labeled as a vendor source (F12)."
+    },
+    {
+      "title": "Circular 30: Works Made for Hire",
+      "publisher": "U.S. Copyright Office",
+      "url": "https://www.copyright.gov/circs/circ30.pdf",
+      "quote": "Ordinarily, the author is the person or persons who actually created the work you intend to register.",
+      "supports": "The creator is ordinarily the author, so paid usage needs a written license (F23)."
+    }
   ],
-  "related": ["ugc-ads", "ugc-usage-rights", "ugc-for-brands"]
+  "related": [
+    "ugc-ads",
+    "ugc-usage-rights",
+    "ugc-for-brands"
+  ]
 }
 ---
 ## What TikTok Spark Ads are

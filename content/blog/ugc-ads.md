@@ -9,21 +9,73 @@
   "cluster": "ugc-for-brands",
   "pillar": false,
   "primary_keyword": "ugc ads",
-  "secondary_keywords": ["ugc ad examples", "ugc script", "ugc hooks", "ugc ad script"],
+  "secondary_keywords": [
+    "ugc ad examples",
+    "ugc script",
+    "ugc hooks",
+    "ugc ad script"
+  ],
   "audience": "brands",
   "excerpt": "How a UGC ad is built, beat by beat: the hook, the script, the demo and the disclosure. Plus real hook examples from my own videos and the claims a brand can never put in a creator's mouth.",
-  "hero": {"file": "ugc-ads-hero", "alt": "A woman at a kitchen table holds up a glass bottle of milk while a camera on a gimbal stand films her, with breakfast food spread out in front of her", "credit": "Mikael Blomkvist", "credit_url": "https://www.pexels.com/@mikael-blomkvist", "source_url": "https://www.pexels.com/photo/brunette-woman-holding-a-glass-bottle-with-white-liquid-4152780/"},
-  "inline_image": {"file": "ugc-ads-inline", "alt": "Close-up of two hands shaking a protein shaker bottle in front of a linen apron, a hands-only product demo shot", "credit": "Felicity Tai", "credit_url": "https://www.pexels.com/@felicity-tai", "source_url": "https://www.pexels.com/photo/a-person-holding-a-shaker-container-7965973/"},
+  "hero": {
+    "file": "ugc-ads-hero",
+    "alt": "Close up of a smartphone recording a short video indoors",
+    "credit": "Ron Lach",
+    "credit_url": "https://www.pexels.com/@ron-lach",
+    "source_url": "https://www.pexels.com/photo/shallow-focus-of-a-person-holding-a-smartphone-while-recording-8368375/"
+  },
+  "inline_image": {
+    "file": "ugc-ads-inline",
+    "alt": "Close-up of two hands shaking a protein shaker bottle in front of a linen apron, a hands-only product demo shot",
+    "credit": "Felicity Tai",
+    "credit_url": "https://www.pexels.com/@felicity-tai",
+    "source_url": "https://www.pexels.com/photo/a-person-holding-a-shaker-container-7965973/"
+  },
   "table": {
     "caption": "The beats of a UGC ad script. Sample lines were written for this post about a made-up drink mix; they are samples, not quotes from my videos.",
-    "columns": ["Beat", "What it does", "Sample line (written for this post)", "Compliance check"],
+    "columns": [
+      "Beat",
+      "What it does",
+      "Sample line (written for this post)",
+      "Compliance check"
+    ],
     "rows": [
-      ["Hook", "Stops the scroll with a question, a POV, a joke or a visual surprise", "\"POV: you swore you'd drink more water this year.\"", "No health promise in the hook. A question is not a claim, so keep it that way."],
-      ["Problem", "Names the buyer's real frustration in their own words", "\"Plain water and I are not on speaking terms.\"", "Only describe an experience the creator actually had."],
-      ["Demo", "Shows the product in use, hands on, in a real setting", "\"One packet, one glass, stir. That's it.\"", "The creator must have really used the product."],
-      ["Proof", "Gives the viewer a reason to believe, in plain words", "\"I've had it every afternoon this week.\"", "Only if true. No disease claims and nothing the brand couldn't prove itself."],
-      ["Call to action", "Tells the viewer exactly one thing to do next", "\"If you want to try it, it's linked here.\"", "One ask. Do not add new claims at the end."],
-      ["Disclosure", "Tells the viewer about the brand connection", "\"Ad. The brand sent me this to try.\"", "Said or shown inside the video, in plain words like ad or sponsored."]
+      [
+        "Hook",
+        "Stops the scroll with a question, a POV, a joke or a visual surprise",
+        "\"POV: you swore you'd drink more water this year.\"",
+        "No health promise in the hook. A question is not a claim, so keep it that way."
+      ],
+      [
+        "Problem",
+        "Names the buyer's real frustration in their own words",
+        "\"Plain water and I are not on speaking terms.\"",
+        "Only describe an experience the creator actually had."
+      ],
+      [
+        "Demo",
+        "Shows the product in use, hands on, in a real setting",
+        "\"One packet, one glass, stir. That's it.\"",
+        "The creator must have really used the product."
+      ],
+      [
+        "Proof",
+        "Gives the viewer a reason to believe, in plain words",
+        "\"I've had it every afternoon this week.\"",
+        "Only if true. No disease claims and nothing the brand couldn't prove itself."
+      ],
+      [
+        "Call to action",
+        "Tells the viewer exactly one thing to do next",
+        "\"If you want to try it, it's linked here.\"",
+        "One ask. Do not add new claims at the end."
+      ],
+      [
+        "Disclosure",
+        "Tells the viewer about the brand connection",
+        "\"Ad. The brand sent me this to try.\"",
+        "Said or shown inside the video, in plain words like ad or sponsored."
+      ]
     ],
     "source": "Compliance checks from the FTC Health Products Compliance Guidance and FTC Disclosures 101 for Social Media Influencers. Sample lines written for this post.",
     "source_url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
@@ -32,33 +84,121 @@
     "title": "How product reviews lift sales (review data, not a UGC study)",
     "unit": "%",
     "data": [
-      {"label": "Purchase likelihood, 5 reviews vs none", "value": 270},
-      {"label": "Conversion lift, higher-priced items", "value": 380},
-      {"label": "Conversion lift, lower-priced items", "value": 190}
+      {
+        "label": "Purchase likelihood, 5 reviews vs none",
+        "value": 270
+      },
+      {
+        "label": "Conversion lift, higher-priced items",
+        "value": 380
+      },
+      {
+        "label": "Conversion lift, lower-priced items",
+        "value": 190
+      }
     ],
     "source": "Spiegel Research Center, Northwestern University, using 2017 data from PowerReviews (a review vendor)",
     "source_url": "https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/"
   },
-  "tiktok": ["7690644146540776734", "7691470090906193182"],
+  "tiktok": [
+    "7690644146540776734",
+    "7691470090906193182"
+  ],
   "faq": [
-    {"q": "What is a UGC ad?", "a": "A UGC ad is a short video made by a creator in the casual style of a regular social post, which a brand then runs as a paid ad. On TikTok it can run as a Spark Ad, and on Facebook and Instagram as a Partnership Ad."},
-    {"q": "Can a UGC ad make health claims about a supplement?", "a": "Not disease claims. A supplement cannot claim to diagnose, treat, cure or prevent any disease, and the FTC says a testimonial cannot carry a claim the brand could not prove if it said it directly. This is general information, not legal advice, so have your own counsel review supplement scripts."},
-    {"q": "Do UGC ads need #ad in the video?", "a": "If the creator has a connection to the brand, including free product, the FTC says to disclose it clearly. In a video, the disclosure belongs in the video itself, not only in the description. Plain words like ad, advertisement or sponsored work. A hashtag is fine but not required."},
-    {"q": "What makes a good UGC hook?", "a": "A good hook names something the viewer already thinks or feels, right away and in plain words. Questions, POV setups, a little humor, an extreme close-up or a reply to a comment all work. Write several hooks for the same product and test them."}
+    {
+      "q": "What is a UGC ad?",
+      "a": "A UGC ad is a short video made by a creator in the casual style of a regular social post, which a brand then runs as a paid ad. On TikTok it can run as a Spark Ad, and on Facebook and Instagram as a Partnership Ad."
+    },
+    {
+      "q": "Can a UGC ad make health claims about a supplement?",
+      "a": "Not disease claims. A supplement cannot claim to diagnose, treat, cure or prevent any disease, and the FTC says a testimonial cannot carry a claim the brand could not prove if it said it directly. This is general information, not legal advice, so have your own counsel review supplement scripts."
+    },
+    {
+      "q": "Do UGC ads need #ad in the video?",
+      "a": "If the creator has a connection to the brand, including free product, the FTC says to disclose it clearly. In a video, the disclosure belongs in the video itself, not only in the description. Plain words like ad, advertisement or sponsored work. A hashtag is fine but not required."
+    },
+    {
+      "q": "What makes a good UGC hook?",
+      "a": "A good hook names something the viewer already thinks or feels, right away and in plain words. Questions, POV setups, a little humor, an extreme close-up or a reply to a comment all work. Write several hooks for the same product and test them."
+    }
   ],
   "references": [
-    {"title": "How Online Reviews Influence Sales (full report)", "publisher": "Spiegel Research Center, Northwestern University (2017 data from PowerReviews, a review vendor)", "url": "https://spiegel.medill.northwestern.edu/wp-content/uploads/sites/2/2021/04/Spiegel_Online-Review_eBook_Jun2017_FINAL.pdf", "quote": "The purchase likelihood for a product with five reviews is 270% greater than the purchase likelihood of a product with no reviews.", "supports": "A product with five reviews was 270% more likely to be bought than one with none (body and chart)"},
-    {"title": "How Online Reviews Influence Sales", "publisher": "Spiegel Research Center, Northwestern University (PowerReviews data)", "url": "https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/", "quote": "when reviews were displayed for a lower-priced product, the conversion rate increased 190%. However, for a higher-priced product, the conversion rate increased 380%.", "supports": "Reviews lifted conversion 190% for lower-priced and 380% for higher-priced products (body and chart)"},
-    {"title": "Disclosures 101 for Social Media Influencers", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers", "quote": "the disclosure should be in the video and not just in the description uploaded with the video.", "supports": "Video disclosures go inside the video; plain disclosure words; no vague tags; no talking about a product you have not tried"},
-    {"title": "16 CFR 255.1: General considerations (FTC Endorsement Guides)", "publisher": "Legal Information Institute, Cornell Law School", "url": "https://www.law.cornell.edu/cfr/text/16/255.1", "quote": "the endorser must have been a bona fide user of it at the time the endorsement was given.", "supports": "A creator who says they use a product must actually have used it"},
-    {"title": "16 CFR 255.5: Disclosure of material connections", "publisher": "eCFR (FTC Endorsement Guides)", "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.5", "quote": "the provision of free or discounted products (including products unrelated to the endorsed product) to an endorser", "supports": "Free or discounted product counts as a material connection that must be disclosed"},
-    {"title": "Federal Trade Commission Announces Final Rule Banning Fake Reviews and Testimonials", "publisher": "Federal Trade Commission (press release, August 2024)", "url": "https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials", "quote": "reviews and testimonials that misrepresent that they are by someone who does not exist, such as AI-generated fake reviews", "supports": "The FTC rule bans fake reviews and testimonials, including AI-generated ones and ones from people with no real experience"},
-    {"title": "Health Products Compliance Guidance", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance", "quote": "should not make claims through consumer testimonials or expert endorsements that would be deceptive or couldn't be substantiated", "supports": "Testimonials cannot carry health claims the brand could not prove directly (body and table)"},
-    {"title": "21 CFR 101.93: Certain types of statements for dietary supplements", "publisher": "Legal Information Institute, Cornell Law School", "url": "https://www.law.cornell.edu/cfr/text/21/101.93", "quote": "This product is not intended to diagnose, treat, cure, or prevent any disease.", "supports": "Supplements cannot make disease claims"},
-    {"title": "About Spark Ads", "publisher": "TikTok Ads Manager Help Center", "url": "https://ads.tiktok.com/help/article/spark-ads", "quote": "organic posts made by other creators (with their authorization)", "supports": "Spark Ads can run a creator's organic posts as ads, with the creator's authorization"},
-    {"title": "Meta at IAB NewFronts 2025", "publisher": "Meta for Business", "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025", "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.", "supports": "Meta Partnership Ads can show just the creator in the ad header (May 2025)"}
+    {
+      "title": "How Online Reviews Influence Sales (full report)",
+      "publisher": "Spiegel Research Center, Northwestern University (2017 data from PowerReviews, a review vendor)",
+      "url": "https://spiegel.medill.northwestern.edu/wp-content/uploads/sites/2/2021/04/Spiegel_Online-Review_eBook_Jun2017_FINAL.pdf",
+      "quote": "The purchase likelihood for a product with five reviews is 270% greater than the purchase likelihood of a product with no reviews.",
+      "supports": "A product with five reviews was 270% more likely to be bought than one with none (body and chart)"
+    },
+    {
+      "title": "How Online Reviews Influence Sales",
+      "publisher": "Spiegel Research Center, Northwestern University (PowerReviews data)",
+      "url": "https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/",
+      "quote": "when reviews were displayed for a lower-priced product, the conversion rate increased 190%. However, for a higher-priced product, the conversion rate increased 380%.",
+      "supports": "Reviews lifted conversion 190% for lower-priced and 380% for higher-priced products (body and chart)"
+    },
+    {
+      "title": "Disclosures 101 for Social Media Influencers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "quote": "the disclosure should be in the video and not just in the description uploaded with the video.",
+      "supports": "Video disclosures go inside the video; plain disclosure words; no vague tags; no talking about a product you have not tried"
+    },
+    {
+      "title": "16 CFR 255.1: General considerations (FTC Endorsement Guides)",
+      "publisher": "Legal Information Institute, Cornell Law School",
+      "url": "https://www.law.cornell.edu/cfr/text/16/255.1",
+      "quote": "the endorser must have been a bona fide user of it at the time the endorsement was given.",
+      "supports": "A creator who says they use a product must actually have used it"
+    },
+    {
+      "title": "16 CFR 255.5: Disclosure of material connections",
+      "publisher": "eCFR (FTC Endorsement Guides)",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255/section-255.5",
+      "quote": "the provision of free or discounted products (including products unrelated to the endorsed product) to an endorser",
+      "supports": "Free or discounted product counts as a material connection that must be disclosed"
+    },
+    {
+      "title": "Federal Trade Commission Announces Final Rule Banning Fake Reviews and Testimonials",
+      "publisher": "Federal Trade Commission (press release, August 2024)",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials",
+      "quote": "reviews and testimonials that misrepresent that they are by someone who does not exist, such as AI-generated fake reviews",
+      "supports": "The FTC rule bans fake reviews and testimonials, including AI-generated ones and ones from people with no real experience"
+    },
+    {
+      "title": "Health Products Compliance Guidance",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "quote": "should not make claims through consumer testimonials or expert endorsements that would be deceptive or couldn't be substantiated",
+      "supports": "Testimonials cannot carry health claims the brand could not prove directly (body and table)"
+    },
+    {
+      "title": "21 CFR 101.93: Certain types of statements for dietary supplements",
+      "publisher": "Legal Information Institute, Cornell Law School",
+      "url": "https://www.law.cornell.edu/cfr/text/21/101.93",
+      "quote": "This product is not intended to diagnose, treat, cure, or prevent any disease.",
+      "supports": "Supplements cannot make disease claims"
+    },
+    {
+      "title": "About Spark Ads",
+      "publisher": "TikTok Ads Manager Help Center",
+      "url": "https://ads.tiktok.com/help/article/spark-ads",
+      "quote": "organic posts made by other creators (with their authorization)",
+      "supports": "Spark Ads can run a creator's organic posts as ads, with the creator's authorization"
+    },
+    {
+      "title": "Meta at IAB NewFronts 2025",
+      "publisher": "Meta for Business",
+      "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025",
+      "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.",
+      "supports": "Meta Partnership Ads can show just the creator in the ad header (May 2025)"
+    }
   ],
-  "related": ["types-of-ugc-videos", "tiktok-spark-ads", "ugc-for-brands"]
+  "related": [
+    "types-of-ugc-videos",
+    "tiktok-spark-ads",
+    "ugc-for-brands"
+  ]
 }
 ---
 ## What makes UGC ads different

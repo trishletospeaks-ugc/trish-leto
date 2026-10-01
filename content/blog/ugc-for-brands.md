@@ -9,20 +9,66 @@
   "cluster": "ugc-for-brands",
   "pillar": true,
   "primary_keyword": "ugc for brands",
-  "secondary_keywords": ["user generated content for brands", "ugc creator meaning", "what is a ugc creator"],
+  "secondary_keywords": [
+    "user generated content for brands",
+    "ugc creator meaning",
+    "what is a ugc creator"
+  ],
   "audience": "brands",
   "excerpt": "What UGC means for a brand, where it runs, which rights to get in writing, and why households headed by Gen X are worth a creator who looks like them.",
-  "hero": {"file": "ugc-for-brands-hero", "alt": "Smiling woman holding a bottled protein drink in a bright home kitchen", "credit": "Rich Ortiz", "credit_url": "https://www.pexels.com/@rich-ortiz-898469", "source_url": "https://www.pexels.com/photo/smiling-woman-with-protein-drink-in-bottle-5661903/"},
-  "inline_image": {"file": "ugc-for-brands-inline", "alt": "Woman waving at a smartphone on a tripod while recording a video at her kitchen counter", "credit": "Polina Tankilevitch", "credit_url": "https://www.pexels.com/@polina-tankilevitch", "source_url": "https://www.pexels.com/photo/a-woman-waving-her-hand-at-her-smartphone-while-recording-a-video-7669738/"},
+  "hero": {
+    "file": "ugc-for-brands-hero",
+    "alt": "Two hands pouring white supplement capsules from a bottle on a pink background",
+    "credit": "Blated Inc",
+    "credit_url": "https://www.pexels.com/@getblated",
+    "source_url": "https://www.pexels.com/photo/hands-pouring-capsules-from-brown-bottle-on-pink-background-37475878/"
+  },
+  "inline_image": {
+    "file": "ugc-for-brands-inline",
+    "alt": "A smartphone recording a product close up on a table",
+    "credit": "Corentin HENRY",
+    "credit_url": "https://www.pexels.com/@corentin-henry-1296863",
+    "source_url": "https://www.pexels.com/photo/white-smartphone-in-close-up-photography-9992435/"
+  },
   "table": {
     "caption": "US households and spending by generation, 2024",
-    "columns": ["Generation", "Born", "Share of households", "Share of consumer spending"],
+    "columns": [
+      "Generation",
+      "Born",
+      "Share of households",
+      "Share of consumer spending"
+    ],
     "rows": [
-      ["Gen Z", "1997 or later", "8.2%", "5.7%"],
-      ["Millennials", "1981 to 1996", "27.1%", "29.6%"],
-      ["Gen X", "1965 to 1980", "26.7%", "32.9%"],
-      ["Boomers", "1946 to 1964", "30.6%", "27.0%"],
-      ["Silent and older", "1945 or earlier", "7.4%", "4.8%"]
+      [
+        "Gen Z",
+        "1997 or later",
+        "8.2%",
+        "5.7%"
+      ],
+      [
+        "Millennials",
+        "1981 to 1996",
+        "27.1%",
+        "29.6%"
+      ],
+      [
+        "Gen X",
+        "1965 to 1980",
+        "26.7%",
+        "32.9%"
+      ],
+      [
+        "Boomers",
+        "1946 to 1964",
+        "30.6%",
+        "27.0%"
+      ],
+      [
+        "Silent and older",
+        "1945 or earlier",
+        "7.4%",
+        "4.8%"
+      ]
     ],
     "source": "U.S. Bureau of Labor Statistics, Consumer Expenditure Surveys 2024, Table 2602 (aggregate shares). BLS groups households by the birth year of the reference person; generation names follow Pew.",
     "source_url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx"
@@ -31,35 +77,129 @@
     "title": "Average annual spending per household, by generation (2024)",
     "unit": "$",
     "data": [
-      {"label": "Gen Z", "value": 54830},
-      {"label": "Millennials", "value": 85302},
-      {"label": "Gen X", "value": 96941},
-      {"label": "Boomers", "value": 69303},
-      {"label": "Silent and older", "value": 51147}
+      {
+        "label": "Gen Z",
+        "value": 54830
+      },
+      {
+        "label": "Millennials",
+        "value": 85302
+      },
+      {
+        "label": "Gen X",
+        "value": 96941
+      },
+      {
+        "label": "Boomers",
+        "value": 69303
+      },
+      {
+        "label": "Silent and older",
+        "value": 51147
+      }
     ],
     "source": "U.S. Bureau of Labor Statistics, Consumer Expenditure Surveys 2024, Table 2602 (means)",
     "source_url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/reference-person-age-generation-2024.xlsx"
   },
-  "tiktok": ["7690644146540776734", "7689506559583472927"],
+  "tiktok": [
+    "7690644146540776734",
+    "7689506559583472927"
+  ],
   "faq": [
-    {"q": "What is UGC for brands?", "a": "UGC for brands is short, natural-looking content, usually video, made by a real person about a product. The brand posts it on its own channels, its product pages or its ads. A paid UGC creator makes it on commission, and the brand gets its usage rights in writing."},
-    {"q": "Does a UGC creator need a big following?", "a": "No. A UGC creator makes content for your channels, while an influencer posts on their own, so the reach comes from your accounts and your ads. What matters more is whether their samples fit your product, your formats and your buyer."},
-    {"q": "Who owns a UGC video a brand pays for?", "a": "Under US copyright law, the person who creates a work is ordinarily its author, so ownership and usage come down to your written agreement. Spell out where you can use each video, for how long, and whether paid ads are included. This is general information, not legal advice."},
-    {"q": "How do brands find UGC creators?", "a": "Look for creators whose samples match your niche and the formats you need, ask about turnaround and b-roll, and then send a clear brief: the product, where the videos will run, for how long, your timeline and your budget range."}
+    {
+      "q": "What is UGC for brands?",
+      "a": "UGC for brands is short, natural-looking content, usually video, made by a real person about a product. The brand posts it on its own channels, its product pages or its ads. A paid UGC creator makes it on commission, and the brand gets its usage rights in writing."
+    },
+    {
+      "q": "Does a UGC creator need a big following?",
+      "a": "No. A UGC creator makes content for your channels, while an influencer posts on their own, so the reach comes from your accounts and your ads. What matters more is whether their samples fit your product, your formats and your buyer."
+    },
+    {
+      "q": "Who owns a UGC video a brand pays for?",
+      "a": "Under US copyright law, the person who creates a work is ordinarily its author, so ownership and usage come down to your written agreement. Spell out where you can use each video, for how long, and whether paid ads are included. This is general information, not legal advice."
+    },
+    {
+      "q": "How do brands find UGC creators?",
+      "a": "Look for creators whose samples match your niche and the formats you need, ask about turnaround and b-roll, and then send a clear brief: the product, where the videos will run, for how long, your timeline and your budget range."
+    }
   ],
   "references": [
-    {"title": "Participative Web and User-Created Content", "publisher": "OECD", "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2007/09/participative-web-and-user-created-content_g1gh826c/9789264037472-en.pdf", "quote": "In this study UCC is defined as: i) content made publicly available over the Internet, ii) which reflects a certain amount of creative effort", "supports": "OECD's three-part definition of user-created content (2007), and its note that the unpaid, non-professional part was getting harder to maintain"},
-    {"title": "What is user-generated content (UGC)?", "publisher": "Hootsuite blog (vendor)", "url": "https://blog.hootsuite.com/user-generated-content-ugc/", "quote": "UGC creators make content for your channels, while influencers post content on theirs.", "supports": "UGC creator vs influencer split; also the vendor definition of UGC and the point that the creator holds the copyright"},
-    {"title": "Where Millennials end and Generation Z begins", "publisher": "Pew Research Center", "url": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/", "quote": "Generation X (born between 1965 and 1980)", "supports": "Gen X birth years used for the generation labels"},
-    {"title": "Consumer Expenditure Surveys, Table 2602: aggregate shares by generation of reference person, 2024", "publisher": "U.S. Bureau of Labor Statistics", "url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx", "quote": "Percent distribution of consumer units 100.0 8.2 27.1 26.7 30.6 7.4 Annual aggregate expenditures 10655034.0 5.7 29.6 32.9 27.0 4.8", "supports": "Share of households and share of consumer spending by generation, 2024 (Gen X 26.7% and 32.9%)"},
-    {"title": "Consumer Expenditure Surveys, Table 2602: means by generation of reference person, 2024", "publisher": "U.S. Bureau of Labor Statistics", "url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/reference-person-age-generation-2024.xlsx", "quote": "Income before taxes Mean 104207.0 63549.0 118982.0 140313.0 83812.0 49208.0 Average annual expenditures Mean 78535.0 54830.0 85302.0 96941.0 69303.0 51147.0", "supports": "Average income and spending per household by generation, 2024 (Gen X $140,313 and $96,941; all households $78,535 spending)"},
-    {"title": "About Spark Ads", "publisher": "TikTok Ads Manager Help Center", "url": "https://ads.tiktok.com/help/article/spark-ads", "quote": "Spark Ads is a native ad format that allows you to leverage organic TikTok posts and their features in your advertising.", "supports": "Spark Ads run organic TikTok posts, including creators' posts with their authorization, as ads"},
-    {"title": "Meta at IAB NewFronts 2025", "publisher": "Meta for Business", "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025", "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.", "supports": "Partnership Ads can feature a single partner in the ad header (May 2025)"},
-    {"title": "Circular 30: Works Made for Hire", "publisher": "U.S. Copyright Office", "url": "https://www.copyright.gov/circs/circ30.pdf", "quote": "Ordinarily, the author is the person or persons who actually created the work you intend to register.", "supports": "The creator is ordinarily the author; works made for hire are the exception"},
-    {"title": "Disclosures 101 for Social Media Influencers", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers", "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure", "supports": "Creators must disclose a material connection, including gifted or discounted product"},
-    {"title": "16 CFR 255.1: General considerations (FTC Endorsement Guides)", "publisher": "Legal Information Institute, Cornell Law School", "url": "https://www.law.cornell.edu/cfr/text/16/255.1", "quote": "Advertisers are subject to liability for misleading or unsubstantiated statements made through endorsements", "supports": "Brands carry liability for endorsement claims and undisclosed connections"}
+    {
+      "title": "Participative Web and User-Created Content",
+      "publisher": "OECD",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2007/09/participative-web-and-user-created-content_g1gh826c/9789264037472-en.pdf",
+      "quote": "In this study UCC is defined as: i) content made publicly available over the Internet, ii) which reflects a certain amount of creative effort",
+      "supports": "OECD's three-part definition of user-created content (2007), and its note that the unpaid, non-professional part was getting harder to maintain"
+    },
+    {
+      "title": "What is user-generated content (UGC)?",
+      "publisher": "Hootsuite blog (vendor)",
+      "url": "https://blog.hootsuite.com/user-generated-content-ugc/",
+      "quote": "UGC creators make content for your channels, while influencers post content on theirs.",
+      "supports": "UGC creator vs influencer split; also the vendor definition of UGC and the point that the creator holds the copyright"
+    },
+    {
+      "title": "Where Millennials end and Generation Z begins",
+      "publisher": "Pew Research Center",
+      "url": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/",
+      "quote": "Generation X (born between 1965 and 1980)",
+      "supports": "Gen X birth years used for the generation labels"
+    },
+    {
+      "title": "Consumer Expenditure Surveys, Table 2602: aggregate shares by generation of reference person, 2024",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/aggregate-group-share/reference-person-age-generation-2024.xlsx",
+      "quote": "Percent distribution of consumer units 100.0 8.2 27.1 26.7 30.6 7.4 Annual aggregate expenditures 10655034.0 5.7 29.6 32.9 27.0 4.8",
+      "supports": "Share of households and share of consumer spending by generation, 2024 (Gen X 26.7% and 32.9%)"
+    },
+    {
+      "title": "Consumer Expenditure Surveys, Table 2602: means by generation of reference person, 2024",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/reference-person-age-generation-2024.xlsx",
+      "quote": "Income before taxes Mean 104207.0 63549.0 118982.0 140313.0 83812.0 49208.0 Average annual expenditures Mean 78535.0 54830.0 85302.0 96941.0 69303.0 51147.0",
+      "supports": "Average income and spending per household by generation, 2024 (Gen X $140,313 and $96,941; all households $78,535 spending)"
+    },
+    {
+      "title": "About Spark Ads",
+      "publisher": "TikTok Ads Manager Help Center",
+      "url": "https://ads.tiktok.com/help/article/spark-ads",
+      "quote": "Spark Ads is a native ad format that allows you to leverage organic TikTok posts and their features in your advertising.",
+      "supports": "Spark Ads run organic TikTok posts, including creators' posts with their authorization, as ads"
+    },
+    {
+      "title": "Meta at IAB NewFronts 2025",
+      "publisher": "Meta for Business",
+      "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025",
+      "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.",
+      "supports": "Partnership Ads can feature a single partner in the ad header (May 2025)"
+    },
+    {
+      "title": "Circular 30: Works Made for Hire",
+      "publisher": "U.S. Copyright Office",
+      "url": "https://www.copyright.gov/circs/circ30.pdf",
+      "quote": "Ordinarily, the author is the person or persons who actually created the work you intend to register.",
+      "supports": "The creator is ordinarily the author; works made for hire are the exception"
+    },
+    {
+      "title": "Disclosures 101 for Social Media Influencers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure",
+      "supports": "Creators must disclose a material connection, including gifted or discounted product"
+    },
+    {
+      "title": "16 CFR 255.1: General considerations (FTC Endorsement Guides)",
+      "publisher": "Legal Information Institute, Cornell Law School",
+      "url": "https://www.law.cornell.edu/cfr/text/16/255.1",
+      "quote": "Advertisers are subject to liability for misleading or unsubstantiated statements made through endorsements",
+      "supports": "Brands carry liability for endorsement claims and undisclosed connections"
+    }
   ],
-  "related": ["ugc-vs-influencer", "types-of-ugc-videos", "ugc-usage-rights"]
+  "related": [
+    "ugc-vs-influencer",
+    "types-of-ugc-videos",
+    "ugc-usage-rights"
+  ]
 }
 ---
 ## What UGC means for a brand

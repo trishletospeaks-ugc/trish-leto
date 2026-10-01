@@ -9,20 +9,66 @@
   "cluster": "ugc-for-brands",
   "pillar": false,
   "primary_keyword": "ugc vs influencer",
-  "secondary_keywords": ["ugc creator vs influencer", "ugc vs influencer marketing", "influencer vs content creator"],
+  "secondary_keywords": [
+    "ugc creator vs influencer",
+    "ugc vs influencer marketing",
+    "influencer vs content creator"
+  ],
   "audience": "brands",
   "excerpt": "A UGC creator makes content for your channels. An influencer posts on theirs. Here is how to tell which one your brand actually needs, plus rights and disclosure basics.",
-  "hero": {"file": "ugc-vs-influencer-hero", "alt": "A woman in a white blazer uses a smartphone mounted on a tripod outdoors", "credit": "Blue Bird", "credit_url": "https://www.pexels.com/@blue-bird", "source_url": "https://www.pexels.com/photo/woman-in-white-blazer-holding-using-a-phone-7243216/"},
-  "inline_image": {"file": "ugc-vs-influencer-inline", "alt": "A small business owner packs online shop orders at home, with cardboard boxes, a laptop and a clothing rack", "credit": "Kampus Production", "credit_url": "https://www.pexels.com/@kampus", "source_url": "https://www.pexels.com/photo/woman-standing-next-to-a-desk-with-a-laptop-and-cardboard-boxes-and-writing-on-paper-7857553/"},
+  "hero": {
+    "file": "ugc-vs-influencer-hero",
+    "alt": "Hands holding a smartphone on a gimbal to film video",
+    "credit": "TimSon Foox",
+    "credit_url": "https://www.pexels.com/@timson-foox-776012",
+    "source_url": "https://www.pexels.com/photo/man-holding-stabilizer-2468812/"
+  },
+  "inline_image": {
+    "file": "ugc-vs-influencer-inline",
+    "alt": "Hands packing a product into a cardboard box",
+    "credit": "Ron Lach",
+    "credit_url": "https://www.pexels.com/@ron-lach",
+    "source_url": "https://www.pexels.com/photo/packaging-of-a-product-using-craft-paper-9594502/"
+  },
   "table": {
     "caption": "UGC creator vs influencer vs brand-made content",
-    "columns": ["Question", "UGC creator", "Influencer", "Brand-made"],
+    "columns": [
+      "Question",
+      "UGC creator",
+      "Influencer",
+      "Brand-made"
+    ],
     "rows": [
-      ["Where it is posted", "Your channels and your ads", "The influencer's own channels", "Your channels and your ads"],
-      ["Whose audience sees it", "Yours, plus whoever your ads reach", "Their followers", "Yours, plus whoever your ads reach"],
-      ["Who holds copyright by default", "The creator, unless your written deal says otherwise", "The creator, unless your written deal says otherwise", "Your company, when employees made it as part of their regular duties"],
-      ["Is a disclosure needed", "Yes, when the creator posts it with a brand connection (free product counts)", "Yes, on every paid or gifted post (free product counts)", "No creator post involved, but endorsement claims still have to be true"],
-      ["Best use", "Ads, product pages, emails, testing many hooks", "Reach, launch moments, social proof on their feed", "Brand story, specs, polished campaigns"]
+      [
+        "Where it is posted",
+        "Your channels and your ads",
+        "The influencer's own channels",
+        "Your channels and your ads"
+      ],
+      [
+        "Whose audience sees it",
+        "Yours, plus whoever your ads reach",
+        "Their followers",
+        "Yours, plus whoever your ads reach"
+      ],
+      [
+        "Who holds copyright by default",
+        "The creator, unless your written deal says otherwise",
+        "The creator, unless your written deal says otherwise",
+        "Your company, when employees made it as part of their regular duties"
+      ],
+      [
+        "Is a disclosure needed",
+        "Yes, when the creator posts it with a brand connection (free product counts)",
+        "Yes, on every paid or gifted post (free product counts)",
+        "No creator post involved, but endorsement claims still have to be true"
+      ],
+      [
+        "Best use",
+        "Ads, product pages, emails, testing many hooks",
+        "Reach, launch moments, social proof on their feed",
+        "Brand story, specs, polished campaigns"
+      ]
     ],
     "source": "Channel split: Hootsuite blog (vendor, industry usage). Copyright: U.S. Copyright Office, Circular 30. Disclosure: FTC, Disclosures 101 and 16 CFR 255.1.",
     "source_url": "https://blog.hootsuite.com/user-generated-content-ugc/"
@@ -31,30 +77,100 @@
     "title": "Share of US adults ages 50 to 64 who use each platform (2025)",
     "unit": "%",
     "data": [
-      {"label": "YouTube", "value": 85},
-      {"label": "Facebook", "value": 74},
-      {"label": "Instagram", "value": 40},
-      {"label": "TikTok", "value": 30}
+      {
+        "label": "YouTube",
+        "value": 85
+      },
+      {
+        "label": "Facebook",
+        "value": 74
+      },
+      {
+        "label": "Instagram",
+        "value": 40
+      },
+      {
+        "label": "TikTok",
+        "value": 30
+      }
     ],
     "source": "Pew Research Center, Social Media Fact Sheet (survey of US adults, February 5 to June 18, 2025)",
     "source_url": "https://www.pewresearch.org/internet/fact-sheet/social-media/"
   },
-  "tiktok": ["7486834491520994591", "7689485389450497311"],
+  "tiktok": [
+    "7486834491520994591",
+    "7689485389450497311"
+  ],
   "faq": [
-    {"q": "Is a UGC creator the same as an influencer?", "a": "Not quite. In common industry usage, a UGC creator makes content for your brand's channels and ads, while an influencer posts content on their own channels to their own audience. Some people do both jobs, so ask which one you are buying."},
-    {"q": "Do UGC creators post the videos on their own accounts?", "a": "Not by default. A standard UGC job delivers video files that you post or run as ads. Some creators will also post on their own feed or authorize a creator post for a TikTok Spark Ad, but that is a separate ask and belongs in your written agreement. For me, it is an ask."},
-    {"q": "Do UGC videos need an #ad disclosure?", "a": "When a creator posts about a brand that gave them pay, free product or perks, the FTC says to disclose it, and in a video the disclosure belongs in the video, not only in the description. When your brand runs the video as its own ad, the claims in it still have to be true. This is general information, not legal advice."}
+    {
+      "q": "Is a UGC creator the same as an influencer?",
+      "a": "Not quite. In common industry usage, a UGC creator makes content for your brand's channels and ads, while an influencer posts content on their own channels to their own audience. Some people do both jobs, so ask which one you are buying."
+    },
+    {
+      "q": "Do UGC creators post the videos on their own accounts?",
+      "a": "Not by default. A standard UGC job delivers video files that you post or run as ads. Some creators will also post on their own feed or authorize a creator post for a TikTok Spark Ad, but that is a separate ask and belongs in your written agreement. For me, it is an ask."
+    },
+    {
+      "q": "Do UGC videos need an #ad disclosure?",
+      "a": "When a creator posts about a brand that gave them pay, free product or perks, the FTC says to disclose it, and in a video the disclosure belongs in the video, not only in the description. When your brand runs the video as its own ad, the claims in it still have to be true. This is general information, not legal advice."
+    }
   ],
   "references": [
-    {"title": "User-generated content (UGC) guide for brands (vendor blog)", "publisher": "Hootsuite", "url": "https://blog.hootsuite.com/user-generated-content-ugc/", "quote": "UGC creators make content for your channels, while influencers post content on theirs.", "supports": "The industry split between UGC creators (your channels) and influencers (their channels); used for the table"},
-    {"title": "Social Media Fact Sheet", "publisher": "Pew Research Center", "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/", "quote": "YouTube 95 92 85 64 Facebook 68 80 74 57 Instagram 80 62 40 19 TikTok 63 44 30 12", "supports": "Ages 50 to 64 (third column): YouTube 85%, Facebook 74%, Instagram 40%, TikTok 30%; used in the body and the chart"},
-    {"title": "About Spark Ads", "publisher": "TikTok Ads Manager Help Center", "url": "https://ads.tiktok.com/help/article/spark-ads", "quote": "organic posts made by other creators (with their authorization)", "supports": "Spark Ads can run a creator's organic post as an ad only with the creator's authorization"},
-    {"title": "Meta at IAB NewFronts 2025", "publisher": "Meta for Business", "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025", "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.", "supports": "Partnership Ads on Facebook and Instagram can feature just the creator in the ad header (May 2025)"},
-    {"title": "Circular 30: Works Made for Hire", "publisher": "U.S. Copyright Office", "url": "https://www.copyright.gov/circs/circ30.pdf", "quote": "Ordinarily, the author is the person or persons who actually created the work you intend to register.", "supports": "The creator is ordinarily the author and holds copyright; works made for hire, including employee work, are the exception"},
-    {"title": "Disclosures 101 for Social Media Influencers", "publisher": "Federal Trade Commission", "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers", "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure", "supports": "Free or gifted product triggers a disclosure; in video, the disclosure goes in the video itself"},
-    {"title": "16 CFR 255.1, General considerations (FTC Endorsement Guides)", "publisher": "Cornell Law School, Legal Information Institute", "url": "https://www.law.cornell.edu/cfr/text/16/255.1", "quote": "Advertisers are subject to liability for misleading or unsubstantiated statements made through endorsements or for failing to disclose unexpected material connections", "supports": "Brands share liability for endorsement claims and undisclosed connections"}
+    {
+      "title": "User-generated content (UGC) guide for brands (vendor blog)",
+      "publisher": "Hootsuite",
+      "url": "https://blog.hootsuite.com/user-generated-content-ugc/",
+      "quote": "UGC creators make content for your channels, while influencers post content on theirs.",
+      "supports": "The industry split between UGC creators (your channels) and influencers (their channels); used for the table"
+    },
+    {
+      "title": "Social Media Fact Sheet",
+      "publisher": "Pew Research Center",
+      "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/",
+      "quote": "YouTube 95 92 85 64 Facebook 68 80 74 57 Instagram 80 62 40 19 TikTok 63 44 30 12",
+      "supports": "Ages 50 to 64 (third column): YouTube 85%, Facebook 74%, Instagram 40%, TikTok 30%; used in the body and the chart"
+    },
+    {
+      "title": "About Spark Ads",
+      "publisher": "TikTok Ads Manager Help Center",
+      "url": "https://ads.tiktok.com/help/article/spark-ads",
+      "quote": "organic posts made by other creators (with their authorization)",
+      "supports": "Spark Ads can run a creator's organic post as an ad only with the creator's authorization"
+    },
+    {
+      "title": "Meta at IAB NewFronts 2025",
+      "publisher": "Meta for Business",
+      "url": "https://www.facebook.com/business/news/meta-at-iab-newfronts-2025",
+      "quote": "Now advertisers have the ability to feature one partner in the ad's header on Facebook and Instagram.",
+      "supports": "Partnership Ads on Facebook and Instagram can feature just the creator in the ad header (May 2025)"
+    },
+    {
+      "title": "Circular 30: Works Made for Hire",
+      "publisher": "U.S. Copyright Office",
+      "url": "https://www.copyright.gov/circs/circ30.pdf",
+      "quote": "Ordinarily, the author is the person or persons who actually created the work you intend to register.",
+      "supports": "The creator is ordinarily the author and holds copyright; works made for hire, including employee work, are the exception"
+    },
+    {
+      "title": "Disclosures 101 for Social Media Influencers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "quote": "If a brand gives you free or discounted products or other perks and then you mention one of its products, make a disclosure",
+      "supports": "Free or gifted product triggers a disclosure; in video, the disclosure goes in the video itself"
+    },
+    {
+      "title": "16 CFR 255.1, General considerations (FTC Endorsement Guides)",
+      "publisher": "Cornell Law School, Legal Information Institute",
+      "url": "https://www.law.cornell.edu/cfr/text/16/255.1",
+      "quote": "Advertisers are subject to liability for misleading or unsubstantiated statements made through endorsements or for failing to disclose unexpected material connections",
+      "supports": "Brands share liability for endorsement claims and undisclosed connections"
+    }
   ],
-  "related": ["ugc-for-brands", "tiktok-spark-ads", "ugc-usage-rights"]
+  "related": [
+    "ugc-for-brands",
+    "tiktok-spark-ads",
+    "ugc-usage-rights"
+  ]
 }
 ---
 ## The short answer on UGC vs influencer
