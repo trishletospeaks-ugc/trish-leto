@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Crop and optimize the site photos into assets/img/.
+Crop and optimize the site photos into docs/assets/img/.
 
     python3 tools/make_images.py
 
 Sources live OUTSIDE this repo, in the client folder one level up, so the
 big originals never get committed here:
 
-    ../photos/facebook-captures/   temporary screen captures from her Facebook
+    ../photos/facebook-captures/   placeholder photos until Trish sends originals
     ../photos/tiktok-thumbs/       cover frames of her own TikTok videos
                                    (from TikTok's public oEmbed endpoint)
 
@@ -28,7 +28,7 @@ SITE = os.path.dirname(HERE)
 CLIENT = os.path.dirname(SITE)
 CAP = os.path.join(CLIENT, "photos", "facebook-captures")
 THUMBS = os.path.join(CLIENT, "photos", "tiktok-thumbs")
-OUT = os.path.join(SITE, "assets", "img")
+OUT = os.path.join(SITE, "docs", "assets", "img")
 
 # name: (source file, crop box (left, top, right, bottom) or None, output widths)
 SOURCES = {

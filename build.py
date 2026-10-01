@@ -5,8 +5,10 @@ Trish Leto website generator.
     python3 build.py            build every page, then run the audit
     python3 build.py --audit    audit the existing output only
 
-Writes index.html, work-with-me/, portfolio/, about/, speaking/, contact/,
-404.html, robots.txt, sitemap.xml and site.webmanifest.
+Writes the published site into docs/: index.html, work-with-me/, portfolio/,
+about/, speaking/, contact/, 404.html, robots.txt, sitemap.xml and
+site.webmanifest. GitHub Pages serves docs/ only, so this file, the README and
+tools/ are never published.
 
 DO NOT HAND-EDIT THE GENERATED HTML. Edit this file and re-run. Every page
 shares one header, one footer, one email address and one set of numbers, so a
@@ -22,11 +24,16 @@ Two switches matter:
               and points at the sitemap. Flip it only when Trish has approved
               the copy and the site is on its final address.
 
+The PENDING block below holds lines that wait on Trish (or Eddie) to confirm.
+Each renders only once its switch is True.
+
 House rules this file must keep (the audit enforces the ones it can):
   1. US English. No em dashes or en dashes anywhere.
   2. No invented brand clients, testimonials, results, prices or credentials.
      Products in her TikTok videos are shown as HER content, never as clients.
-  3. No day job, birthday, age, family or kids, beyond the hands-only rule.
+     Products she sells as an affiliate are labeled as affiliate links.
+  3. Her personal life stays off the site, apart from the hands-only rule
+     for kids on camera.
   4. Social numbers always carry "as of" (STATS_AS_OF).
   5. No third-party embed loads on page load. TikTok cards are links; the
      official player loads only when someone presses Play.
@@ -48,11 +55,37 @@ BASE = "https://ogeddiesmith.github.io/trish-leto/"
 INDEXABLE = False
 
 # =============================================================================
+# PENDING: each line below waits on a confirmation and renders only when True
+# =============================================================================
+
+# Trish: link her personal Facebook profile (footer + JSON-LD sameAs)? Off
+# until she says yes. If she has a creator page instead, put its address in
+# FACEBOOK_URL and switch this on.
+LINK_FACEBOOK = False
+# Trish: is "GenX content that works" a talk she gives? Off until she confirms.
+TALK_GENX_CONFIRMED = False
+# Trish: will she post a brand's video on her own TikTok (TikTok Shop or Spark
+# Ads, with the paid-partnership label)? Off until she confirms.
+POSTS_ON_OWN_TIKTOK_CONFIRMED = False
+# Eddie: partner agreement signed, or he names her a partner regardless. The
+# "Official Simply Digital Partner" badge renders in the draft because Eddie
+# asked for it, but the audit warns until this is True and fails any build
+# with INDEXABLE = True. Do not push the site before this is settled.
+PARTNER_CONFIRMED = False
+# Added to the "Do you post the videos for us?" answer once Trish confirms.
+OWN_TIKTOK_LINE = (" Want it on my own TikTok (TikTok Shop or Spark Ads)? Ask. "
+                   "It carries a paid-partnership label.")
+
+# =============================================================================
 # FACTS (sources: ../RESEARCH-2026-10-01.md and ../Content Creation Guidelines.rtf)
 # =============================================================================
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-TODAY = datetime.date.today()
+SRC = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.join(SRC, "docs")  # the published folder (GitHub Pages: main /docs)
+# BUILD_TODAY=YYYY-MM-DD previews the site as it builds on that date (for
+# example the day after the summit, to check the past-event copy).
+TODAY = (datetime.date.fromisoformat(os.environ["BUILD_TODAY"]) if os.environ.get("BUILD_TODAY")
+         else datetime.date.today())
 BUILD_DATE = TODAY.isoformat()
 YEAR = TODAY.year
 
@@ -78,7 +111,9 @@ STATS = [
 ]
 
 # Verified on spartanmedia.com/dominate/ on 2026-10-01. Times are local
-# (Eastern Daylight Time in October, so UTC-4).
+# (Eastern Daylight Time in October, so UTC-4). The organizer runs the Power
+# Track from 4:20 to 5:20 p.m. as "a series of quick-hitting three minute
+# presentations", so the site never calls her slot a full-length talk.
 EVENT = {
     "name": "DOMINATE Entrepreneurial Summit",
     "talk": "Control the Scroll: How to Grab Attention with Unlimited Content Ideas",
@@ -87,6 +122,8 @@ EVENT = {
     "end": "2026-10-09T17:30:00-04:00",
     "date_label": "Friday, October 9, 2026",
     "time_label": "10:30 a.m. to 5:30 p.m. Eastern",
+    "track_time_label": "4:20 to 5:20 p.m. Eastern",
+    "short_date": "Oct 9, 2026",
     "where_label": "Clearwater, FL, and online",
     "street": "3118 Gulf To Bay Ste 111",
     "locality": "Clearwater",
@@ -96,6 +133,9 @@ EVENT = {
     "organizer": "Spartan Media",
     "organizer_url": "https://spartanmedia.com/",
 }
+# After the summit ends, the build writes past-tense copy, drops the Event
+# JSON-LD (Google ignores past events) and labels it "Past event" in the HTML.
+EVENT_PAST = TODAY > datetime.date.fromisoformat(EVENT["end"][:10])
 
 FORMATS = [
     ("Talking heads", "Straight to camera. Clear, warm and convincing."),
@@ -132,9 +172,6 @@ PRODUCT_VIDEOS = [
     {"id": "7691470090906193182", "title": "Energy drink", "tag": "Food and drink · TikTok Shop",
      "note": "Hook: “‘Patiently’ waiting for tomorrow’s energy drink…”",
      "alt": "Cover frame: Trish waits on the couch while an energy drink sits on the kitchen counter"},
-    {"id": "7690267187298290975", "title": "Morning coffee", "tag": "Lifestyle",
-     "note": "On screen: “I hope your coffee tastes great, you feel beautiful today, and you realize how truly blessed you are.”",
-     "alt": "Cover frame: coffee brewing, with an on-screen message about feeling blessed"},
     {"id": "7689485389450497311", "title": "Protein powder", "tag": "Supplements · TikTok Shop",
      "note": "Comment reply: “I love replying to comments about my favorite protein powder.”",
      "alt": "Cover frame: Trish holds a jar of protein shake at her kitchen counter"},
@@ -145,7 +182,16 @@ PRODUCT_VIDEOS = [
      "note": "Unboxing-style demo: the stick pack, the box and the glass.",
      "alt": "Cover frame: Trish holds up a hydration drink stick pack beside its box"},
 ]
-HOME_VIDEO_IDS = ["7690644146540776734", "7689506559583472927", "7691470090906193182", "7690267187298290975"]
+HOME_VIDEO_IDS = ["7690644146540776734", "7689506559583472927", "7691470090906193182", "7689485389450497311"]
+
+# Not a product video: its caption is "#jesuschrist #christiantiktok #coffee"
+# (TikTok oEmbed, 2026-10-01). Shown on the portfolio in its own small
+# "Lifestyle and faith" slot, never under the product-video headings.
+LIFESTYLE_VIDEOS = [
+    {"id": "7690267187298290975", "title": "Morning coffee", "tag": "Lifestyle · Faith",
+     "note": "On screen: “I hope your coffee tastes great, you feel beautiful today, and you realize how truly blessed you are.”",
+     "alt": "Cover frame: coffee brewing, with an on-screen message about feeling blessed"},
+]
 
 # Packages sold with Simply Digital (partner deck slide 10). No prices, ever:
 # Trish sets her own rates and every package is a custom quote.
@@ -164,11 +210,21 @@ PACKAGES = [
      "sd": "Builds the website, sets up tracking and runs launch campaigns on Google, Meta or TikTok."},
 ]
 
+# Checked on her Stan store on 2026-10-01. The two guides are hers ("by
+# @trishleto"). "The Ultimate UGC Course" on her store is an AFFILIATE link to
+# @Megan_UGC's course, so it is labeled as a recommendation with a disclosure,
+# never as her own course.
 STAN_PRODUCTS = [
-    ("The Ultimate UGC Course", "Get brand deals without followers.", STAN_URL),
-    ("The GenX Content Survival Guide", "5 proven GenX video formulas that actually work.",
-     STAN_URL + "/p/genx-content-survival-guide"),
-    ("The No B.S. ChatGPT Prompt Playbook", "Your business in a few prompts. Yes, REALLY!", STAN_URL),
+    {"label": "On my Stan store", "title": "The GenX Content Survival Guide",
+     "text": "5 proven GenX video formulas that actually work.",
+     "url": STAN_URL + "/p/genx-content-survival-guide"},
+    {"label": "On my Stan store", "title": "The No B.S. ChatGPT Prompt Playbook",
+     "text": "Your business in a few prompts. Yes, REALLY!",
+     "url": STAN_URL + "/p/the-ultimate-guide-to-using-the-piggly-method"},
+    {"label": "A course I recommend", "title": "The Ultimate UGC Course",
+     "text": "A UGC course for creators 40+ by @Megan_UGC.",
+     "url": "https://stan.store/affiliates/364b4eae-b086-40f4-87f9-9c3fec9693c6",
+     "disclosure": "Affiliate link: I may earn a commission."},
 ]
 
 NAV = [
@@ -320,15 +376,26 @@ def stats_band(heading_level="h2", heading="The numbers, so far"):
 
 
 def event_status():
+    if EVENT_PAST:
+        return '<span class="event-status is-past">Past event</span>'
+    # site.js still relabels it in the browser if the page outlives the date.
     return (f'<span class="event-status" data-event-end="{EVENT["end"]}" '
             f'data-past-label="Past event">Upcoming</span>')
+
+
+def home_event_line():
+    if EVENT_PAST:
+        return (f"<p><strong>{EVENT['short_date']}:</strong> I spoke in the {EVENT['track']} at the "
+                f"{EVENT['name']} in {EVENT['locality']}, {EVENT['region']}: &ldquo;{EVENT['talk']}.&rdquo;</p>")
+    return (f"<p><strong>{EVENT['date_label']}:</strong> {EVENT['name']}, {EVENT['where_label']}. "
+            f"My {EVENT['track']} ({EVENT['track_time_label']}): &ldquo;{EVENT['talk']}.&rdquo;</p>")
 
 
 def cta_band(p):
     return f"""<section class="band-coral section" aria-labelledby="cta-h">
   <div class="wrap center">
-    <p class="kicker">Paid collabs only</p>
-    <h2 id="cta-h">Let's make something people actually watch.</h2>
+    <p class="kicker">PAID collabs ONLY</p>
+    <h2 id="cta-h">Let's make something people can't scroll past!</h2>
     <p class="lede" style="margin-inline:auto">Tell me about your product, and I'll tell you how I'd film it.</p>
     <div class="btn-row" style="justify-content:center">
       <a class="btn btn-sun" href="{esc(mailto('UGC collab: [your brand]', UGC_TEMPLATE))}">Email Trish</a>
@@ -385,13 +452,13 @@ def footer(p):
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
           <li>{ext(TIKTOK_URL, 'TikTok <span class="handle">' + esc(TIKTOK_HANDLE) + '</span>')}</li>
           <li>{ext(INSTAGRAM_URL, 'Instagram <span class="handle">' + esc(INSTAGRAM_HANDLE) + '</span>')}</li>
-          <li>{ext(FACEBOOK_URL, 'Facebook')}</li>
-          <li>{ext(STAN_URL, 'Courses and guides <span class="handle">on Stan</span>')}</li>
+          {f"<li>{ext(FACEBOOK_URL, 'Facebook')}</li>" if LINK_FACEBOOK else ""}
+          <li>{ext(STAN_URL, 'My guides <span class="handle">on Stan</span>')}</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; {YEAR} Trish Leto. Paid collabs only.</span>
+      <span>&copy; {YEAR} Trish Leto. PAID collabs ONLY.</span>
       <span>Social numbers as of {STATS_AS_OF}.</span>
     </div>
   </div>
@@ -421,7 +488,7 @@ def person():
         "address": {"@type": "PostalAddress", "addressLocality": CITY, "addressRegion": REGION, "addressCountry": "US"},
         "knowsAbout": ["User-generated content (UGC)", "Short-form video", "TikTok Shop",
                        "Content strategy", "Hooks and content ideas"],
-        "sameAs": [TIKTOK_URL, INSTAGRAM_URL, FACEBOOK_URL, STAN_URL],
+        "sameAs": [TIKTOK_URL, INSTAGRAM_URL] + ([FACEBOOK_URL] if LINK_FACEBOOK else []) + [STAN_URL],
     }
 
 
@@ -430,6 +497,8 @@ def service():
         ("Monthly UGC retainer", "A batch of short-form videos plus b-roll every month, delivered to Google Drive."),
         ("Per-project UGC", "Videos and b-roll for one product or launch, delivered to Google Drive."),
     ] + [(pk["name"] + " (with Simply Digital)", pk["trish"] + " Simply Digital: " + pk["sd"]) for pk in PACKAGES]
+    # serviceType belongs to Service, not ProfessionalService, so it sits on
+    # each offered Service below.
     return {
         "@type": "ProfessionalService",
         "@id": SERVICE_ID,
@@ -441,14 +510,15 @@ def service():
         "email": "mailto:" + EMAIL,
         "address": {"@type": "PostalAddress", "addressLocality": CITY, "addressRegion": REGION, "addressCountry": "US"},
         "founder": {"@id": PERSON_ID},
-        "serviceType": "User-generated content (UGC) video creation",
+        "areaServed": {"@type": "Country", "name": "United States"},
         "knowsLanguage": "en",
         "sameAs": [TIKTOK_URL, INSTAGRAM_URL],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "UGC services",
             "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "description": d}}
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "description": d,
+                                                   "serviceType": "User-generated content (UGC) video creation"}}
                 for n, d in offers
             ],
         },
@@ -592,23 +662,29 @@ def home(p):
     niches = "".join(f"<li>{esc(n)}</li>" for n in NICHES)
     vids = "".join(vid_card(next(v for v in PRODUCT_VIDEOS if v["id"] == i), p) for i in HOME_VIDEO_IDS)
     pkgs = "".join(f"<li>{esc(pk['name'])}</li>" for pk in PACKAGES)
+    # Mobile order: words, then her photo (so her face is in the first
+    # screen), then the buttons. On wide screens the photo sits to the right.
+    # The partner badge lives in the packages band and the footer, not here.
     return f"""<section class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
       <p class="kicker">GenX UGC creator &middot; Model &middot; Speaker</p>
       <h1>UGC for brands that sell to <span class="hl">real grown-ups</span>.</h1>
-      <p class="lede">I'm Trish Leto. I make short-form videos about products I actually use: honest, funny, zero fluff, and built to stop the scroll. You get batches of videos and b-roll in your Google Drive, ready to run.</p>
+      <p class="lede">I'm Trish Leto. I make short-form videos about products I ACTUALLY use: honest, funny, zero fluff, and built to stop the scroll.</p>
+    </div>
+    <div class="hero-photo">
+      <div class="frame">{img(p, "trish-coffee", [400, 640], "Trish Leto smiling over a pink coffee mug in her kitchen", "(min-width: 900px) 420px, min(76vw, 340px)", (640, 800), eager=True)}</div>
+      <span class="sticker sticker-genx" aria-hidden="true"><span><b>Gen X</b>creator</span></span>
+      <span class="sticker sticker-navy">{ICON_STAR}Navy veteran</span>
+    </div>
+    <div class="hero-actions">
+      <p class="lede hero-more">You get batches of videos and b-roll in your Google Drive, ready to run.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="{p}work-with-me/">Work with me</a>
         <a class="btn btn-ghost" href="{p}portfolio/">Watch my videos</a>
       </div>
-      <p class="hero-note">Paid collabs only &middot; U.S. Navy veteran &middot; Based in Tampa, FL</p>
-      {partner_badge()}
-    </div>
-    <div class="hero-photo">
-      <div class="frame">{img(p, "trish-coffee", [400, 640], "Trish Leto smiling over a pink coffee mug in her kitchen", "(min-width: 900px) 420px, 86vw", (640, 800), eager=True)}</div>
-      <span class="sticker sticker-genx" aria-hidden="true"><span><b>Gen X</b>creator</span></span>
-      <span class="sticker sticker-navy">{ICON_STAR}Navy veteran</span>
+      <p class="hero-note">PAID collabs ONLY &middot; U.S. Navy veteran &middot; Based in Tampa, FL<br>
+      <a href="{p}work-with-me/#packages">Official Simply Digital Partner for UGC + ads packages</a></p>
     </div>
   </div>
 </section>
@@ -619,7 +695,7 @@ def home(p):
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">What I make</p>
-      <h2 id="make-h">Videos that sound like a real person. Because I am one.</h2>
+      <h2 id="make-h">Videos that sound like a real person. Because I am one!</h2>
       <p class="lede">Vertical, hook-first and made for TikTok, TikTok Shop, Instagram Reels and your ads.</p>
     </div>
     <div class="grid formats">{formats}</div>
@@ -639,7 +715,7 @@ def home(p):
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">How it works</p>
-      <h2 id="how-h">Batch it. Drive it. Done.</h2>
+      <h2 id="how-h">Film it in batches. Drop it in your Drive. BOOM!</h2>
     </div>
     <ol class="steps steps-3">
       <li><h3>Send the brief</h3><p>Your product, your audience, and where the videos will run.</p></li>
@@ -683,9 +759,9 @@ def home(p):
   <div class="wrap split split-rev">
     <div>
       <p class="kicker">Speaking</p>
-      <h2 id="speak-h">Brands hire me to make content. Stages book me to teach it.</h2>
+      <h2 id="speak-h">I make the videos. Then I teach the craft on stage.</h2>
       <p>{event_status()}</p>
-      <p><strong>{EVENT['date_label']}:</strong> {EVENT['name']}, {EVENT['where_label']}. My {EVENT['track']}: &ldquo;{EVENT['talk']}.&rdquo;</p>
+      {home_event_line()}
       <div class="btn-row"><a class="btn btn-ghost" href="{p}speaking/">Speaking and booking</a></div>
     </div>
     <div class="photo">{img(p, "trish-military-creator-con", [400, 600], "Trish Leto speaking into a microphone in front of the Military Creator Con backdrop", "(min-width: 880px) 540px, 92vw", (600, 408))}</div>
@@ -709,7 +785,7 @@ def work_with_me(p):
   <div class="wrap">
     <p class="kicker">Work with me</p>
     <h1>UGC videos and b-roll, delivered every month and ready to run.</h1>
-    <p class="lede">UGC is fancy lingo for short-form videos about products I'm already using, made for your brand to post and run as ads. Here is exactly how working together works.</p>
+    <p class="lede">UGC is fancy lingo for short-form videos about products I'm ALREADY using, made for your brand to post and run as ads. Here is exactly how working together works.</p>
   </div>
 </section>
 
@@ -721,6 +797,7 @@ def work_with_me(p):
         <span class="card-label">My favorite</span>
         <h3 style="font-size:1.7rem">Monthly retainer</h3>
         <p>A batch of videos plus b-roll every month, uploaded to your Google Drive. Fresh creative on a schedule, so your ads never go stale.</p>
+        <p class="card-voice">Send me the product and I will crank those videos out, no problem!</p>
         <ul class="ticks">
           <li>A set number of videos each month</li>
           <li>B-roll with every batch</li>
@@ -764,7 +841,7 @@ def work_with_me(p):
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">The process</p>
-      <h2 id="process-h">Five steps. No drama.</h2>
+      <h2 id="process-h">Five steps. That's REALLY it!</h2>
     </div>
     <ol class="steps steps-5">
       <li><h3>Email the brief</h3><p>Product, audience, where the videos will run, and your timeline. The <a href="{p}contact/">contact page</a> has a checklist.</p></li>
@@ -797,14 +874,14 @@ def work_with_me(p):
     <div class="section-head">
       <p class="kicker">Ground rules</p>
       <h2 id="nope-h">What I don't do</h2>
-      <p class="lede">Saves us both an email.</p>
+      <p class="lede">A few hard NOs. Saves us both an email!</p>
     </div>
     <ul class="nope">
       <li><strong>Alcohol, tobacco or gambling</strong><span>Not for any budget.</span></li>
-      <li><strong>Running or posting to your accounts</strong><span>No &ldquo;canvas UGC&rdquo; where I start a new TikTok or Instagram and feed it every day. I make the content. You post it.</span></li>
+      <li><strong>Managing your brand accounts</strong><span>I don't run or post to your brand accounts, and I don't start new accounts for you (&ldquo;canvas UGC&rdquo;). I make the content. You post it.</span></li>
       <li><strong>Fake reviews</strong><span>I only talk about products I have actually used.</span></li>
       <li><strong>Kids' faces</strong><span>Kids on camera are hands only, never faces.</span></li>
-      <li><strong>Unpaid collabs</strong><span>Paid collabs only. Gifted product alone is not a deal.</span></li>
+      <li><strong>Unpaid collabs</strong><span>PAID collabs ONLY. Gifted product alone is not a deal.</span></li>
     </ul>
   </div>
 </section>
@@ -813,11 +890,11 @@ def work_with_me(p):
   <div class="wrap">
     <div class="section-head">
       <p class="kicker">Questions</p>
-      <h2 id="faq-h">Good questions, straight answers</h2>
+      <h2 id="faq-h">Good questions. STRAIGHT answers.</h2>
     </div>
     <div class="faq">
       <details><summary>What does it cost?</summary><div class="answer"><p>Every job is a custom quote. It depends on how many videos you need, how much b-roll, and where and for how long you will run them. Email me the details and I will send a quote.</p></div></details>
-      <details><summary>Do you post the videos for us?</summary><div class="answer"><p>No. You get the files and post or run them wherever you like. I don't manage brand accounts.</p></div></details>
+      <details><summary>Do you post the videos for us?</summary><div class="answer"><p>Not on your brand accounts, and I don't start new accounts for you. You get the files and post or run them wherever you like.{OWN_TIKTOK_LINE if POSTS_ON_OWN_TIKTOK_CONFIRMED else ""}</p></div></details>
       <details><summary>Can we run your videos as ads?</summary><div class="answer"><p>Yes. Tell me where and for how long when you ask for a quote, and it goes into the quote. If you want the ads run for you too, ask about a <a href="#packages">package with Simply Digital</a>.</p></div></details>
       <details><summary>Which categories are a fit?</summary><div class="answer"><p>Supplements, food and drink, pets, cars, kitchen and appliances, plants and gardening, makeup, skin care and hair care. Not a fit: alcohol, tobacco and gambling.</p></div></details>
       <details><summary>How do the videos get to us?</summary><div class="answer"><p>Through a shared Google Drive folder, batch by batch.</p></div></details>
@@ -836,6 +913,7 @@ def portfolio(p):
   {ext(tiktok_url(v['id']), 'Watch on TikTok<span class="sr-only">: ' + esc(v['title']) + '</span>', 'btn btn-sun')}
 </div>""" for v in TOP_VIDEOS)
     vids = "".join(vid_card(v, p) for v in PRODUCT_VIDEOS)
+    life = "".join(vid_card(v, p) for v in LIFESTYLE_VIDEOS)
     return f"""<section class="page-hero">
   <div class="wrap">
     <p class="kicker">Portfolio</p>
@@ -862,14 +940,25 @@ def portfolio(p):
     <div class="section-head">
       <p class="kicker">Product videos</p>
       <h2 id="products-h">Recent TikTok Shop and product videos</h2>
-      <p class="lede">Supplements, drinks, skin care and everyday life. Each one opens with a hook built to stop the scroll.</p>
+      <p class="lede">Supplements, drinks and skin care. Each one opens with a hook built to stop the scroll.</p>
     </div>
     <div class="vids">{vids}</div>
     {disclosure()}
   </div>
 </section>
 
-<section class="section" aria-labelledby="pf-next-h">
+<section class="section-tight" aria-labelledby="life-h">
+  <div class="wrap life">
+    <div>
+      <p class="kicker">Lifestyle and faith</p>
+      <h2 id="life-h">Not every post sells something.</h2>
+      <p class="lede">Some are just me, my coffee and my faith. Same voice, same real life your customers see in my product videos.</p>
+    </div>
+    <div class="vids vids-solo">{life}</div>
+  </div>
+</section>
+
+<section class="band-alt section" aria-labelledby="pf-next-h">
   <div class="wrap split">
     <div>
       <p class="kicker">Your product next?</p>
@@ -890,22 +979,33 @@ def portfolio(p):
 {cta_band(p)}"""
 
 
+# DRAFT, Trish to rewrite or approve before launch: her story in her words.
+# Kept to facts from her bios until she does (no invented backstory).
+ABOUT_STORY = """<p>I make short-form videos for brands about products I ACTUALLY use. Supplements, kitchen gadgets, skin care, my morning coffee: if I use it, I can show it on camera exactly the way it fits my life.</p>
+      <p>I'm Gen X, and maybe your customers are too. That's my lane: real talk for real grown-ups.</p>
+      <p>I'm also a proud U.S. Navy veteran.</p>"""
+
+
+def stan_card(sp):
+    note = f'<p class="small" style="margin-top:0.8rem">{esc(sp["disclosure"])}</p>' if sp.get("disclosure") else ""
+    link = "See the course" if sp.get("disclosure") else "Check it out"
+    return f"""<div class="card">
+  <span class="card-label">{esc(sp['label'])}</span>
+  <h3>{esc(sp['title'])}</h3>
+  <p>{esc(sp['text'])}</p>{note}
+  <p style="margin-top:1rem">{ext(sp['url'], link + '<span class="sr-only">: ' + esc(sp['title']) + '</span>', 'text-link')}</p>
+</div>"""
+
+
 def about(p):
-    stan = "".join(f"""<div class="card">
-  <span class="card-label">On my Stan store</span>
-  <h3>{esc(t)}</h3>
-  <p>{esc(d)}</p>
-  <p style="margin-top:1rem">{ext(u, 'Check it out<span class="sr-only">: ' + esc(t) + '</span>', 'text-link')}</p>
-</div>""" for t, d, u in STAN_PRODUCTS)
+    stan = "".join(stan_card(sp) for sp in STAN_PRODUCTS)
     return f"""<section class="page-hero">
   <div class="wrap split">
     <div>
       <p class="kicker">About</p>
       <h1>Hi, I'm Trish Leto.</h1>
       <p class="lede">GenX UGC creator and model, U.S. Navy veteran and public speaker, based in Tampa, Florida.</p>
-      <p>I make short-form videos for brands about products I actually use. Supplements, kitchen gadgets, skin care, my morning coffee: if it lives in my real life, I can make it look good on camera and sound like the truth. Because it is.</p>
-      <p>I'm Gen X, and maybe your customers are too. We grew up on mixtapes and dial-up, we can smell a fake from a mile away, and we buy from people who talk to us straight. That's my lane.</p>
-      <p>I'm also a proud U.S. Navy veteran. Show up, do the work, deliver. That part never left.</p>
+      {ABOUT_STORY}
       <div class="btn-row">
         <a class="btn btn-primary" href="{p}work-with-me/">Work with me</a>
         <a class="btn btn-ghost" href="{p}portfolio/">See my videos</a>
@@ -951,7 +1051,7 @@ def about(p):
     <div class="section-head">
       <p class="kicker">For creators</p>
       <h2 id="learn-h">Want to make UGC yourself?</h2>
-      <p class="lede">Turn your doom scrolling into money rolling. My course and guides live on my Stan store.</p>
+      <p class="lede">Turn your doom scrolling into money rolling! My guides live on my Stan store, plus a UGC course I recommend.</p>
     </div>
     <div class="grid grid-3">{stan}</div>
     <div class="btn-row">{ext(STAN_URL, 'Visit my Stan store', 'btn btn-primary')}</div>
@@ -961,12 +1061,48 @@ def about(p):
 {cta_band(p)}"""
 
 
+TALKS = [
+    # Her DOMINATE Power Track slot is a quick three-minute talk, so it is
+    # labeled "As seen at", never "Signature talk", unless Trish confirms she
+    # gives a full-length version.
+    ("As seen at DOMINATE 2026", "Control the Scroll",
+     "How to grab attention with unlimited content ideas: hooks, formats, and a way to never run out of things to post.", True),
+    ("For new creators", "Getting set up for brand deals",
+     "What you need before the first pitch: payment gateways, contracts, pitch emails and DMs, bio setup, and where to find paid work.", True),
+    ("For brands and creators", "GenX content that works",
+     "Video formulas for reaching Gen X, from the creator of The GenX Content Survival Guide.", TALK_GENX_CONFIRMED),
+]
+
+
+def speaking_event_facts():
+    if EVENT_PAST:
+        return f"""<dl class="facts">
+          <div><dt>When</dt><dd>{EVENT['date_label']}</dd></div>
+          <div><dt>Where</dt><dd>{EVENT['where_label']}</dd></div>
+          <div><dt>Host</dt><dd>{EVENT['organizer']}</dd></div>
+        </dl>"""
+    return f"""<dl class="facts">
+          <div><dt>When</dt><dd>{EVENT['date_label']}<br>Summit: {EVENT['time_label']}<br><strong>My {EVENT['track']}: {EVENT['track_time_label']}</strong></dd></div>
+          <div><dt>Where</dt><dd>{EVENT['where_label']}</dd></div>
+          <div><dt>Host</dt><dd>{EVENT['organizer']}</dd></div>
+        </dl>
+        <p class="small">The {EVENT['track']} is a series of quick three-minute talks. Virtual attendance is free for everyone, per the organizer.</p>
+        <div class="btn-row">{ext(EVENT['url'], 'Event details and registration', 'btn btn-primary')}</div>"""
+
+
 def speaking(p):
+    talks = [t for t in TALKS if t[3]]
+    cards = "".join(f'<div class="card"><span class="card-label">{esc(lab)}</span><h3>{esc(h)}</h3><p>{esc(d)}</p></div>'
+                    for lab, h, d, _ in talks)
+    cols = "grid-3" if len(talks) == 3 else "grid-2"
+    topics = "Content ideas that never run dry, and how to get set up for brand deals that PAY"
+    if TALK_GENX_CONFIRMED:
+        topics += ", plus GenX content that actually works"
     return f"""<section class="page-hero">
   <div class="wrap">
     <p class="kicker">Speaking</p>
     <h1>I teach people how to control the scroll.</h1>
-    <p class="lede">Content ideas that never run dry, UGC that gets paid, and GenX content that actually works. Practical, funny and straight to the point.</p>
+    <p class="lede">{topics}. Practical, funny and straight to the point.</p>
     <div class="btn-row">
       <a class="btn btn-primary" href="{esc(mailto('Speaking inquiry: [event name]', SPEAKING_TEMPLATE))}">Book me to speak</a>
       <a class="btn btn-ghost" href="#topics">See my topics</a>
@@ -982,13 +1118,7 @@ def speaking(p):
         {event_status()}
         <h2 id="event-h" style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem)">{EVENT['name']}</h2>
         <p class="talk">{EVENT['track']}: {esc(EVENT['talk'])}</p>
-        <dl class="facts">
-          <div><dt>When</dt><dd>{EVENT['date_label']}<br>{EVENT['time_label']}</dd></div>
-          <div><dt>Where</dt><dd>{EVENT['where_label']}</dd></div>
-          <div><dt>Host</dt><dd>{EVENT['organizer']}</dd></div>
-        </dl>
-        <p class="small">Virtual attendance is free for everyone, per the organizer.</p>
-        <div class="btn-row">{ext(EVENT['url'], 'Event details and registration', 'btn btn-primary')}</div>
+        {speaking_event_facts()}
       </div>
     </article>
   </div>
@@ -1011,11 +1141,7 @@ def speaking(p):
       <p class="kicker">Talk topics</p>
       <h2 id="topics-h">What I can bring to your stage</h2>
     </div>
-    <div class="grid grid-3">
-      <div class="card"><span class="card-label">Signature talk</span><h3>Control the Scroll</h3><p>How to grab attention with unlimited content ideas: hooks, formats, and a way to never run out of things to post.</p></div>
-      <div class="card"><span class="card-label">For new creators</span><h3>Getting set up for brand deals</h3><p>What you need before the first pitch: payment gateways, contracts, pitch emails and DMs, bio setup, and where to find paid work.</p></div>
-      <div class="card"><span class="card-label">For brands and creators</span><h3>GenX content that works</h3><p>Video formulas for reaching Gen X, from the creator of The GenX Content Survival Guide.</p></div>
-    </div>
+    <div class="grid {cols}">{cards}</div>
     <p style="margin-top:1.6rem">A great fit for entrepreneur events, creator conferences, veteran and military-connected communities, and virtual summits. In person or online.</p>
   </div>
 </section>
@@ -1024,7 +1150,7 @@ def speaking(p):
   <div class="wrap split">
     <div>
       <p class="kicker">Book me</p>
-      <h2 id="book-h">Bring the energy to your event.</h2>
+      <h2 id="book-h">Bring the energy to your event!</h2>
       <p class="lede">Email me with the details below and I will get back to you.</p>
       <div class="btn-row"><a class="btn btn-sun" href="{esc(mailto('Speaking inquiry: [event name]', SPEAKING_TEMPLATE))}">Email a speaking inquiry</a></div>
     </div>
@@ -1045,7 +1171,7 @@ def contact(p):
   <div class="wrap">
     <p class="kicker">Contact</p>
     <h1>Let's work together.</h1>
-    <p class="lede">Email is the fastest way to reach me. Paid collabs only, please.</p>
+    <p class="lede">Email is the fastest way to reach me. PAID collabs ONLY, please!</p>
   </div>
 </section>
 
@@ -1151,9 +1277,10 @@ PAGES = [
      "page_type": "ProfilePage", "og_type": "profile"},
     {"slug": "speaking/", "file": "speaking/index.html", "crumb": "Speaking", "body": speaking,
      "title": "Speaking: Control the Scroll | Trish Leto, Speaker",
-     "description": "Book Trish Leto to speak on content ideas, UGC brand deals and GenX content. Catch her Power "
-                    "Track at the DOMINATE Entrepreneurial Summit, October 9, 2026.",
-     "schema": [event]},
+     "description": ("Book Trish Leto to speak on content ideas and getting set up for UGC brand deals. "
+                     + ("She spoke in the Power Track at the DOMINATE Summit, Oct 9, 2026." if EVENT_PAST else
+                        "Catch her Power Track at the DOMINATE Summit, October 9, 2026.")),
+     "schema": [] if EVENT_PAST else [event]},
     {"slug": "contact/", "file": "contact/index.html", "crumb": "Contact", "body": contact,
      "title": "Contact Trish Leto: Paid UGC Collabs and Speaking",
      "description": "Email Trish Leto at trishletospeaks@gmail.com for paid UGC collabs, UGC + ads packages "
@@ -1207,7 +1334,7 @@ def build():
     write("robots.txt", robots_txt())
     write("sitemap.xml", sitemap_xml())
     write("site.webmanifest", manifest())
-    print(f"Built {len(PAGES)} pages. BASE={BASE} INDEXABLE={INDEXABLE}")
+    print(f"Built {len(PAGES)} pages into docs/. BASE={BASE} INDEXABLE={INDEXABLE} TODAY={TODAY} EVENT_PAST={EVENT_PAST}")
 
 
 # =============================================================================
@@ -1220,7 +1347,7 @@ TEXT_EXT = (".html", ".css", ".js", ".xml", ".txt", ".webmanifest", ".md", ".py"
 
 def audit():
     errors, warnings = [], []
-    for dirpath, dirnames, filenames in os.walk(ROOT):
+    for dirpath, dirnames, filenames in os.walk(SRC):
         dirnames[:] = [d for d in dirnames if d not in (".git",)]
         for fn in filenames:
             if fn.endswith(TEXT_EXT):
@@ -1228,7 +1355,12 @@ def audit():
                 text = open(path, encoding="utf-8").read()
                 for ch, label in DASHES.items():
                     if ch in text:
-                        errors.append(f"{os.path.relpath(path, ROOT)}: contains an {label}")
+                        errors.append(f"{os.path.relpath(path, SRC)}: contains an {label}")
+
+    if not PARTNER_CONFIRMED:
+        msg = ("partner badge is in the HTML but PARTNER_CONFIRMED is False: do not push until Eddie "
+               "confirms the partner agreement is signed (or names her a partner regardless)")
+        (errors if INDEXABLE else warnings).append(msg)
 
     want_robots = "index,follow" if INDEXABLE else "noindex,nofollow"
     for pg in PAGES:
@@ -1262,6 +1394,11 @@ def audit():
                 errors.append(f"{name}: <img> without alt: {tag[:80]}")
             if " width=" not in tag or " height=" not in tag:
                 errors.append(f"{name}: <img> without width/height: {tag[:80]}")
+        for m in re.finditer(r'href="https://stan\.store/affiliates/', s):
+            if "Affiliate link" not in s[max(0, m.start() - 600):m.start() + 600]:
+                errors.append(f"{name}: affiliate link without an affiliate disclosure next to it")
+        if EVENT_PAST and ("EventScheduled" in s or ">Upcoming<" in s):
+            errors.append(f"{name}: the event is over but the page still calls it upcoming")
         if pg.get("absolute"):
             continue
         base_dir = os.path.dirname(path)

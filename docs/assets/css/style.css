@@ -1,7 +1,12 @@
 /* Trish Leto: site styles. Hand-edited source file (build.py does not touch it).
    Palette: navy ink (Navy veteran), warm paper, watermelon coral, Tampa sun.
-   All text pairs meet WCAG AA: ink on paper 15.9:1, coral on paper 5.0:1,
-   white on coral 5.3:1, sun on ink 11.5:1, muted on paper 6.3:1. */
+   Text pairs used (WCAG AA needs 4.5:1): ink on paper 15.9:1, coral on paper
+   4.97:1, coral on paper-2 4.53:1, muted on paper 6.3:1, white on coral 5.3:1,
+   sun on ink 11.5:1, muted-ink on ink-2 7.4:1. The coral CTA band uses
+   coral-dark, because sun on plain coral is only 3.6:1: on coral-dark, sun is
+   4.84:1, #ffe3ea is 5.9:1 and white is 7.1:1.
+   Focus rings (3:1 needed): coral on light, sun on every dark surface (sun on
+   ink-2 9.4:1; coral on ink-2 is only 2.6:1, so never coral there). */
 
 :root {
   --ink: #17193b;
@@ -56,7 +61,8 @@ a:hover { color: var(--coral-dark); }
   outline-offset: 3px;
   border-radius: 6px;
 }
-.on-ink :focus-visible, .band-ink :focus-visible, .band-coral :focus-visible, .site-footer :focus-visible { outline-color: var(--sun); }
+.on-ink :focus-visible, .band-ink :focus-visible, .band-coral :focus-visible, .site-footer :focus-visible,
+.top-vid :focus-visible, .email-box :focus-visible, .card-feature :focus-visible { outline-color: var(--sun); }
 
 .sr-only {
   position: absolute !important;
@@ -278,8 +284,9 @@ p:last-child { margin-bottom: 0; }
     display: none;
     position: absolute;
     top: 100%;
-    left: calc(-1 * var(--gutter));
-    right: calc(-1 * var(--gutter));
+    /* .header-row already spans the full width, so 0/0 is edge to edge. */
+    left: 0;
+    right: 0;
     background: var(--paper);
     border-bottom: 1px solid var(--line);
     box-shadow: 0 18px 30px -18px rgba(23, 25, 59, 0.35);
@@ -306,7 +313,7 @@ p:last-child { margin-bottom: 0; }
 .band-ink .kicker { color: var(--sun); }
 .band-ink a:not(.btn) { color: var(--coral-soft); }
 .band-ink a:not(.btn):hover { color: var(--sun); }
-.band-coral { background: var(--coral); color: var(--white); }
+.band-coral { background: var(--coral-dark); color: var(--white); }
 .band-coral .kicker { color: var(--sun); }
 .band-coral .lede { color: #ffe3ea; }
 .band-coral .ticks li { color: var(--white); }
@@ -318,18 +325,35 @@ p:last-child { margin-bottom: 0; }
 /* ---------- Hero ---------- */
 
 .hero { padding-block: clamp(2.2rem, 1.6rem + 3vw, 4.8rem) clamp(3rem, 2.4rem + 3vw, 5.5rem); overflow: hidden; }
-.hero-grid { display: grid; gap: 2.75rem; align-items: center; }
+/* Phones: words, photo, buttons (her face lands in the first screen).
+   Wide screens: words and buttons on the left, photo on the right. */
+.hero-grid { display: grid; gap: 2.1rem; align-items: center; }
+.hero-actions > .lede { margin: 0; }
 @media (min-width: 900px) {
-  .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 3.5rem; }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    grid-template-rows: 1fr auto auto 1fr;
+    grid-template-areas: ". photo" "copy photo" "actions photo" ". photo";
+    column-gap: 3.5rem;
+    row-gap: 0;
+  }
+  .hero-grid > .hero-copy { grid-area: copy; }
+  .hero-grid > .hero-photo { grid-area: photo; }
+  .hero-grid > .hero-actions { grid-area: actions; }
+  .hero-actions > .lede { margin-top: 1rem; }
 }
 .hero .lede { margin-top: 0.4rem; }
 .hero-note { margin-top: 1.1rem; font-size: 0.92rem; color: var(--muted); }
+.hero-note a { font-weight: 700; }
 
 .hero-photo {
   position: relative;
   width: calc(100% - 22px);
   max-width: 420px;
   margin-inline: auto;
+}
+@media (max-width: 899.98px) {
+  .hero-grid > .hero-photo { max-width: 340px; }
 }
 .hero-photo::before {
   content: "";
@@ -501,6 +525,15 @@ p:last-child { margin-bottom: 0; }
 .card-feature { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .card-feature p, .card-feature li { color: var(--muted-ink); }
 .card-feature .card-label { color: var(--sun); }
+.card .card-voice {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.35;
+  color: var(--paper);
+}
+.card:not(.card-feature) .card-voice { color: var(--ink); }
 
 .ticks { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.55rem; }
 .ticks li { position: relative; padding-left: 1.7rem; color: var(--muted); }
@@ -643,6 +676,8 @@ p:last-child { margin-bottom: 0; }
   box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.6);
 }
 .js .vid-play:hover { background: var(--coral-dark); }
+/* The ring sits on the video cover, so it is two-tone: works on any frame. */
+.js .vid-play:focus-visible { outline-color: #fff; box-shadow: 0 0 0 6px var(--ink); }
 .vid-play svg { width: 14px; height: 14px; fill: currentColor; }
 .vid-body { display: flex; flex-direction: column; gap: 0.3rem; flex: 1; padding: 0.85rem 0.95rem 1rem; }
 .vid-tag { margin: 0; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); }
@@ -652,6 +687,14 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 420px) {
   .vid-body { padding: 0.75rem 0.75rem 0.9rem; }
   .js .vid-play { font-size: 0.82rem; padding: 0.45rem 0.85rem 0.45rem 0.7rem; }
+}
+
+/* One video on its own (portfolio lifestyle slot). */
+.life { display: grid; gap: 1.6rem; align-items: center; }
+.vids-solo { grid-template-columns: minmax(0, 230px); }
+@media (min-width: 760px) {
+  .life { grid-template-columns: minmax(0, 1fr) 260px; gap: 3rem; }
+  .vids-solo { grid-template-columns: minmax(0, 1fr); }
 }
 
 .top-vid {

@@ -4,9 +4,9 @@ Build the favicons and the Open Graph image.
 
     python3 tools/make_icons.py
 
-  favicon.ico, apple-touch-icon.png, android-chrome-192.png, android-chrome-512.png
+  docs/favicon.ico, apple-touch-icon.png, android-chrome-192.png, android-chrome-512.png
       Drawn with Pillow from the same geometry as favicon.svg (64-unit grid).
-  assets/img/og-image.jpg  (1200x630)
+  docs/assets/img/og-image.jpg  (1200x630)
       Screenshot of tools/og.html in headless Chrome. Run tools/make_images.py
       first, because og.html uses the optimized headshot.
 """
@@ -19,6 +19,7 @@ from PIL import Image, ImageDraw
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.dirname(HERE)
+DOCS = os.path.join(SITE, "docs")  # the published folder
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 INK, PAPER, CORAL_SOFT = "#17193b", "#fbf7f1", "#ff8aa3"
@@ -45,11 +46,11 @@ def draw_icon(size, rounded=True):
 
 
 def icons():
-    draw_icon(180, rounded=False).convert("RGB").save(os.path.join(SITE, "apple-touch-icon.png"), optimize=True)
-    draw_icon(192).save(os.path.join(SITE, "android-chrome-192.png"), optimize=True)
-    draw_icon(512).save(os.path.join(SITE, "android-chrome-512.png"), optimize=True)
+    draw_icon(180, rounded=False).convert("RGB").save(os.path.join(DOCS, "apple-touch-icon.png"), optimize=True)
+    draw_icon(192).save(os.path.join(DOCS, "android-chrome-192.png"), optimize=True)
+    draw_icon(512).save(os.path.join(DOCS, "android-chrome-512.png"), optimize=True)
     big = draw_icon(256)
-    big.save(os.path.join(SITE, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
+    big.save(os.path.join(DOCS, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
     print("icons written")
 
 
@@ -64,7 +65,7 @@ def og_image():
         im = Image.open(png).convert("RGB")
         if im.size != (1200, 630):
             im = im.crop((0, 0, 1200, 630))
-        out = os.path.join(SITE, "assets", "img", "og-image.jpg")
+        out = os.path.join(DOCS, "assets", "img", "og-image.jpg")
         im.save(out, "JPEG", quality=86, optimize=True, progressive=True)
         print(f"{out} {im.size} {os.path.getsize(out) // 1024} KB")
 
