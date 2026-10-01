@@ -11,9 +11,10 @@
 // saving <page>-<width>-menu.jpg for the home page. On the home page it
 // reports where the hero photo starts, so her face stays in the first screen.
 import { spawn } from "node:child_process";
-import { mkdirSync, writeFileSync, mkdtempSync } from "node:fs";
+import { mkdirSync, writeFileSync, mkdtempSync, readdirSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const ORIGIN = process.env.SITE_ORIGIN || "http://127.0.0.1:8765/";
@@ -21,7 +22,13 @@ const ORIGIN = process.env.SITE_ORIGIN || "http://127.0.0.1:8765/";
 // Requests to BASE are answered from ORIGIN, so the 404 page checks locally.
 const LIVE_BASE = process.env.LIVE_BASE || "https://ogeddiesmith.github.io/trish-leto/";
 const OUT = process.argv[2] || join(tmpdir(), "trish-shots");
-const PAGES = (process.env.PAGES || ",work-with-me/,portfolio/,about/,speaking/,contact/,404.html").split(",");
+// The blog hub and every built post (docs/blog/<slug>/index.html) are added automatically.
+const DOCS = join(dirname(dirname(fileURLToPath(import.meta.url))), "docs");
+const BLOG = join(DOCS, "blog");
+const POSTS = existsSync(BLOG) ? readdirSync(BLOG, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && existsSync(join(BLOG, d.name, "index.html"))).map((d) => `blog/${d.name}/`) : [];
+const PAGES = process.env.PAGES ? process.env.PAGES.split(",")
+  : ["", "work-with-me/", "portfolio/", "about/", "speaking/", "contact/", "blog/", ...POSTS, "404.html"];
 const WIDTHS = [360, 390, 768, 1280];
 const PORT = 9333;
 
@@ -109,12 +116,12 @@ for (const width of WIDTHS) {
     const { result } = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => {
       const W = ${width};
       ${OVERFLOW_JS}
-      const smallTargets = [...document.querySelectorAll("a, button")].filter((el) => { const r = el.getBoundingClientRect(); return r.width && r.height && r.height < 24 && !el.closest("p, li, dd, .footer-list") ; }).map((el) => el.textContent.trim().slice(0, 30));
+      const smallTargets = [...document.querySelectorAll("a, button")].filter((el) => { const r = el.getBoundingClientRect(); return r.width && r.height && r.height < 24 && !el.closest("p, li, dd, figcaption, .footer-list") ; }).map((el) => el.textContent.trim().slice(0, 30));
       const hero = document.querySelector(".hero-photo img");
       return { sw, h1: document.querySelectorAll("h1").length, height: document.documentElement.scrollHeight, over: over.slice(0, 8), smallTargets: smallTargets.slice(0, 6), font: document.fonts.check("800 20px 'Bricolage Grotesque'"), heroTop: hero ? Math.round(hero.getBoundingClientRect().top + scrollY) : null, vh: innerHeight };
     })()` });
     const v = result.value;
-    const name = (page.replace(/\/$/, "").replace(".html", "") || "home") + "-" + width;
+    const name = (page.replace(/\/$/, "").replace(".html", "").replace(/\//g, "-") || "home") + "-" + width;
     const shot = await send("Page.captureScreenshot", { format: "jpeg", quality: 70, captureBeyondViewport: true,
       clip: { x: 0, y: 0, width, height: Math.min(v.height, 16000), scale: mobile ? 0.5 : 1 } });
     writeFileSync(join(OUT, name + ".jpg"), Buffer.from(shot.data, "base64"));
