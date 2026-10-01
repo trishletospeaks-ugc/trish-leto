@@ -67,11 +67,9 @@ TALK_GENX_CONFIRMED = False
 # Trish: will she post a brand's video on her own TikTok (TikTok Shop or Spark
 # Ads, with the paid-partnership label)? Off until she confirms.
 POSTS_ON_OWN_TIKTOK_CONFIRMED = False
-# Eddie: partner agreement signed, or he names her a partner regardless. The
-# "Official Simply Digital Partner" badge renders in the draft because Eddie
-# asked for it, but the audit warns until this is True and fails any build
-# with INDEXABLE = True. Do not push the site before this is settled.
-PARTNER_CONFIRMED = False
+# Eddie (2026-10-01): Simply Digital is never mentioned on her site except the
+# "Website built by Simply Digital" credit in the footer (plain text, no link).
+# The ads partner in the packages stays unnamed. The audit enforces this.
 # Added to the "Do you post the videos for us?" answer once Trish confirms.
 OWN_TIKTOK_LINE = (" Want it on my own TikTok (TikTok Shop or Spark Ads)? Ask. "
                    "It carries a paid-partnership label.")
@@ -192,7 +190,7 @@ LIFESTYLE_VIDEOS = [
      "alt": "Cover frame: coffee brewing, with an on-screen message about feeling blessed"},
 ]
 
-# Packages sold with Simply Digital (partner deck slide 10). No prices, ever:
+# UGC + ads packages with her (unnamed) ads partner. No prices, ever:
 # Trish sets her own rates and every package is a custom quote.
 PACKAGES = [
     {"name": "UGC + Meta or TikTok ads",
@@ -254,7 +252,7 @@ Thanks!"""
 
 PACKAGE_TEMPLATE = """Hi Trish,
 
-We are interested in a UGC + ads package with Simply Digital.
+We are interested in a UGC + ads package.
 
 Brand:
 Website:
@@ -321,14 +319,6 @@ def img(p, name, widths, alt, sizes, ratio, eager=False, cls=""):
     c = f' class="{cls}"' if cls else ""
     return (f'<img{c} src="{p}assets/img/{name}-{big}.webp" srcset="{srcset}" sizes="{sizes}" '
             f'width="{w}" height="{h}" alt="{esc(alt)}" {load} decoding="async">')
-
-
-def partner_badge(where=""):
-    # Plain text, never a link to Simply Digital (Eddie, 2026-10-01).
-    return (f'<div class="partner">'
-            f'<span class="seal">{ICON_CHECK}</span>'
-            f'<span><span class="p-top">Official Simply Digital Partner</span>'
-            f'<span class="p-main">UGC + paid ads packages</span></span></div>')
 
 
 def tiktok_url(vid):
@@ -438,7 +428,6 @@ def footer(p):
       <div class="footer-brand">
         <span class="brand-name">Trish Leto<span class="dot" style="color:var(--coral-soft)">.</span></span>
         <p>GenX UGC creator and model, U.S. Navy veteran and public speaker in Tampa, FL. Short-form videos for brands that sell to real grown-ups.</p>
-        {partner_badge()}
       </div>
       <nav aria-label="Footer">
         <p class="footer-h">Pages</p>
@@ -458,6 +447,7 @@ def footer(p):
     <div class="footer-bottom">
       <span>&copy; {YEAR} Trish Leto. PAID collabs ONLY.</span>
       <span>Social numbers as of {STATS_AS_OF}.</span>
+      <span class="built-by">Website built by Simply Digital</span>
     </div>
   </div>
 </footer>"""
@@ -494,7 +484,7 @@ def service():
     offers = [
         ("Monthly UGC retainer", "A batch of short-form videos plus b-roll every month, delivered to Google Drive."),
         ("Per-project UGC", "Videos and b-roll for one product or launch, delivered to Google Drive."),
-    ] + [(pk["name"] + " (with Simply Digital)", pk["trish"] + " Simply Digital: " + pk["sd"]) for pk in PACKAGES]
+    ] + [(pk["name"], pk["trish"] + " Ads partner: " + pk["sd"]) for pk in PACKAGES]
     # serviceType belongs to Service, not ProfessionalService, so it sits on
     # each offered Service below.
     return {
@@ -741,13 +731,12 @@ def home(p):
     <div>
       <p class="kicker">UGC + paid ads</p>
       <h2 id="pkg-h">Need the videos and the ads? Get both.</h2>
-      <p class="lede">I'm an Official Simply Digital Partner. When you need content and the ads to run it, we quote them together: I make the videos, Simply Digital runs the ads, pages and tracking.</p>
+      <p class="lede">When you need content and the ads to run it, I quote them together with my ads partner: I make the videos, they run the ads, pages and tracking.</p>
       <div class="btn-row"><a class="btn btn-sun" href="{p}work-with-me/#packages">See the packages</a></div>
     </div>
     <div>
       <ul class="ticks" style="font-size:1.08rem">{pkgs}</ul>
       <p class="small" style="margin-top:1.2rem">Every package is a custom quote.</p>
-      <div style="margin-top:1.4rem">{partner_badge()}</div>
     </div>
   </div>
 </section>
@@ -773,7 +762,7 @@ def work_with_me(p):
   <h3>{esc(pk['name'])}</h3>
   <dl>
     <div><dt>Trish</dt><dd>{esc(pk['trish'])}</dd></div>
-    <div><dt>Simply Digital</dt><dd>{esc(pk['sd'])}</dd></div>
+    <div><dt>Ads partner</dt><dd>{esc(pk['sd'])}</dd></div>
   </dl>
   <span class="quote-chip">Custom quote</span>
 </div>""" for pk in PACKAGES)
@@ -853,10 +842,9 @@ def work_with_me(p):
 <section id="packages" class="band-ink section anchor-target" aria-labelledby="packages-h">
   <div class="wrap">
     <div class="section-head">
-      <p class="kicker">Packages with Simply Digital</p>
+      <p class="kicker">Packages</p>
       <h2 id="packages-h">UGC + paid ads packages</h2>
-      <p class="lede">I'm an Official Simply Digital Partner. When you need the videos and the ads, we quote them together. I make the content. Simply Digital runs the ads, landing pages and tracking.</p>
-      <div style="margin-top:1.4rem">{partner_badge()}</div>
+      <p class="lede">When you need the videos and the ads, I quote them together with my ads partner. I make the content. They run the ads, landing pages and tracking.</p>
     </div>
     <div class="grid grid-2">{pk_cards}</div>
     <div class="btn-row">
@@ -891,7 +879,7 @@ def work_with_me(p):
     <div class="faq">
       <details><summary>What does it cost?</summary><div class="answer"><p>Every job is a custom quote. It depends on how many videos you need, how much b-roll, and where and for how long you will run them. Email me the details and I will send a quote.</p></div></details>
       <details><summary>Do you post the videos for us?</summary><div class="answer"><p>Not on your brand accounts, and I don't start new accounts for you. You get the files and post or run them wherever you like.{OWN_TIKTOK_LINE if POSTS_ON_OWN_TIKTOK_CONFIRMED else ""}</p></div></details>
-      <details><summary>Can we run your videos as ads?</summary><div class="answer"><p>Yes. Tell me where and for how long when you ask for a quote, and it goes into the quote. If you want the ads run for you too, ask about a <a href="#packages">package with Simply Digital</a>.</p></div></details>
+      <details><summary>Can we run your videos as ads?</summary><div class="answer"><p>Yes. Tell me where and for how long when you ask for a quote, and it goes into the quote. If you want the ads run for you too, ask about a <a href="#packages">UGC + ads package</a>.</p></div></details>
       <details><summary>Which categories are a fit?</summary><div class="answer"><p>Supplements, food and drink, pets, cars, kitchen and appliances, plants and gardening, makeup, skin care and hair care. Not a fit: alcohol, tobacco and gambling.</p></div></details>
       <details><summary>How do the videos get to us?</summary><div class="answer"><p>Through a shared Google Drive folder, batch by batch.</p></div></details>
     </div>
@@ -1033,10 +1021,9 @@ def about(p):
   <div class="wrap split">
     <div class="photo">{img(p, "trish-military-creator-con", [400, 600], "Trish Leto speaking into a microphone in front of the Military Creator Con backdrop", "(min-width: 880px) 540px, 92vw", (600, 408))}<p class="photo-cap" style="padding:0 1rem 1rem">Teaching creators at Military Creator Con.</p></div>
     <div>
-      <p class="kicker">Partner</p>
-      <h2 id="partner-h">Content from me. Ads from Simply Digital.</h2>
-      <p class="lede">I'm an Official Simply Digital Partner for UGC + paid ads packages. Brands that want the videos and the ads can get both, quoted together.</p>
-      <div style="margin-top:1.4rem">{partner_badge()}</div>
+      <p class="kicker">Packages</p>
+      <h2 id="partner-h">Content from me. Ads from my partner.</h2>
+      <p class="lede">I team up with an ads partner for UGC + paid ads packages. Brands that want the videos and the ads can get both, quoted together.</p>
       <p style="margin-top:1.4rem"><a class="text-link" href="{p}work-with-me/#packages">See the packages &rarr;</a></p>
     </div>
   </div>
@@ -1194,7 +1181,7 @@ def contact(p):
     </div>
     <div class="grid grid-3">
       <div class="card"><span class="card-label">Brands</span><h3>UGC videos</h3><p>Videos and b-roll for your product, on a monthly retainer or per project.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('UGC collab: [your brand]', UGC_TEMPLATE))}">Email about UGC</a></p></div>
-      <div class="card"><span class="card-label">Brands</span><h3>UGC + ads package</h3><p>My videos plus paid ads, landing pages and tracking from Simply Digital.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('Package inquiry: UGC + ads', PACKAGE_TEMPLATE))}">Email about a package</a></p></div>
+      <div class="card"><span class="card-label">Brands</span><h3>UGC + ads package</h3><p>My videos plus paid ads, landing pages and tracking from my ads partner.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('Package inquiry: UGC + ads', PACKAGE_TEMPLATE))}">Email about a package</a></p></div>
       <div class="card"><span class="card-label">Events</span><h3>Speaking</h3><p>Your stage, breakout or virtual summit.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('Speaking inquiry: [event name]', SPEAKING_TEMPLATE))}">Email about speaking</a></p></div>
     </div>
   </div>
@@ -1353,10 +1340,18 @@ def audit():
                     if ch in text:
                         errors.append(f"{os.path.relpath(path, SRC)}: contains an {label}")
 
-    if not PARTNER_CONFIRMED:
-        msg = ("partner badge is in the HTML but PARTNER_CONFIRMED is False: do not push until Eddie "
-               "confirms the partner agreement is signed (or names her a partner regardless)")
-        (errors if INDEXABLE else warnings).append(msg)
+    # Simply Digital appears only in the footer "built by" credit, never linked (Eddie, 2026-10-01).
+    for dirpath, _, files in os.walk(ROOT):
+        for fn in files:
+            if not fn.endswith((".html", ".xml", ".txt", ".json")):
+                continue
+            fp = os.path.join(dirpath, fn)
+            t = open(fp, encoding="utf-8").read()
+            if "simplydigitalmarketing" in t.lower():
+                errors.append(f"{os.path.relpath(fp, ROOT)}: links to Simply Digital")
+            t = t.replace('<span class="built-by">Website built by Simply Digital</span>', "")
+            if re.search(r"simply\s*digital", t, re.I):
+                errors.append(f"{os.path.relpath(fp, ROOT)}: mentions Simply Digital outside the footer credit")
 
     want_robots = "index,follow" if INDEXABLE else "noindex,nofollow"
     for pg in PAGES:

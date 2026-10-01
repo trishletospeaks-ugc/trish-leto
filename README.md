@@ -1,6 +1,6 @@
 # Trish Leto website
 
-Static site for Trish Leto, GenX UGC creator and model, U.S. Navy veteran and speaker. It is her own brand, and it names her as an Official Simply Digital Partner for UGC + paid ads packages. Built by Simply Digital.
+Static site for Trish Leto, GenX UGC creator and model, U.S. Navy veteran and speaker. It is her own brand. Simply Digital appears only as the footer credit "Website built by Simply Digital" (plain text, no link); the build audit fails on any other mention or any link to simplydigitalmarketing.co. The ads partner in her packages stays unnamed.
 
 Not indexed yet (`INDEXABLE = False`).
 
@@ -18,9 +18,9 @@ Not indexed yet (`INDEXABLE = False`).
 | Path | What it does |
 |---|---|
 | `/` | Who she is, proof numbers, formats and categories, how it works, recent product videos, packages, speaking, CTA |
-| `/work-with-me/` | Retainer vs per project, what you get, 5-step process, the four Simply Digital packages, what she won't do, FAQ |
+| `/work-with-me/` | Retainer vs per project, what you get, 5-step process, the four UGC + ads packages, what she won't do, FAQ |
 | `/portfolio/` | Stats, top performers, recent product videos with the FTC disclosure, a lifestyle and faith slot |
-| `/about/` | Her story, quick facts, partner note, her Stan store guides and a recommended course (affiliate link, disclosed) |
+| `/about/` | Her story, quick facts, packages note, her Stan store guides and a recommended course (affiliate link, disclosed) |
 | `/speaking/` | DOMINATE Summit (Oct 9, 2026), Military Creator Con, talk topics, booking checklist |
 | `/contact/` | Collab email, copy button, three pre-filled mailto paths, inquiry template. No third-party form. |
 | `/404.html` | Not-found page (always noindex, uses absolute BASE links so it works at any depth) |
@@ -46,7 +46,7 @@ Crawlers only read `robots.txt` at the root of a host. While the site lives at t
 
 ### Pending lines
 
-The `PENDING` block at the top of `build.py` holds lines that wait on a confirmation (her Facebook link, a third talk topic, posting on her own TikTok, the partner badge). Each renders only when its switch is `True`.
+The `PENDING` block at the top of `build.py` holds lines that wait on a confirmation (her Facebook link, a third talk topic, posting on her own TikTok). Each renders only when its switch is `True`.
 
 ### Events
 
