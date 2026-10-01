@@ -47,7 +47,7 @@
     {"q": "Do I need an agent to get NIL deals?", "a": "You can pitch brands yourself, and this guide shows you how. If you want someone to represent you on NIL contracts in Florida, state law requires that person to hold an athlete-agent license, and Florida DBPR handles those licenses. Take any question about representation or your eligibility to your school's compliance office."},
     {"q": "Do I have to report my NIL deals?", "a": "If you are an NCAA Division I athlete, third-party deals worth $600 or more in total go into NIL Go within five business days, whether or not your school shares revenue. Division II, Division III, NAIA, junior college and high school athletes follow different rules, so ask your compliance office or athletic director."},
     {"q": "Are NIL deals taxable?", "a": "The IRS says gig income must be reported whether or not you get a Form 1099-K, and NIL pay is income. Ask about gifted product too. I am not a tax professional, so take the details to a licensed one."},
-    {"q": "Can high school athletes in Florida get NIL deals?", "a": "Yes. FHSAA rules allow high school NIL, including social media and endorsements, with limits such as a written agreement that ends at graduation, no school logos or uniforms, banned product categories and an affidavit to your school. Read my Florida high school NIL guide and talk to your athletic director."}
+    {"q": "What is NIL Go?", "a": "NIL Go is the College Sports Commission's portal for Division I deals with outside companies. Deals worth $600 or more in total go in within five business days, and the CSC checks each one for a valid business purpose and a reasonable range of pay. Your compliance office can walk you through it."}
   ],
   "references": [
     {"title": "About the College Sports Commission", "publisher": "College Sports Commission", "url": "https://www.collegesportscommission.org/about", "quote": "On June 6, 2025, Judge Claudia Wilken of the U.S. District Court for the Northern District of California approved the class action settlement", "supports": "House settlement approved June 6, 2025; the $600 aggregate threshold counts royalties, contingencies and bonuses and applies whether or not the school opted in"},
@@ -119,9 +119,9 @@ Keep the scale in perspective. NIL Go only counts Division I deals of $600 or mo
 
 ## Content is the product
 
-Here's the stat that made me sit up straight. Opendorse, a commercial NIL platform reporting on its own marketplace, found that athletes receive [just 10% of commercial NIL dollars tied to products](https://biz.opendorse.com/wp-content/uploads/2025/07/NIL-at-Four-Monetizing-the-New-Reality_July2025.pdf) such as jerseys and video games, but 80% of the dollars tied to services such as posts. Read that again. When a brand pays for content, most of that money lands with the athlete.
+Here's the stat that matters most for content. Opendorse, a commercial NIL platform reporting on its own marketplace, found that athletes receive [just 10% of commercial NIL dollars tied to products](https://biz.opendorse.com/wp-content/uploads/2025/07/NIL-at-Four-Monetizing-the-New-Reality_July2025.pdf) such as jerseys and video games, but 80% of the dollars tied to services such as posts. Read that again. When a brand pays for content, most of that money lands with the athlete.
 
-That's my lane. As I like to put it, "UGC is fancy lingo for creating short-form videos for brands about products you're ALREADY using... and getting paid!" Talking heads, yap-style videos, lifestyle clips, product demos and b-roll are the same skills a sponsor wants from an athlete. Your sport already gives people a reason to watch. The craft is turning that attention into content a business would actually pay for.
+That's my lane. Talking heads, yap-style videos, lifestyle clips, product demos and b-roll are the same skills a sponsor wants from an athlete. Your sport already gives people a reason to watch. The craft is turning that attention into content a business would actually pay for.
 
 [[IMAGE]]
 
@@ -173,7 +173,7 @@ Federal rules are moving, so here's where things stand as of October 1, 2026:
 
 - The Senate passed the [Protect College Sports Act](https://www.commerce.senate.gov/protect-college-sports-act/) 77-22 on September 28, 2026. It now goes to the House. It is not law.
 - The SCORE Act stalled. House leadership pulled it from the floor twice, per a [Morgan Lewis client alert](https://www.morganlewis.com/pubs/2026/05/no-score-congress-leaves-college-sports-in-regulatory-limbo-forcing-the-white-house-to-sub-in).
-- [Executive Order 14400](https://www.whitehouse.gov/wp-content/uploads/2026/04/eo-14400.pdf) on college sports took effect August 1, 2026.
+- Key sections of [Executive Order 14400](https://www.whitehouse.gov/wp-content/uploads/2026/04/eo-14400.pdf) on college sports took effect August 1, 2026.
 
 None of this changes your to-do list today. Follow the rules that apply to you right now, and ask your compliance office when something changes.
 

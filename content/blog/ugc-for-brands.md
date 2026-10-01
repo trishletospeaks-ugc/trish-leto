@@ -9,7 +9,7 @@
   "cluster": "ugc-for-brands",
   "pillar": true,
   "primary_keyword": "ugc for brands",
-  "secondary_keywords": ["user generated content for brands", "find ugc creators", "ugc creator meaning", "what is a ugc creator", "gen x ugc creator"],
+  "secondary_keywords": ["user generated content for brands", "ugc creator meaning", "what is a ugc creator"],
   "audience": "brands",
   "excerpt": "What UGC means for a brand, where it runs, which rights to get in writing, and why households headed by Gen X are worth a creator who looks like them.",
   "hero": {"file": "ugc-for-brands-hero", "alt": "Smiling woman holding a bottled protein drink in a bright home kitchen", "credit": "Rich Ortiz", "credit_url": "https://www.pexels.com/@rich-ortiz-898469", "source_url": "https://www.pexels.com/photo/smiling-woman-with-protein-drink-in-bottle-5661903/"},

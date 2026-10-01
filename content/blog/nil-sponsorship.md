@@ -42,7 +42,7 @@
     {"q": "What is an NIL sponsorship?", "a": "It's a deal where a business pays an athlete, in cash or in product, to use their name, image and likeness to promote something it sells. Most of the time the athlete delivers content. Opendorse's July 2025 report found that 80% of the commercial NIL dollars athletes receive come from services such as posts."},
     {"q": "Do athletes have to disclose sponsored posts?", "a": "Yes. Under the FTC's Endorsement Guides, a material connection to a brand, including free or discounted product, has to be disclosed clearly and conspicuously. Use plain words like \"ad\" or \"sponsored,\" put the disclosure inside the video, and turn on the platform's paid content setting too."},
     {"q": "Is free product from a sponsor taxable?", "a": "It can be. IRS Publication 525 says you must include in your income the fair market value of property or services you receive in bartering. Keep a record of what you received and ask a tax professional how it applies to you."},
-    {"q": "Can a high school athlete wear the school jersey in a sponsored post?", "a": "Not under FHSAA Bylaw 9.9 as written in the 2024-25 handbook, which bars athletes from using school uniforms, logos, mascots or marks in NIL activity. Confirm the current rules with your school before you film anything."}
+    {"q": "Is the TikTok branded content toggle enough of a disclosure?", "a": "Turn it on, because TikTok asks creators to use it for content made in exchange for payment or any other incentive. But don't stop there. The FTC wants a disclosure that is hard to miss, so say \"ad\" or \"sponsored\" in your own words, inside the video."}
   ],
   "references": [
     {"title": "NIL at Four: Monetizing the New Reality", "publisher": "Opendorse (July 2025 report; NIL platform describing its own users)", "url": "https://biz.opendorse.com/wp-content/uploads/2025/07/NIL-at-Four-Monetizing-the-New-Reality_July2025.pdf", "quote": "but 80% from services (e.g., posts). ... Student-athletes boast a social media engagement rate 3.7x higher than traditional influencers (5.6% compared to 1.9%).", "supports": "80% of athletes' commercial NIL dollars come from services such as posts; engagement 5.6% vs 1.9% (chart)"},
@@ -127,7 +127,7 @@ Under the FTC's Endorsement Guides, if an ad says you use a product, you must ha
 
 Florida high school athletes can do NIL under FHSAA Bylaw 9.9, but the content rules are tighter. School uniforms, logos, mascots and marks are off limits in NIL activity. The bylaw also bans whole product categories, including alcohol, tobacco, vaping and nicotine products, cannabis, gambling (sports betting included), weapons and NIL collectives ([FHSAA Handbook](https://s3.amazonaws.com/fhsaa.org/documents/2024/11/20/2425_handbook_update_11424.pdf)).
 
-Fun fact: alcohol, tobacco and gambling are three categories I turn down in my own UGC work too, so I'm right there with you. That text comes from the 2024-25 handbook, so confirm the current version with your athletic director before you film anything with school gear in it. Parents, my post on [Florida high school NIL rules](/blog/florida-high-school-nil-rules/) covers the rest.
+That text comes from the 2024-25 handbook, so confirm the current version with your athletic director before you film anything with school gear in it. Parents, my post on [Florida high school NIL rules](/blog/florida-high-school-nil-rules/) covers the rest.
 
 ## Disclose it right
 

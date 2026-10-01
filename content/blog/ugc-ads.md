@@ -96,7 +96,7 @@ The hook has one job: earn the rest of the video. Here are four hook styles I us
 
 Ask the question your buyer is already asking in their head. My zinc video opens with the on-screen text "POV: is taking zinc really doing anything???" That is a question real people have, and it is phrased the way they would say it.
 
-Notice what that hook does not do: it does not promise anything. That matters. A question hook for a supplement has to be followed by honest stuff, like the routine, the taste, the packaging or how easy it is to take. It is never followed by "and now I never get sick." I will show you the rule behind that in a minute.
+Notice what that hook does not do: it does not promise anything. That matters. A question hook for a supplement has to be followed by honest stuff, like the routine, the taste, the packaging or how easy it is to take. It should never be followed by "and now I never get sick." I will show you the rule behind that in a minute.
 
 ### Humor hooks
 
@@ -147,7 +147,7 @@ This is the part brands skip and should not. A UGC ad is an endorsement, and end
 - **The creator must have used the product.** Under the FTC Endorsement Guides, when an ad says the endorser uses the product, the endorser must have been a [bona fide user](https://www.law.cornell.edu/cfr/text/16/255.1) when the endorsement was given. The FTC also tells creators flat out that they cannot talk about their experience with a product they have not tried.
 - **No fake reviews.** The FTC's 2024 [final rule on fake reviews and testimonials](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials) covers reviews by people who do not exist, including AI-generated ones, and reviews by people with no real experience with the product.
 
-My own definition of UGC has always been "fancy lingo for creating short-form videos for brands about products you're ALREADY using... and getting paid!" Already using is the whole point. And I do not do alcohol, tobacco or gambling at all.
+UGC works best when the creator ALREADY uses the product. That is the whole point. And I do not do alcohol, tobacco or gambling at all.
 
 ## Put the disclosure inside the ad
 

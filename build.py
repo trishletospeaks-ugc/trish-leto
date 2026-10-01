@@ -181,7 +181,7 @@ PRODUCT_VIDEOS = [
      "note": "Product demo with the box, the packet and the finished drink.",
      "alt": "Cover frame: Trish holds a box of hydration drink mix next to a glass of it"},
     {"id": "7691470090906193182", "title": "Energy drink", "tag": "Food and drink · TikTok Shop",
-     "note": "Hook: “‘Patiently’ waiting for tomorrow’s energy drink…”",
+     "note": "Hook: “‘Patiently’ waiting for tomorrow’s energy drink...”",
      "alt": "Cover frame: Trish waits on the couch while an energy drink sits on the kitchen counter"},
     {"id": "7689485389450497311", "title": "Protein powder", "tag": "Supplements · TikTok Shop",
      "note": "Comment reply: “I love replying to comments about my favorite protein powder.”",

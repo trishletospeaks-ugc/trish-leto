@@ -69,7 +69,7 @@ You've got a business to run, so here is the short answer first. The types of UG
 4. **Product demo and unboxing:** open it, use it, show it working.
 5. **B-roll:** hands, pours, textures and close-ups, with no talking at all.
 
-If the whole idea is new to you, here is how I explain it: UGC is fancy lingo for creating short-form videos for brands about products you're ALREADY using... and getting paid! That's the creator side of the deal. For the brand side, start with my [guide to UGC for brands](/blog/ugc-for-brands/), and if you're still deciding between a UGC creator and an influencer, read [UGC vs influencer](/blog/ugc-vs-influencer/) first.
+If the whole idea is new to you, start with my [guide to UGC for brands](/blog/ugc-for-brands/), and if you're still deciding between a UGC creator and an influencer, read [UGC vs influencer](/blog/ugc-vs-influencer/) first.
 
 Below, I walk through each of these UGC video formats: what it looks like, what it does, where it tends to run, and how to brief it. Then we'll match the formats to the jobs you need done, look at where Gen X households actually spend their money, and cover the rules that apply to every single video. Grab a coffee. This is the good stuff.
 
