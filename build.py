@@ -90,7 +90,7 @@ NIL_CONSULTING_CONFIRMED = False
 # SHOW_SOBRIETY_STORY = False. "Helicopter mechanic" comes from her text to
 # Eddie on 2026-10-01: confirm it with her before launch too.
 SHOW_SOBRIETY_STORY = True
-STORY_SOBRIETY_CONFIRMED = False
+STORY_SOBRIETY_CONFIRMED = True  # Eddie, 2026-10-19: "she talks about it already"
 # Eddie (2026-10-01): Simply Digital is never mentioned on her site except the
 # "Website built by Simply Digital" credit in the footer (plain text, no link).
 # The ads partner in the packages stays unnamed. The audit enforces this.
