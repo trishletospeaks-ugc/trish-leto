@@ -59,7 +59,7 @@ from urllib.parse import quote
 
 BASE = "https://trishleto.com/"
 DOMAIN = "trishleto.com"
-GTM_ID = "GTM-KW5RK947"  # Simply Digital GTM account; fires GA4 G-GE2DE6LW45 (created 2026-10-19)
+GTM_ID = "GTM-MXDRCJSS"  # Trish's own GTM account 6383565025; fires GA4 G-LZXFVEX8ZD in her GA account 412596035 (2026-10-19)
 GTM_HEAD = ("<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n"
             "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n"
             "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n"
