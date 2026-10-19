@@ -426,7 +426,7 @@ def cta_band(p):
     <h2 id="cta-h">Let's make something people can't scroll past!</h2>
     <p class="lede" style="margin-inline:auto">Tell me about your product, and I'll tell you how I'd film it.</p>
     <div class="btn-row" style="justify-content:center">
-      <a class="btn btn-sun" href="{esc(mailto('UGC collab: [your brand]', UGC_TEMPLATE))}">Email Trish</a>
+      {ext(STAN_URL, 'Book on my Stan store', 'btn btn-sun')}
       <a class="btn btn-ghost" href="{p}contact/">All the ways to reach me</a>
     </div>
   </div>
@@ -898,7 +898,7 @@ def work_with_me(p):
     </div>
     <div class="grid grid-2">{pk_cards}</div>
     <div class="btn-row">
-      <a class="btn btn-sun" href="{esc(mailto('Package inquiry: UGC + ads', PACKAGE_TEMPLATE))}">Ask about a package</a>
+      {ext(STAN_URL, 'Get a package on Stan', 'btn btn-sun')}
     </div>
   </div>
 </section>
@@ -1171,7 +1171,7 @@ def speaking(p):
     <h1>I teach people how to control the scroll.</h1>
     <p class="lede">{topics}. Practical, funny and straight to the point.</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="{esc(mailto('Speaking inquiry: [event name]', SPEAKING_TEMPLATE))}">Book me to speak</a>
+      {ext(STAN_URL, 'Book me on Stan', 'btn btn-primary')}
       <a class="btn btn-ghost" href="#topics">See my topics</a>
     </div>
   </div>
@@ -1220,7 +1220,7 @@ def speaking(p):
       <p class="kicker">Book me</p>
       <h2 id="book-h">Bring the energy to your event!</h2>
       <p class="lede">Email me with the details below and I will get back to you.</p>
-      <div class="btn-row"><a class="btn btn-sun" href="{esc(mailto('Speaking inquiry: [event name]', SPEAKING_TEMPLATE))}">Email a speaking inquiry</a></div>
+      <div class="btn-row">{ext(STAN_URL, 'Book speaking on Stan', 'btn btn-sun')}</div>
     </div>
     <ul class="ticks">
       <li>Event name and date</li>
@@ -1258,7 +1258,7 @@ def contact(p):
       <h2 id="email-h" class="label" style="font-family:var(--font-body);margin:0">Collab email</h2>
       <a class="email-big" href="mailto:{EMAIL}">{EMAIL.replace("@", "<wbr>@")}</a>
       <div class="btn-row" style="margin-top:0">
-        <a class="btn btn-sun" href="{esc(mailto('UGC collab: [your brand]', UGC_TEMPLATE))}">Start an email</a>
+        {ext(STAN_URL, 'Go to my Stan store', 'btn btn-sun')}
         <button class="btn btn-ghost copy-btn" type="button" hidden data-copy="{EMAIL}" data-status="copy-email-status" data-done="Email address copied.">Copy email address</button>
       </div>
       <p id="copy-email-status" class="copy-status" role="status" aria-live="polite"></p>
@@ -1274,9 +1274,9 @@ def contact(p):
       <p class="lede">Each button opens an email with the right subject line and a short checklist already filled in.</p>
     </div>
     <div class="grid grid-3">
-      <div class="card"><span class="card-label">Brands</span><h3>UGC videos</h3><p>Videos and b-roll for your product, on a monthly retainer or per project.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('UGC collab: [your brand]', UGC_TEMPLATE))}">Email about UGC</a></p></div>
-      <div class="card"><span class="card-label">Brands</span><h3>UGC + ads package</h3><p>My videos plus paid ads, landing pages and tracking from my ads partner.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('Package inquiry: UGC + ads', PACKAGE_TEMPLATE))}">Email about a package</a></p></div>
-      <div class="card"><span class="card-label">Events</span><h3>Speaking</h3><p>Your stage, breakout or virtual summit.</p><p style="margin-top:1.1rem"><a class="btn btn-primary" href="{esc(mailto('Speaking inquiry: [event name]', SPEAKING_TEMPLATE))}">Email about speaking</a></p></div>
+      <div class="card"><span class="card-label">Brands</span><h3>UGC videos</h3><p>Videos and b-roll for your product, on a monthly retainer or per project.</p><p style="margin-top:1.1rem">{ext(STAN_URL, 'Book UGC on Stan', 'btn btn-primary')}</p></div>
+      <div class="card"><span class="card-label">Brands</span><h3>UGC + ads package</h3><p>My videos plus paid ads, landing pages and tracking from my ads partner.</p><p style="margin-top:1.1rem">{ext(STAN_URL, 'Get a package on Stan', 'btn btn-primary')}</p></div>
+      <div class="card"><span class="card-label">Events</span><h3>Speaking</h3><p>Your stage, breakout or virtual summit.</p><p style="margin-top:1.1rem">{ext(STAN_URL, 'Book speaking on Stan', 'btn btn-primary')}</p></div>
     </div>
     {contact_nil_line(p)}
   </div>
@@ -1413,7 +1413,7 @@ def nil_consulting(p):
     <h1>NIL consulting for student-athletes and parents</h1>
     <p class="lede">I help student-athletes build a personal brand and make the kind of content sponsors pay for. I coach the content side. I'm not an agent or an attorney.</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="{nil_mail}">Email Trish</a>
+      {ext(STAN_URL, 'Book on my Stan store', 'btn btn-primary')}
       <a class="btn btn-ghost" href="#how">How it works</a>
     </div>
   </div>
@@ -1524,7 +1524,7 @@ def nil_consulting(p):
     <h2 id="nil-cta-h">Ready to build your brand the right way?</h2>
     <p class="lede" style="margin-inline:auto">Email me the sport, school and goals. Under 18? Include a parent or guardian.</p>
     <div class="btn-row" style="justify-content:center">
-      <a class="btn btn-sun" href="{nil_mail}">Email Trish</a>
+      {ext(STAN_URL, 'Book on my Stan store', 'btn btn-sun')}
       <a class="btn btn-ghost" href="{p}blog/">Read the blog</a>
     </div>
   </div>
@@ -1966,13 +1966,13 @@ def post_cta(audience, p):
   <p class="post-cta-kicker">For athletes and families</p>
   <p class="post-cta-h">Building your NIL brand? Let's talk.</p>
   <p>See how my NIL consulting works, then email me with your sport, school and goals.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="{href}">{label}</a><a class="btn btn-ghost" href="{esc(mailto(NIL_SUBJECT, NIL_TEMPLATE))}">Email Trish</a></div>
+  <div class="btn-row"><a class="btn btn-primary" href="{href}">{label}</a>{ext(STAN_URL, 'Book on my Stan store', 'btn btn-ghost')}</div>
 </aside>"""
     return f"""<aside class="post-cta band-ink" aria-label="Work with Trish">
   <p class="post-cta-kicker">PAID collabs ONLY</p>
   <p class="post-cta-h">Want UGC like this for your brand?</p>
   <p>I make short-form videos and b-roll for brands, delivered to Google Drive on a monthly retainer or per project.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="{p}work-with-me/">Work with me</a><a class="btn btn-ghost" href="{esc(mailto('UGC collab: [your brand]', UGC_TEMPLATE))}">Email Trish</a></div>
+  <div class="btn-row"><a class="btn btn-primary" href="{p}work-with-me/">Work with me</a>{ext(STAN_URL, 'Book on my Stan store', 'btn btn-ghost')}</div>
 </aside>"""
 
 
