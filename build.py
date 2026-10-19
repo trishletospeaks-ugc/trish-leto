@@ -58,7 +58,15 @@ from urllib.parse import quote
 # =============================================================================
 
 BASE = "https://trishleto.com/"
-DOMAIN = "trishleto.com"  # GitHub Pages custom domain (docs/CNAME); DNS at Namecheap
+DOMAIN = "trishleto.com"
+GTM_ID = "GTM-KW5RK947"  # Simply Digital GTM account; fires GA4 G-GE2DE6LW45 (created 2026-10-19)
+GTM_HEAD = ("<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n"
+            "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n"
+            "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n"
+            "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n"
+            "})(window,document,'script','dataLayer','" + GTM_ID + "');</script>\n<!-- End Google Tag Manager -->")
+GTM_BODY = ('<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' + GTM_ID + '"\n'
+            'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n<!-- End Google Tag Manager (noscript) -->')  # GitHub Pages custom domain (docs/CNAME); DNS at Namecheap
 INDEXABLE = False
 
 # =============================================================================
@@ -635,6 +643,7 @@ def head(page, p, absolute=False):
 <html lang="en">
 <head>
 <meta charset="utf-8">
+{GTM_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(page['title'])}</title>
 <meta name="description" content="{esc(page['description'])}">
@@ -678,6 +687,7 @@ def render(page):
     body = page["body"](p)
     return f"""{head(page, p, absolute)}
 <body>
+{GTM_BODY}
 {header(p, page['slug'] if not page.get('noindex') else None)}
 <main id="main">
 {body}
