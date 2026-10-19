@@ -716,7 +716,7 @@ def home(p):
     <div class="hero-actions">
       <p class="lede hero-more">You get batches of videos and b-roll in your Google Drive, ready to run.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="{p}work-with-me/">Work with me</a>
+        {ext(STAN_URL, 'Work with me', 'btn btn-primary')}
         <a class="btn btn-ghost" href="{p}portfolio/">Watch my videos</a>
       </div>
       <p class="hero-note">PAID collabs ONLY &middot; U.S. Navy veteran &middot; Based in Tampa, FL</p>
@@ -780,7 +780,7 @@ def home(p):
       <p class="kicker">UGC + paid ads</p>
       <h2 id="pkg-h">Need the videos and the ads? Get both.</h2>
       <p class="lede">When you need content and the ads to run it, I quote them together with my ads partner: I make the videos, they run the ads, pages and tracking.</p>
-      <div class="btn-row"><a class="btn btn-sun" href="{p}work-with-me/#packages">See the packages</a></div>
+      <div class="btn-row">{ext(STAN_URL, 'See the packages', 'btn btn-sun')}</div>
     </div>
     <div>
       <ul class="ticks" style="font-size:1.08rem">{pkgs}</ul>
@@ -1028,7 +1028,7 @@ def portfolio(p):
       <h2 id="pf-next-h">Want videos like these for your brand?</h2>
       <p class="lede">Monthly retainer or one project. Videos and b-roll in your Google Drive.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="{p}work-with-me/">How it works</a>
+        {ext(STAN_URL, 'How it works', 'btn btn-primary')}
         <a class="btn btn-ghost" href="{p}contact/">Get a quote</a>
       </div>
     </div>
@@ -1075,7 +1075,7 @@ def about(p):
       <p class="lede">GenX UGC creator and model, U.S. Navy veteran and public speaker, based in Tampa, Florida.</p>
       {ABOUT_STORY}
       <div class="btn-row">
-        <a class="btn btn-primary" href="{p}work-with-me/">Work with me</a>
+        {ext(STAN_URL, 'Work with me', 'btn btn-primary')}
         <a class="btn btn-ghost" href="{p}portfolio/">See my videos</a>
       </div>
     </div>
@@ -1578,7 +1578,7 @@ def not_found(p):
     <p class="lede">The page you were looking for is not here. Try one of these instead.</p>
     <div class="btn-row">
       <a class="btn btn-primary" href="{p}">Home</a>
-      <a class="btn btn-ghost" href="{p}work-with-me/">Work with me</a>
+      {ext(STAN_URL, 'Work with me', 'btn btn-ghost')}
       <a class="btn btn-ghost" href="{p}contact/">Contact</a>
     </div>
   </div>
@@ -1967,13 +1967,13 @@ def post_cta(audience, p):
   <p class="post-cta-kicker">For athletes and families</p>
   <p class="post-cta-h">Building your NIL brand? Let's talk.</p>
   <p>See how my NIL consulting works, then email me with your sport, school and goals.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="{href}">{label}</a>{ext(STAN_URL, 'Book on my Stan store', 'btn btn-ghost')}</div>
+  <div class="btn-row">{ext(STAN_URL, label, 'btn btn-primary')}{ext(STAN_URL, 'Book on my Stan store', 'btn btn-ghost')}</div>
 </aside>"""
     return f"""<aside class="post-cta band-ink" aria-label="Work with Trish">
   <p class="post-cta-kicker">PAID collabs ONLY</p>
   <p class="post-cta-h">Want UGC like this for your brand?</p>
   <p>I make short-form videos and b-roll for brands, delivered to Google Drive on a monthly retainer or per project.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="{p}work-with-me/">Work with me</a>{ext(STAN_URL, 'Book on my Stan store', 'btn btn-ghost')}</div>
+  <div class="btn-row">{ext(STAN_URL, 'Work with me', 'btn btn-primary')}{ext(STAN_URL, 'Book on my Stan store', 'btn btn-ghost')}</div>
 </aside>"""
 
 
