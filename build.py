@@ -57,8 +57,7 @@ from urllib.parse import quote
 # SWITCHES
 # =============================================================================
 
-BASE = "https://trishleto.com/"
-DOMAIN = "trishleto.com"  # GitHub Pages custom domain (docs/CNAME); DNS at Namecheap
+BASE = "https://ogeddiesmith.github.io/trish-leto/"
 INDEXABLE = False
 
 # =============================================================================
@@ -2475,7 +2474,6 @@ def build():
         if os.path.isdir(os.path.join(blog_root, d)) and d not in keep:
             shutil.rmtree(os.path.join(blog_root, d))
     write("robots.txt", robots_txt())
-    write("CNAME", DOMAIN + "\n")
     write("sitemap.xml", sitemap_xml(blog))
     write("site.webmanifest", manifest())
     live = len(live_posts(posts))
