@@ -67,7 +67,7 @@ GTM_HEAD = ("<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]
             "})(window,document,'script','dataLayer','" + GTM_ID + "');</script>\n<!-- End Google Tag Manager -->")
 GTM_BODY = ('<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' + GTM_ID + '"\n'
             'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n<!-- End Google Tag Manager (noscript) -->')  # GitHub Pages custom domain (docs/CNAME); DNS at Namecheap
-INDEXABLE = False
+INDEXABLE = True  # Eddie, 2026-10-28: "push it please"
 
 # =============================================================================
 # PENDING: each line below waits on a confirmation and renders only when True
@@ -470,9 +470,8 @@ def header(p, current):
 
 
 def footer(p):
-    # The NIL page sits in the footer even before Trish confirms it (preview only:
-    # the audit blocks an indexable build until she does).
-    foot = [(h, l) for h, l in NAV[:-1] if h != NIL_PATH] + [(NIL_PATH, "NIL consulting")]
+    # The NIL page is in the footer only while it is built (see the PAGES filter after PAGES).
+    foot = [(h, l) for h, l in NAV[:-1] if h != NIL_PATH] + ([(NIL_PATH, "NIL consulting")] if nil_page_exists() else [])
     links = "".join(f'<li><a href="{p}{h}">{l}</a></li>' for h, l in foot)
     return f"""<footer class="site-footer">
   <div class="wrap">
@@ -1221,7 +1220,7 @@ def speaking(p):
     </div>
     <div class="grid {cols}">{cards}</div>
     <p style="margin-top:1.6rem">A great fit for entrepreneur events, creator conferences, veteran and military-connected communities, and virtual summits. In person or online.</p>
-    <p>Want the written version of Control the Scroll? Read <a href="{p}blog/ugc-ads/">UGC ads that stop the scroll</a>. Coach or parent of an athlete? See <a href="{p}nil-consulting/">NIL consulting</a>: content and personal brand coaching for athletes and their families.</p>
+    <p>Want the written version of Control the Scroll? Read <a href="{p}blog/ugc-ads/">UGC ads that stop the scroll</a>.{nil_speaking_line(p)}</p>
   </div>
 </section>
 
@@ -1640,6 +1639,11 @@ PAGES = [
      "description": "This page does not exist. Head back to Trish Leto's home page to see her UGC work and contact details.",
      "noindex": True, "absolute": True},
 ]
+# NIL consulting stays off the live site until Trish confirms she offers it and counsel reviews the copy (see
+# NIL_CONSULTING_CONFIRMED). Its three posts are held in content/_held-nil/ (Eddie, 2026-10-28: "push it please"). To
+# bring it back: set the switch to True and move the posts back into content/blog/.
+if not NIL_CONSULTING_CONFIRMED:
+    PAGES = [pg for pg in PAGES if pg["slug"] != "nil-consulting/"]
 
 
 # =============================================================================
@@ -1663,6 +1667,20 @@ AUDIENCES = ("brands", "creators", "athletes")
 # Pages that sell a service. Every post links to at least one.
 SERVICE_PATHS = ("work-with-me/", "nil-consulting/", "speaking/")
 NIL_PATH = "nil-consulting/"
+
+
+def nil_speaking_line(p):
+    """The speaking page's pointer to NIL consulting, only while that page is built."""
+    if not nil_page_exists():
+        return ""
+    return (f' Coach or parent of an athlete? See <a href="{p}nil-consulting/">NIL consulting</a>: content and personal '
+            'brand coaching for athletes and their families.')
+
+
+def nil_parents_line(p):
+    """The blog hub's pointer to NIL consulting, only while that page is built."""
+    return f' Athletes and parents: <a href="{p}nil-consulting/">NIL consulting</a>.' if nil_page_exists() else ""
+
 # Optional hub headings per cluster id. Clusters not listed here get a heading
 # made from the id ("ugc-for-brands" becomes "UGC for brands").
 BLOG_CLUSTER_NAMES = {"ugc-for-brands": "UGC for brands", "become-a-ugc-creator": "Become a UGC creator over 40",
@@ -2128,7 +2146,7 @@ def blog_hub(posts, p):
     <p class="kicker">The UGC blog</p>
     <h1>Real talk about UGC, content and brand deals.</h1>
     <p class="lede">How brands get UGC that works, how creators land PAID collabs, and what athletes should know about NIL. Straight from a GenX UGC creator and Navy veteran.</p>
-    <p>Brands: <a href="{p}work-with-me/">work with me</a>. Athletes and parents: <a href="{p}nil-consulting/">NIL consulting</a>.</p>
+    <p>Brands: <a href="{p}work-with-me/">work with me</a>.{nil_parents_line(p)}</p>
   </div>
 </section>
 <section class="section-tight hub">
